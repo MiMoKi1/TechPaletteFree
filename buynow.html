@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="favicon.ico"> <!-- Favicon -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet"> <!-- Font -->
+    <title>Tech Palette Mentor - Sales Page</title>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #FFFFFF;
+            color: #333;
+            margin: 0;
+            padding: 20px;
+            line-height: 1.6;
+            font-size: 14px;
+        }
+
+        /* Header styles */
+        #header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            background-color: #f0f0f0;
+        }
+
+        #logo {
+            width: 100px;
+        }
+
+        h1 {
+            color: #888;
+            text-align: center;
+            font-weight: 700;
+        }
+
+        /* Section styles */
+        section {
+            margin-bottom: 40px;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            background-color: #fafafa;
+        }
+
+        h2 {
+            color: #555;
+            margin-bottom: 10px;
+        }
+
+        /* Purchase button styles */
+        form {
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        button {
+            background-color: #8B5B29;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #a86535;
+        }
+
+        /* Stripe button wrapper styles */
+        .stripe-button-wrapper {
+            display: flex;
+            align-items: flex-start; /* Align button with the top of the text */
+            padding: 0 0 20px 20px; /* Adjust padding to position the button */
+        }
+
+        footer {
+            margin-top: auto;
+            text-align: center;
+            padding: 10px 0;
+            background-color: ##FFFFFF;
+        }
+
+        footer a {
+            color: black;
+            text-decoration: none;
+            margin: 0 10px;
+            transition: color 0.3s ease, font-weight 0.3s ease;
+        }
+
+        footer a:hover {
+            font-weight: bold;
+        }
+
+        footer a:active {
+            color: white;
+        }
+
+        footer a:visited {
+            color: black;
+        }
+
+
+        /* Menu Icon (Moved to the top-right) */
+        #menu-icon {
+            position: absolute;
+            top: 10px;
+            right: 10px; /* Move to the right side */
+            width: 40px;
+            height: 40px;
+            cursor: pointer;
+            transition: transform 0.3s ease, filter 0.3s ease;
+        }
+
+        #menu-icon:hover {
+            transform: scale(1.1);
+            filter: brightness(1.2);
+        }
+
+        /* Dropdown Menu (Moved under the icon on the right) */
+        .dropdown {
+            position: absolute;
+            top: 60px; /* Position dropdown slightly below the icon */
+            right: 10px; /* Align dropdown to the right */
+            background-color: #FAF2E2;
+            border: 1px solid #8B5B29;
+            border-radius: 5px;
+            display: none;
+            flex-direction: column;
+            width: 160px;
+            padding: 5px;
+        }
+
+        .dropdown a {
+            text-decoration: none;
+            color: #8B5B29;
+            padding: 10px;
+            display: block;
+            transition: background-color 0.3s ease, font-weight 0.3s ease;
+        }
+
+        .dropdown a:hover {
+            background-color: #8B5B29;
+            color: white;
+            font-weight: bold;
+        }
+
+        #menu-icon.active + .dropdown {
+            display: flex;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Menu Icon -->
+    <img id="menu-icon" src="menu.png" alt="Menu Icon">
+
+        <!-- Dropdown Menu -->
+        <div class="dropdown">
+    <a href="index.html">Home</a>
+    <a href="HowToUse.html">How to Use</a>
+    <a href="buynow.html">Buy</a>
+    <a href="app.html">Web App</a>
+ <a href="ContactUs.html">Contact Us</a>
+        </div>
+
+    <!-- Header -->
+    <div id="header">
+        <a href="index.html">
+            <img id="logo" src="palettementor100x100transp.png" alt="Tech Palette Mentor Logo">
+        </a>
+    </div>
+
+    <header>
+        <h1>Unlock Your Creative Potential with Tech Palette Mentor</h1>
+    </header>
+
+    <section id="sales-pitch">
+        <h2>Transform Your Artistic Journey</h2>
+        <p>Are you an artist looking to elevate your work? Tech Palette Mentor is the ultimate tool that empowers you to blend colours like never before, using your actual paint inventory to create stunning visuals.</p>
+
+        <p>Say goodbye to guesswork and hello to precision! With our unique blending algorithm, you can recreate any image using the paints you already own. This tool is designed to make art more accessible and enjoyable.</p>
+        <p>Click on our Stripe checkout to start your free trial, it takes up to 24 hours to be added to our database to gain access and be verified to log in with your gmail account. We verify accounts via Google's OAuth, so yes you can <strong>only access Tech Palette Mentor with a gmail account.</strong> We do this so users can get access to our colour blending logic on Github.</p>
+    </section>
+
+<section id="features">
+    <h2 style="text-align: center;">Why Choose Tech Palette Mentor?</h2>
+    <div style="text-align: center; display: flex; flex-direction: column; align-items: center;">
+        <p>Our app provides:</p>
+        <ul style="list-style-type: none; padding: 0; text-align: left; display: inline-block;">
+            <li>Real-time blending suggestions based on your personal paint inventory.</li>
+            <li>Intuitive interface for easy navigation and usage.</li>
+            <li>Experiment with colour theory to enhance your skills.</li>
+            <li>Support for various file types, making it versatile for all your needs.</li>
+        </ul>
+
+        <!-- Stripe Button Wrapper -->
+        <div class="stripe-button-wrapper" style="margin-top: 20px;">
+            <script async src="https://js.stripe.com/v3/buy-button.js"></script>
+
+            <stripe-buy-button
+              buy-button-id="buy_btn_1QApqKIcCV1uZ856vlMNlS3k"
+              publishable-key="pk_live_51QAUaLIcCV1uZ856dNizRkc41p6GdHdxSpa91BcPfVLthFKC79e1zqyP169SsTkmQunQLCGeCFqZlIWYOeeFFcoA003NXZ8J1V"
+            >
+            </stripe-buy-button>
+        </div>
+    </div>
+</section>
+
+
+    <script>
+        const menuIcon = document.getElementById("menu-icon");
+        const dropdown = document.querySelector(".dropdown");
+
+        menuIcon.addEventListener("click", () => {
+            menuIcon.classList.toggle("active");
+            dropdown.classList.toggle("active");
+        });
+    </script>
+
+<!-- Footer -->
+<footer>
+    <div id="copyright">
+        <p>&copy; 2024 Tech Palette Mentor. All rights reserved.</p>
+        <p>The Tech Palette Mentor logo, software and all related content are the intellectual property of Tech Palette Mentor. For licensing or permissions, contact mentorpalette @ gmail.com.</p>
+    </div>
+    <p style="font-size: 12px;">
+        <a href="TermsandConditions.html">T&C</a> |
+        <a href="PrivacyPolicy.html">Privacy Policy</a> |
+        <a href="ContactUs.html">Contact Us</a> |
+        <a href="index.html">Back to Home</a>
+        <a href="https://www.instagram.com/techpalettementor"><img src="instagram.png" alt="Instagram" style="width:14px;height:14px;"></a>
+        <a href="https://www.pinterest.com/techmentorpalette/"><img src="pinterest.png" alt="Pinterest" style="width:14px;height:14px;"></a>
+        <a href="https://www.linkedin.com/company/techpalettementor/"><img src="linkedin.png" alt="LinkedIn" style="width:14px;height:14px;"></a>
+    </p>
+</footer>
+
+</body>
+</html>
