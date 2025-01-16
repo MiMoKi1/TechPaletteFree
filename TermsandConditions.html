@@ -3,7 +3,7 @@
 <head>
     <link rel="icon" type="image/x-icon" href="favicon.ico">
     <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
 
     <title>Terms and Conditions - Tech Palette Mentor</title>
@@ -16,23 +16,22 @@
             padding: 20px;
             line-height: 1.6;
             display: flex;
-overflow: auto;
+            overflow: auto;
             flex-direction: column;
             min-height: 100vh; /* Ensure the footer stays at the bottom */
- font-size: 12px; /* Reduced font size */
+            font-size: 12px; /* Reduced font size */
         }
         #header {
             text-align: center;
             margin-bottom: 20px;
         }
         #logo {
-           position: absolute;
+            position: absolute;
             top: 10px;
             left: 10px;
             width: 100px;
             height: auto;
             z-index: 100;
-
         }
         h1 {
             color: #888888; /* Darker color for the header */
@@ -72,89 +71,78 @@ overflow: auto;
         footer a:visited {
             color: black;
         }
-    /* Menu Icon (Moved to the top-right) */
-#menu-icon {
-    position: absolute;
-    top: 10px;
-    right: 10px; /* Move to the right side */
-    width: 40px;
-    height: 40px;
-    cursor: pointer;
-    transition: transform 0.3s ease, filter 0.3s ease;
-}
-
-#menu-icon:hover {
-    transform: scale(1.1);
-    filter: brightness(1.2);
-}
-
-/* Dropdown Menu (Moved under the icon on the right) */
-.dropdown {
-    position: absolute;
-    top: 60px; /* Position dropdown slightly below the icon */
-    right: 10px; /* Align dropdown to the right */
-    background-color: #FAF2E2;
-    border: 1px solid #8B5B29;
-    border-radius: 5px;
-    display: none;
-    flex-direction: column;
-    width: 160px;
-    padding: 5px;
-}
-
-.dropdown a {
-    text-decoration: none;
-    color: #8B5B29;
-    padding: 10px;
-    display: block;
-    transition: background-color 0.3s ease, font-weight 0.3s ease;
-}
-
-.dropdown a:hover {
-    background-color: #8B5B29;
-    color: white;
-    font-weight: bold;
-}
-
-#menu-icon.active + .dropdown {
-    display: flex;
-}
-
-/* Purchase button styles */
-form {
-    text-align: center;
-}
-
-button {
-    background-color: #FF6F61; /* Cute pink color */
-    color: white;
-    border: none;
-    border-radius: 12px; /* Rounded corners */
-    padding: 10px 20px;
-    cursor: pointer;
-    font-size: 16px;
-    font-weight: bold;
-    position: relative;
-    overflow: hidden; /* To contain the pseudo-element */
-    transition: transform 0.3s;
-}
-
-button::before {
-    content: '❤️'; /* Heart symbol */
-    position: absolute;
-    left: 84px; /* Adjusted left position */
-    top: 50%;
-    transform: translateY(-50%);
-    font-size: 20px; /* Heart size */
-    opacity: 0.7; /* Slightly transparent */
-}
-
-button:hover {
-    background-color: #FF4C4C; /* Darker pink on hover */
-    transform: scale(1.05); /* Slight scale on hover */
-}
-
-
+        /* Menu Icon (Moved to the top-right) */
+        #menu-icon {
+            position: absolute;
+            top: 10px;
+            right: 10px; /* Move to the right side */
+            width: 40px;
+            height: 40px;
+            cursor: pointer;
+            transition: transform 0.3s ease, filter 0.3s ease;
+        }
+        #menu-icon:hover {
+            transform: scale(1.1);
+            filter: brightness(1.2);
+        }
+        /* Dropdown Menu (Moved under the icon on the right) */
+        .dropdown {
+            position: absolute;
+            top: 60px; /* Position dropdown slightly below the icon */
+            right: 10px; /* Align dropdown to the right */
+            background-color: #FAF2E2;
+            border: 1px solid #8B5B29;
+            border-radius: 5px;
+            display: none;
+            flex-direction: column;
+            width: 160px;
+            padding: 5px;
+        }
+        .dropdown a {
+            text-decoration: none;
+            color: #8B5B29;
+            padding: 10px;
+            display: block;
+            transition: background-color 0.3s ease, font-weight 0.3s ease;
+        }
+        .dropdown a:hover {
+            background-color: #8B5B29;
+            color: white;
+            font-weight: bold;
+        }
+        #menu-icon.active + .dropdown {
+            display: flex;
+        }
+        /* Purchase button styles */
+        form {
+            text-align: center;
+        }
+        button {
+            background-color: #FF6F61; /* Cute pink color */
+            color: white;
+            border: none;
+            border-radius: 12px; /* Rounded corners */
+            padding: 10px 20px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: bold;
+            position: relative;
+            overflow: hidden; /* To contain the pseudo-element */
+            transition: transform 0.3s;
+        }
+        button::before {
+            content: '❤️'; /* Heart symbol */
+            position: absolute;
+            left: 84px; /* Adjusted left position */
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 20px; /* Heart size */
+            opacity: 0.7; /* Slightly transparent */
+        }
+        button:hover {
+            background-color: #FF4C4C; /* Darker pink on hover */
+            transform: scale(1.05); /* Slight scale on hover */
+        }
     </style>
 </head>
 <body>
@@ -209,41 +197,52 @@ button:hover {
     <h2>7. Changes to Terms</h2>
     <p>We reserve the right to modify these Terms and Conditions at any time. Changes will be effective immediately upon posting on the App. Your continued use of the App constitutes acceptance of the revised terms.</p>
 
-<h2>License</h2>  
-<p>All rights reserved. This software and its associated files are the property of the author and may not be:</p>
-<p>- Copied</p>
-<p>- Modified</p>
-<p>- Distributed</p>
-<p>- Sold</p>
-<p>- Used for any purpose without explicit permission from the author. For inquiries about licensing, contact us via email.</p>
-<p> Any work made by users is their license, we have no access to images uploaded bar their file type to ensure only images are uploaded. </p>
+<h2>8. Advertising</h2>
+<p>Tech Palette Mentor may display third-party advertisements on the App. These advertisements may be provided by Google Ads or other advertising networks. These ads may use cookies, web beacons, or similar technologies to collect information about users' interactions with the App or other websites to provide relevant ads.</p>
 
+    <h2>9. Google Ads</h2>
+    <p>Our App may display advertisements through Google Ads. These ads may use cookies to collect information about your activities within the App. This information is used to show relevant ads based on your interests. By using the App, you consent to the use of cookies for this purpose. For more information on Google Ads' privacy practices, please refer to <a href="https://policies.google.com/technologies/ads" target="_blank">Google Ads Privacy & Terms</a>.</p>
 
-    <h2>8. Contact Information</h2>
-    <p>For any questions or concerns regarding these Terms and Conditions, please contact us at mentorpalette @ gmail.com</p>
+    <h2>10. Cookies</h2>
+    <p>We may use cookies to enhance your experience while using the App. Cookies are small files stored on your device that help us remember your preferences and improve the overall user experience. You can choose to disable cookies in your browser settings, but this may affect the functionality of the App.</p>
 
+    <h2>11. Third-Party Links</h2>
+    <p>The App may contain links to third-party websites or services. We do not control and are not responsible for the content or privacy practices of these third-party sites. We encourage you to review the privacy policies of any external sites you visit.</p>
 
-<script>
-        const menuIcon = document.getElementById("menu-icon");
-        const dropdown = document.querySelector(".dropdown");
+    <h2>12. Advertisements</h2>
+    <p>In addition to Google Ads, we may also use other third-party advertising networks to display ads within the App. These networks may collect information about your interactions with the ads, which helps us to serve more relevant advertisements. By using the App, you consent to the use of these third-party advertising networks.</p>
 
-        menuIcon.addEventListener("click", () => {
-            menuIcon.classList.toggle("active");
-            dropdown.classList.toggle("active");
-        });
-    </script>
+    <h2>13. User Feedback</h2>
+    <p>If you provide any feedback, suggestions, or ideas regarding the App, you agree that we may use them without any obligation to you. We will not be liable for any unsolicited feedback provided.</p>
 
+    <h2>14. Force Majeure</h2>
+    <p>We are not liable for any failure or delay in the performance of our obligations due to events beyond our control, including but not limited to natural disasters, technical failures, or any unforeseen circumstances that prevent us from fulfilling our obligations.</p>
 
-<footer>
-    <p style="font-size: 10px;"> <!-- Reduced font size -->
-        <a href="PrivacyPolicy.html">Privacy Policy</a> |
-        <a href="LegalDisclaimer.html">Legal Disclaimer</a> |
-        <a href="ContactUs.html">Contact Us</a> |
-        <a href="index.html">Back to Home</a>
+    <h2>15. Severability</h2>
+    <p>If any provision of these Terms and Conditions is found to be invalid or unenforceable, the remaining provisions will continue in full force and effect.</p>
+
+    <h2>16. Entire Agreement</h2>
+    <p>These Terms and Conditions constitute the entire agreement between you and Tech Palette Mentor regarding your use of the App and supersede all prior or contemporaneous agreements or communications, whether written or oral, related to the subject matter of these Terms.</p>
+
+    <h2>17. Consent to Data Collection</h2>
+    <p>By using the App, you consent to the collection and processing of your data as described in our <a href="PrivacyPolicy.html">Privacy Policy</a>. We take your privacy seriously and are committed to protecting your personal information.</p>
+
+    <h2>18. Termination</h2>
+    <p>We reserve the right to suspend or terminate your access to the App at any time, without notice, for any reason, including but not limited to a violation of these Terms and Conditions.</p>
+
+    <h2>19. Acknowledgement</h2>
+    <p>By using the App, you acknowledge that you have read and understood these Terms and Conditions, and you agree to be bound by them.</p>
+
+    <footer>
+        <p style="font-size: 10px;"> <!-- Reduced font size -->
+            <a href="PrivacyPolicy.html">Privacy Policy</a> |
+            <a href="LegalDisclaimer.html">Legal Disclaimer</a> |
+            <a href="ContactUs.html">Contact Us</a> |
+            <a href="index.html">Back to Home</a>
             <a href="https://www.instagram.com/techpalettementor"><img src="instagram.png" alt="Instagram" style="width:14px;height:14px;"></a>
-	   <a href="https://www.pinterest.com/techpalettementor/"><img src="pinterest.png" alt="Pinterest" style="width:14px;height:14px;"></a>
-<a href="https://www.linkedin.com/company/techpalettementor/"><img src="linkedin.png" alt="LinkedIn" style="width:14px;height:14px;"></a>
-    </p>
-</footer>
+            <a href="https://www.pinterest.com/techpalettementor/"><img src="pinterest.png" alt="Pinterest" style="width:14px;height:14px;"></a>
+            <a href="https://www.linkedin.com/company/techpalettementor/"><img src="linkedin.png" alt="LinkedIn" style="width:14px;height:14px;"></a>
+        </p>
+    </footer>
 </body>
 </html>
