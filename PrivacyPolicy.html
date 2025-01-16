@@ -7,18 +7,16 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
 
     <title>Privacy Policy - Tech Palette Mentor</title>
-    <style>
+     <style>
+        /* General Styles */
         body {
-            font-family: 'Arial', sans-serif;
-            background-color: #FFFFFF; /* Light background color */
-            color: #333; /* Dark text color for contrast */
+            font-family: Arial, sans-serif;
             margin: 0;
-            overflow: auto;
-            padding: 20px;
-            line-height: 1.6;
-            font-size: 12px; /* Reduced font size */
+            padding: 0;
+            background-color: #f9f9f9;
         }
-         header {
+
+        header {
             display: flex;
             align-items: center;
             justify-content: space-between;
@@ -26,47 +24,97 @@
             background-color: #333;
             color: white;
         }
-        #logo {
-            position: absolute;
-            top: 10px;
-            left: 10px;
-            width: 100px;
-            height: auto;
-            z-index: 100;
-        }
-        h1 {
-            color: #888888; /* Darker color for the header */
-        }
-        h2 {
-            margin-top: 2px;
-            color: #666; /* Slightly lighter for section headers */
-        }
-        p {
-            margin: 10px 0;
-        }
-        ul {
-            margin-left: 20px; /* Indent for lists */
-        }
-        footer {
-            margin-top: auto; /* Push footer to the bottom */
-            text-align: center;
-            padding: 10px 0;
-            background-color: #FFFFFF;
-        }
-        footer a {
-            color: black; /* Default black color */
+
+        header a {
             text-decoration: none;
-            margin: 0 10px;
-            transition: color 0.3s ease, font-weight 0.3s ease;
-        }
-        footer a:hover {
-            font-weight: bold;
-        }
-        footer a:active {
             color: white;
         }
-        footer a:visited {
+
+        .logo img {
+            height: 50px;
+        }
+
+        /* Menu Icon */
+        #menu-icon {
+            width: 30px;
+            height: 30px;
+            cursor: pointer;
+            background: url('menu.png') no-repeat center center;
+            background-size: contain;
+        }
+
+        #menu-icon.active {
+            background: url('menu-close.png') no-repeat center center;
+            background-size: contain;
+        }
+
+        /* Dropdown Menu */
+        .dropdown {
+            display: none;
+            position: absolute;
+            top: 60px;
+            right: 20px;
+            background-color: white;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+        }
+
+        .dropdown.active {
+            display: block;
+        }
+
+        .dropdown a {
+            display: block;
+            padding: 10px 20px;
             color: black;
+            text-decoration: none;
+        }
+
+        .dropdown a:hover {
+            background-color: #f0f0f0;
+        }
+
+        /* Content Styles */
+        .content {
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        h2 {
+            color: #555;
+        }
+
+        p {
+            line-height: 1.6;
+            color: #666;
+        }
+
+        /* Footer Styles */
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px 20px;
+        }
+
+        footer a {
+            color: white;
+            text-decoration: none;
+            margin: 0 5px;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        footer .social-icons img {
+            width: 20px;
+            height: 20px;
+            margin: 0 5px;
         }
     </style>
 </head>
