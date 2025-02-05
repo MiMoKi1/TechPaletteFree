@@ -206,22 +206,28 @@
     </ul>
 </main>
 
-<footer>
-    <p>&copy; 2025 Tech Palette Mentor. All rights reserved.</p>
-    <div class="social-icons">
-        <a href="https://twitter.com"><img src="twitter.png" alt="Twitter"></a>
-        <a href="https://facebook.com"><img src="facebook.png" alt="Facebook"></a>
-        <a href="https://instagram.com"><img src="instagram.png" alt="Instagram"></a>
-    </div>
-    <div class="rights-reserved">All rights reserved. <a href="terms.html">Terms of Service</a> | <a href="privacy.html">Privacy Policy</a></div>
-</footer>
-
 <script>
-    const menuIcon = document.getElementById("menu-icon");
-    menuIcon.addEventListener("click", function () {
-        this.classList.toggle("active");
-    });
-</script>
+        const menuIcon = document.getElementById("menu-icon");
+        const dropdown = document.querySelector(".dropdown");
+
+        menuIcon.addEventListener("click", () => {
+            menuIcon.classList.toggle("active");
+            dropdown.classList.toggle("active");
+        });
+    </script>
+
+
+
+<footer>
+    <p style="font-size: 12px;"> <!-- Reduced font size -->
+        <a href="TermsandConditions.html">T&C</a> |
+        <a href="PrivacyPolicy.html">Privacy Policy</a> |
+        <a href="LegalDisclaimer.html">Legal Disclaimer</a> |
+        <a href="index.html">Back to Home</a>
+            <a href="https://www.instagram.com/techpalettementor"><img src="instagram.png" alt="Instagram" style="width:14px;height:14px;"></a>
+	   <a href="https://www.pinterest.com/techpalettementor/"><img src="pinterest.png" alt="Pinterest" style="width:14px;height:14px;"></a>
+<a href="https://www.linkedin.com/company/techpalettementor/"><img src="linkedin.png" alt="LinkedIn" style="width:14px;height:14px;"></a>
+    </p>
 
 </body>
 </html>
