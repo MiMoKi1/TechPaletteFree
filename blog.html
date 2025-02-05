@@ -1,80 +1,227 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1920074084827369" crossorigin="anonymous"></script>
+    <meta name="google-adsense-account" content="ca-pub-1920074084827369">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Art Project</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+    <meta name="description" content="Explore our blog about Irish art history and more.">
+    <title>Blog - Tech Palette Mentor</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
             margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
+            overflow-y: auto;
+            height: auto;
+            min-height: 100vh;
+            background-color: #FFFFFF;
+            font-size: 14px;
+            font-family: 'Poppins', sans-serif;
         }
         header {
-            background-color: #333;
-            color: #fff;
-            padding: 20px;
-            text-align: center;
-        }
-        header h1 {
-            margin: 0;
-        }
-        .content {
-            padding: 20px;
-            text-align: center;
-        }
-        .image-container {
+            width: 100%;
+            padding: 10px;
+            background-color: #FAF2E2;
             display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 20px;
+            justify-content: space-between;
+            align-items: center;
+            position: relative;
         }
-        .image-container img {
-            max-width: 80%;
+        #logo {
+            width: 100px;
             height: auto;
-            margin: 10px;
-            display: block;
         }
-        .description {
+        #logo a {
+            text-decoration: none;
+            color: #8B5B29;
+        }
+        .dropdown {
+            display: none;
+            position: absolute;
+            top: 50px;
+            right: 10px;
+            background-color: #FAF2E2;
+            border: 1px solid #8B5B29;
+            border-radius: 5px;
+            flex-direction: column;
+            width: 160px;
+        }
+        .dropdown a {
+            text-decoration: none;
+            color: #8B5B29;
+            padding: 10px;
+            display: block;
+            transition: background-color 0.3s ease, font-weight 0.3s ease;
+        }
+        .dropdown a:hover {
+            background-color: #8B5B29;
+            color: white;
+            font-weight: bold;
+        }
+        #menu-icon {
+            width: 40px;
+            height: 40px;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+        #menu-icon:hover {
+            transform: scale(1.1);
+            filter: brightness(1.2);
+        }
+        #menu-icon.active + .dropdown {
+            display: flex;
+        }
+
+        main {
+            padding: 20px;
+            width: 80%;
+            text-align: center;
+            background-color: #FFF8E1;
+            border-radius: 10px;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
             margin-top: 20px;
         }
-        a {
-            color: #333;
-            text-decoration: none;
+        main h1 {
+            font-size: 28px;
+            color: #8B5B29;
         }
+        main p {
+            font-size: 16px;
+            color: #333;
+            line-height: 1.6;
+        }
+        ul {
+            list-style: none;
+            padding: 0;
+            text-align: left;
+            margin-top: 20px;
+        }
+        li {
+            margin-bottom: 15px;
+        }
+        li a {
+            color: #8B5B29;
+            text-decoration: none;
+            font-size: 18px;
+            transition: color 0.3s ease, font-weight 0.3s ease;
+        }
+        li a:hover {
+            color: #FF6F61;
+            font-weight: bold;
+        }
+
+        img {
+            max-width: 100%;
+            max-height: 300px;
+            height: auto;
+            display: block;
+            margin: 20px auto;
+            border-radius: 8px;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
         footer {
-            background-color: #333;
-            color: #fff;
-            padding: 10px;
+            margin-top: auto;
             text-align: center;
+            padding: 20px;
+            background-color: #FAF2E2;
+            width: 100%;
+        }
+        footer a {
+            color: #8B5B29;
+            text-decoration: none;
+            margin: 0 10px;
+            font-size: 14px;
+        }
+        footer a:hover {
+            color: #FF6F61;
+        }
+        footer img {
+            width: 24px;
+            height: 24px;
+            margin: 0 10px;
+        }
+        .rights-reserved {
+            font-size: 12px;
+            margin-top: 10px;
+            color: #8B5B29;
         }
     </style>
 </head>
 <body>
 
 <header>
-    <h1>Art Project: Color Blending</h1>
+    <a href="index.html" id="logo">
+        <img src="palettementor100x100transp.png" alt="Tech Palette Mentor Logo">
+    </a>
+    <img id="menu-icon" src="menu.png" alt="Menu Icon">
+    <div class="dropdown">
+        <a href="index.html">Home</a>
+        <a href="AboutUs.html">About Us</a>
+        <a href="HowToUse.html">How to Use</a>
+        <a href="app.html">Web App</a>
+        <a href="ContactUs.html">Contact Us</a>
+        <a href="blog.html">Blog</a>
+    </div>
 </header>
 
-<div class="content">
-    <p>Explore the fusion of traditional painting techniques with modern technology through the <a href="#">Tech Palette Mentor</a> app.</p>
-    
-    <div class="image-container">
-        <img src="images/pexels-steve-1047526.jpg" alt="painting 1">
-        <img src="images/pexels-pixabay-104584.jpg" alt="painting 2">
-        <img src="images/pexels-pixabay-101563.jpg" alt="painting 3">
-    </div>
+<main>
+    <h1>Blog - Tech Palette Mentor</h1>
+    <p>Welcome to our blog! Here you'll find insightful posts on Irish art history, modern art techniques, and more!</p>
 
-    <div class="description">
-        <p>The app helps artists recreate their images using selected color blends from a palette. Adjust grid sizes, explore different blends, and connect creativity with technology.</p>
-        <p>To learn more, visit <a href="https://example.com" target="_blank">our website</a> for a detailed guide on how it works!</p>
-    </div>
-</div>
+    <ul>
+        <li><a href="/how_to_use_tech_palette_to_help_you_paint_a_guide_for_artists.html">How to Use Tech Palette to Help You Paint: A Guide for Artists</a></li>
+        <li><a href="/Exploring-Ireland-s-Art-History-and-the-Influence-of-Religion.html">Exploring Ireland's Art History and the Influence of Religion</a></li>
+        
+        <img src="images/pexels-steve-1047526.jpg" alt="painting" style="max-width: 80%; height: auto; margin: 10px auto; display: block;" />
+
+        
+        <li><a href="/The-Influence-of-Celtic-Art-on-Modern-Irish-Artists.html">The Influence of Celtic Art on Modern Irish Artists</a></li>
+        <li><a href="/The-Evolution-of-Irish-Landscape-Painting.html">The Evolution of Irish Landscape Painting</a></li>
+        <li><a href="/Art_and_the_IrishDiaspora:_Connecting_the_Past_and_Present.html">Art and the Irish Diaspora: Connecting the Past and Present</a></li>
+        <li><a href="/The_Irish_Arts_and_Crafts_Movement:_Forgotten_Legacy.html">The Irish Arts and Crafts Movement: A Forgotten Legacy</a></li>
+        <li><a href="/Famous_Irish_Artists_of_the_19th_Century.html">Famous Irish Artists of the 19th Century</a></li>
+
+        <img src="images/pexels-shukur-18562111.jpg" alt="oil painting" style="max-width: 80%; height: auto; margin: 10px auto; display: block;" />
+
+
+        <li><a href="/Women_in_Irish_Art:_Pioneers_and_Contemporary_Figures.html">Women in Irish Art: Pioneers and Contemporary Figures</a></li>
+        <li><a href="/Exploring_Irish_Modernism:_The_Transition_to_20th_Century_Art_Focus_on_the_shift_from_traditional_to_modernist_art_in_Ireland">Exploring Irish Modernism: The Transition to 20th Century Art</a></li>
+        <li><a href="/How_Irish_Art_Reflects_Its_People.html">How Irish Art Reflects Its People</a></li>
+        <li><a href="/The_Birth_of_Irish_Surrealism:_A_Look_at_Artists_Like_Louis_le_Brocquy.html">The Birth of Irish Surrealism: A Look at Artists Like Louis le Brocquy</a></li>
+        <li><a href="/The_Restoration_of_Irish_Art:_The_Role_of_Galleries_and_Museums.html">The Restoration of Irish Art: The Role of Galleries and Museums</a></li>
+        <li><a href="/Art_Movements_in_Ireland:_From_Abstract_Expressionism_to_Contemporary_Art.html">Art Movements in Ireland: From Abstract Expressionism to Contemporary Art</a></li>
+
+        <img src="images/pexels-cottonbro-7885365.jpg" alt="oil painting canvas" style="max-width: 80%; height: auto; margin: 10px auto; display: block;" />
+
+
+        <li><a href="/Exploring_Irish_Folklore_Through_Art.html">Exploring Irish Folklore Through Art</a></li>
+        <li><a href="/Irish_Art_in_the_Digital_Age_Technology_and_Modern_Creativity.html">Irish Art in the Digital Age Technology and Modern Creativity</a></li>
+        <li><a href="/The_Role_of_Art_in_Social_Justice_Movements_in_Ireland.html">The Role of Art in Social Justice Movements in Ireland</a></li>
+    </ul>
+</main>
 
 <footer>
-    <p>&copy; 2025 MMY King Art. All Rights Reserved.</p>
+    <p>&copy; 2025 Tech Palette Mentor. All rights reserved.</p>
+    <div class="social-icons">
+        <a href="https://twitter.com"><img src="twitter.png" alt="Twitter"></a>
+        <a href="https://facebook.com"><img src="facebook.png" alt="Facebook"></a>
+        <a href="https://instagram.com"><img src="instagram.png" alt="Instagram"></a>
+    </div>
+    <div class="rights-reserved">All rights reserved. <a href="terms.html">Terms of Service</a> | <a href="privacy.html">Privacy Policy</a></div>
 </footer>
+
+<script>
+    const menuIcon = document.getElementById("menu-icon");
+    menuIcon.addEventListener("click", function () {
+        this.classList.toggle("active");
+    });
+</script>
 
 </body>
 </html>
