@@ -1,242 +1,206 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
-	<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1920074084827369" crossorigin="anonymous"></script>
-
-	<meta name="google-adsense-account" content="ca-pub-1920074084827369">
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1920074084827369" crossorigin="anonymous"></script>
+    <meta name="google-adsense-account" content="ca-pub-1920074084827369">
     <link rel="icon" type="image/x-icon" href="favicon.ico">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
     <title>About Us | Tech Palette Mentor</title>
 
-       <style>
-       body {
-    display: flex;
-    flex-direction: row; /* Arrange content horizontally */
-    justify-content: flex-start; /* Align items to the left */
-    margin: 0;
-    padding: 20px;
-    overflow: auto;
-    height: 100vh;
-    font-family: 'Poppins', sans-serif;
-}
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #F4F4F4;
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+            height: 100vh;
+        }
 
-main {
-    padding: 20px;
-    width: 60%; /* Adjust width for text area */
-    text-align: left; /* Align text to the left */
-    background-color: #F0F0F0;
-    border: 5px solid #ffffff;
-}
-
-.content {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start; /* Align text to the left */
-}
-
-.images {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end; /* Align images to the right */
-    padding-left: 20px;
-}
-
-img {
-    max-width: 80%;
-    max-height: 300px;
-    height: auto;
-    display: block;
-    margin: 10px auto;
-}
+        header {
+            width: 100%;
+            background-color: #E6AE99;
+            padding: 20px 0;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
 
         #logo {
-            position: absolute;
-            top: 10px;
-            left: 10px;
-            width: 100px;
+            width: 120px;
             height: auto;
-            z-index: 100;
+            margin-bottom: 10px;
+        }
 
-        }
         h1 {
-            color: #888888; /* Darker color for the header */
+            font-size: 24px;
+            color: #4A4A4A;
+            margin: 0;
         }
-        p {
+
+        main {
+            padding: 20px;
+            width: 80%;
+            max-width: 1200px;
+            background-color: #FFFFFF;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            margin-top: 20px;
+            border-radius: 8px;
+        }
+
+        .content {
+            text-align: left;
+            line-height: 1.6;
+            font-size: 16px;
+            margin-bottom: 20px;
+        }
+
+        .content p {
+            margin: 15px 0;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            margin: 20px 0;
+            border-radius: 8px;
+        }
+
+        h2 {
+            font-size: 20px;
+            color: #555;
+            margin-top: 30px;
+            text-align: center;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        ul li {
             margin: 10px 0;
         }
-        a {
-            color: #666; /* Link color */
-            text-decoration: none; /* Remove underline from links */
-        }
-        a:hover {
-            text-decoration: underline; /* Underline on hover for links */
-        }
 
-         footer {
-            margin: auto; /* Push footer to the bottom */
-            text-align: center;
-            padding: 10px 0;
-            background-color: #        footer {
-            margin-top: auto; /* Push footer to the bottom */
-            text-align: center;
-            padding: 10px 0;
+        footer {
             background-color: #E6AE99;
+            padding: 15px 0;
+            width: 100%;
+            text-align: center;
+            margin-top: 40px;
+            color: #333;
+            font-size: 12px;
         }
+
         footer a {
-            color: black; /* Default black color */
             text-decoration: none;
+            color: #333;
             margin: 0 10px;
-            transition: color 0.3s ease, font-weight 0.3s ease;
+            transition: color 0.3s ease;
         }
+
         footer a:hover {
+            color: #8B5B29;
+        }
+
+        /* Menu Icon */
+        #menu-icon {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            width: 40px;
+            height: 40px;
+            cursor: pointer;
+        }
+
+        #menu-icon:hover {
+            transform: scale(1.1);
+            filter: brightness(1.1);
+        }
+
+        /* Dropdown Menu */
+        .dropdown {
+            position: absolute;
+            top: 70px;
+            right: 10px;
+            background-color: #FAF2E2;
+            border: 1px solid #8B5B29;
+            display: none;
+            flex-direction: column;
+            padding: 5px;
+            border-radius: 5px;
+            width: 160px;
+        }
+
+        .dropdown a {
+            text-decoration: none;
+            color: #8B5B29;
+            padding: 10px;
+            display: block;
+            transition: background-color 0.3s ease, font-weight 0.3s ease;
+        }
+
+        .dropdown a:hover {
+            background-color: #8B5B29;
+            color: white;
             font-weight: bold;
         }
-        footer a:active {
-            color: white;
-        }
-        footer a:visited {
-            color: black;
-        }
-;
-        }
-        footer a {
-            color: black; /* Default black color */
-            text-decoration: none;
-            margin: 0 10px;
-            transition: color 0.3s ease, font-weight 0.3s ease;
-        }
-        footer a:hover {
-            font-weight: bold;
-        }
-        footer a:active {
-            color: white;
-        }
-        footer a:visited {
-            color: black;
-        }
 
-      /* Menu Icon (Moved to the top-right) */
-#menu-icon {
-    position: absolute;
-    top: 10px;
-    right: 10px; /* Move to the right side */
-    width: 40px;
-    height: 40px;
-    cursor: pointer;
-    transition: transform 0.3s ease, filter 0.3s ease;
-}
-
-#menu-icon:hover {
-    transform: scale(1.1);
-    filter: brightness(1.2);
-}
-
-/* Dropdown Menu (Moved under the icon on the right) */
-.dropdown {
-    position: absolute;
-    top: 60px; /* Position dropdown slightly below the icon */
-    right: 10px; /* Align dropdown to the right */
-    background-color: #FAF2E2;
-    border: 1px solid #8B5B29;
-    border-radius: 5px;
-    display: none;
-    flex-direction: column;
-    width: 160px;
-    padding: 5px;
-}
-
-.dropdown a {
-    text-decoration: none;
-    color: #8B5B29;
-    padding: 10px;
-    display: block;
-    transition: background-color 0.3s ease, font-weight 0.3s ease;
-}
-
-.dropdown a:hover {
-    background-color: #8B5B29;
-    color: white;
-    font-weight: bold;
-}
-
-#menu-icon.active + .dropdown {
-    display: flex;
-}
-
-   body {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
-    margin: 0;
-    overflow-y: auto;
-    height: auto;
-    min-height: 100vh;
-    background-color: #FFFFFF; /* This is already white */
-    font-size: 14px;
-    font-family: 'Poppins', sans-serif;
-    border: 5px solid #ffffff; /* Add a white border */
-    background-color: #F0F0F0; /* Set a color background for the body (light gray as an example) */
-}
-main {
-    padding: 20px;
-    width: 80%;
-    text-align: center;
-    background-color: #F0F0F0; /* Set the background color for the content */
-    border: 5px solid #ffffff; /* Optional: add a white border around the main content */
-}
+        #menu-icon.active + .dropdown {
+            display: flex;
+        }
 
     </style>
 </head>
 <body>
-    <div id="header">About Tech Palette Mentor</div>
-    <a href="index.html">
-        <img id="logo" src="palettementor100x100transp.png" alt="Tech Palette Mentor Logo">
-    </a>
-    <!-- Menu Icon -->
-    <img id="menu-icon" src="menu.png" alt="Menu Icon">
-        <!-- Dropdown Menu -->
-        <div class="dropdown">
-    <a href="index.html">Home</a>
-    <a href="AboutUs.html">About Us</a>
-    <a href="HowToUse.html">How to Use</a>
-    <a href="app.html">Web App</a>
- <a href="ContactUs.html">Contact Us</a>
-	 <a href="blog.html">Blog</a>	
+    <header>
+        <a href="index.html"><img id="logo" src="palettementor100x100transp.png" alt="Tech Palette Mentor Logo"></a>
+        <h1>About Tech Palette Mentor</h1>
+    </header>
+
+    <main>
+        <div class="content">
+            <p>Founded by artist, MMY King, Tech Palette Mentor is an app created at the intersection of art processes and technology. We are passionate about bridging the gap between traditional art practices and modern technology. Just as the Old Masters learned from their predecessors, how can we apply this practice in 2024?</p>
+            <img src="images/pexels-cottonbro-3778180.jpg" alt="painting" />
+            <p>This question led to the coding in HTML, CSS, JAVA, SQL, noSQL, and hosting of frontend/backend files to bring light to the answer. This is an innovative web app designed specifically for artists of all levels.</p>
+            <p>With Tech Palette Mentor, the aim is to empower creators by providing personalized color blending suggestions based on their actual paint inventory.</p>
+            <img src="images/pexels-anfisa-eremina-1021202-2090478.jpg" alt="painting" />
+            <p>You're only using the Zorn palette? Cool – select those 4 colors in the palette area, upload the picture you want to paint, and click on the image to be told what color to mix and at what percentage to recreate that image. Drawing is a factor too; draw a grid on your canvas and click on our grid for your image, and boom – copy that picture, block it out, and get blending.</p>
+            <p>Less thinking, less logic; our code does that for you, and more play, more experimentation!</p>
+            <p>The mission here is to inspire creativity, enhance artistic expression, and help artists explore the endless possibilities of color theory. Tech Palette Mentor is on this exciting journey to elevate your artistry!</p>
+            <img src="images/pexels-brett-sayles-1322183.jpg" alt="painting" />
+
+            <h2>Why Choose Tech Palette Mentor?</h2>
+            <ul>
+                <li>Tailored color blending based on your existing paints.</li>
+                <li>Support for multiple color palettes, including the Zorn palette.</li>
+                <li>Grid overlay for structured painting techniques.</li>
+                <li>Developed by an artist with a deep understanding of painting processes.</li>
+            </ul>
+            <p>Tech Palette Mentor is built with passion and a deep appreciation for both traditional and modern artistic methods. Join us on this journey to reimagine painting in the digital age.</p>
         </div>
+    </main>
 
-    <div class="content">
-<p></p>p>
-    <p>Founded by artist, MMY King, Tech Palette Mentor is an app created at the intersection of art processes and technology. We are passionate about bridging the gap between traditional art practices and modern technology. Just as the Old Masters learned from their predecessors, how can we apply this practice in 2024?</p>
-<img src="images/pexels-cottonbro-3778180.jpg" alt="painting" style="max-width: 80%; max-height: 300px; height: auto; display: block; margin: 0 auto;" />
+    <footer>
+        <p>
+            <a href="TermsandConditions.html">T&C</a> |
+            <a href="PrivacyPolicy.html">Privacy Policy</a> |
+            <a href="LegalDisclaimer.html">Legal Disclaimer</a> |
+            <a href="index.html">Back to Home</a>
+            <a href="https://www.instagram.com/techpalettementor"><img src="instagram.png" alt="Instagram" style="width:14px;height:14px;"></a>
+            <a href="https://www.pinterest.com/techpalettementor/"><img src="pinterest.png" alt="Pinterest" style="width:14px;height:14px;"></a>
+            <a href="https://www.linkedin.com/company/techpalettementor/"><img src="linkedin.png" alt="LinkedIn" style="width:14px;height:14px;"></a>
+        </p>
+    </footer>
 
-
-    <p>This question led to the coding in HTML, CSS, JAVA, SQL, noSQL, and hosting of frontend/backend files to bring light to the answer. This is an innovative web app designed specifically for artists of all levels.</p>
-
-    <p>With Tech Palette Mentor, the aim is to empower creators by providing personalized color blending suggestions based on their actual paint inventory.</p> 
-<img src="images/pexels-anfisa-eremina-1021202-2090478.jpg" alt="painting" style="max-width: 80%; max-height: 300px; height: auto; display: block; margin: 0 auto;" />
-    <p>You're only using the Zorn palette? Cool – select those 4 colors in the palette area, upload the picture you want to paint, and click on the image to be told what color to mix and at what percentage to recreate that image. Drawing is a factor too; draw a grid on your canvas and click on our grid for your image, and boom – copy that picture, block it out, and get blending.</p>
-
-    <p>Less thinking, less logic; our code does that for you, and more play, more experimentation!</p>
-
-    <p>The mission here is to inspire creativity, enhance artistic expression, and help artists explore the endless possibilities of color theory. Tech Palette Mentor is on this exciting journey to elevate your artistry!</p>
-<img src="images/pexels-brett-sayles-1322183.jpg" alt="painting" style="max-width: 80%; max-height: 300px; height: auto; display: block; margin: 0 auto;" />
-
-	    <h2>Why Choose Tech Palette Mentor?</h2>
-        <ul>
-            <li>Tailored color blending based on your existing paints.</li>
-            <li>Support for multiple color palettes, including the Zorn palette.</li>
-            <li>Grid overlay for structured painting techniques.</li>
-            <li>Developed by an artist with a deep understanding of painting processes.</li>
-        </ul>
-        <p>Tech Palette Mentor is built with passion and a deep appreciation for both traditional and modern artistic methods. Join us on this journey to reimagine painting in the digital age.</p>
-
-	    <img src="images/pexels-cottonbro-7885591.jpg" alt="painting" style="max-width: 80%; max-height: 300px; height: auto; display: block; margin: 0 auto;" />
-<script>
+    <script>
         const menuIcon = document.getElementById("menu-icon");
         const dropdown = document.querySelector(".dropdown");
 
@@ -245,19 +209,5 @@ main {
             dropdown.classList.toggle("active");
         });
     </script>
-
-
-
-<footer>
-    <p style="font-size: 12px;"> <!-- Reduced font size -->
-        <a href="TermsandConditions.html">T&C</a> |
-        <a href="PrivacyPolicy.html">Privacy Policy</a> |
-        <a href="LegalDisclaimer.html">Legal Disclaimer</a> |
-        <a href="index.html">Back to Home</a>
-            <a href="https://www.instagram.com/techpalettementor"><img src="instagram.png" alt="Instagram" style="width:14px;height:14px;"></a>
-	   <a href="https://www.pinterest.com/techpalettementor/"><img src="pinterest.png" alt="Pinterest" style="width:14px;height:14px;"></a>
-<a href="https://www.linkedin.com/company/techpalettementor/"><img src="linkedin.png" alt="LinkedIn" style="width:14px;height:14px;"></a>
-    </p>
-
 </body>
 </html>
