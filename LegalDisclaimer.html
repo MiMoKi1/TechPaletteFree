@@ -27,119 +27,137 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
 
     <title>Legal Disclaimer - Tech Palette Mentor</title>
-    <style>
+   
+ 
+ <style>
         body {
             font-family: 'Arial', sans-serif;
-            background-color: #FFFFFF;
-            color: #333;
+            background-color: #FFFFFF; /* Light background color */
+            color: #333; /* Dark text color for contrast */
             margin: 0;
-            overflow: auto;
             padding: 20px;
+	overflow: auto;
             line-height: 1.6;
-            font-size: 12px;
+ font-size: 12px; /* Reduced font size */
         }
-
-        /* Header styles */
         #header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 20px;
+            text-align: center;
             margin-bottom: 20px;
-            position: relative;
         }
-
         #logo {
+            position: absolute;
+            top: 10px;
+            left: 10px;
             width: 100px;
             height: auto;
-        }
+            z-index: 100;
 
+        }
         h1 {
-            color: #888888;
-            margin-left: auto;
-            margin-right: auto;
-            text-align: center;
+            color: #888888; /* Darker color for the header */
+        }
+        p {
+            margin: 10px 0;
+        }
+        a {
+            color: #666; /* Link color */
+            text-decoration: none; /* Remove underline from links */
+        }
+        a:hover {
+            text-decoration: underline; /* Underline on hover for links */
         }
 
-        footer {
-            margin-top: auto;
+         footer {
+            margin: auto; /* Push footer to the bottom */
             text-align: center;
             padding: 10px 0;
-            background-color: ##FFFFFF;
+            background-color: #        footer {
+            margin-top: auto; /* Push footer to the bottom */
+            text-align: center;
+            padding: 10px 0;
+            background-color: #E6AE99;
         }
-
         footer a {
-            color: black;
+            color: black; /* Default black color */
             text-decoration: none;
             margin: 0 10px;
             transition: color 0.3s ease, font-weight 0.3s ease;
         }
-
         footer a:hover {
             font-weight: bold;
         }
-
         footer a:active {
             color: white;
         }
-
+        footer a:visited {
+            color: black;
+        }
+;
+        }
+        footer a {
+            color: black; /* Default black color */
+            text-decoration: none;
+            margin: 0 10px;
+            transition: color 0.3s ease, font-weight 0.3s ease;
+        }
+        footer a:hover {
+            font-weight: bold;
+        }
+        footer a:active {
+            color: white;
+        }
         footer a:visited {
             color: black;
         }
 
-        /* Menu Icon (Top-right corner) */
-        #menu-icon {
-            position: absolute;
-            top: 10px;
-            right: 10px;
-            width: 40px;
-            height: 40px;
-            cursor: pointer;
-            transition: transform 0.3s ease, filter 0.3s ease;
-        }
+      /* Menu Icon (Moved to the top-right) */
+#menu-icon {
+    position: absolute;
+    top: 10px;
+    right: 10px; /* Move to the right side */
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
 
-        #menu-icon:hover {
-            transform: scale(1.1);
-            filter: brightness(1.2);
-        }
+#menu-icon:hover {
+    transform: scale(1.1);
+    filter: brightness(1.2);
+}
 
-        /* Dropdown Menu (aligned under the icon on the right) */
-        .dropdown {
-            position: absolute;
-            top: 60px;
-            right: 10px;
-            background-color: #FAF2E2;
-            border: 1px solid #8B5B29;
-            border-radius: 5px;
-            display: none; /* Hidden by default */
-            flex-direction: column;
-            width: 160px;
-            padding: 5px;
-        }
+/* Dropdown Menu (Moved under the icon on the right) */
+.dropdown {
+    position: absolute;
+    top: 60px; /* Position dropdown slightly below the icon */
+    right: 10px; /* Align dropdown to the right */
+    background-color: #FAF2E2;
+    border: 1px solid #8B5B29;
+    border-radius: 5px;
+    display: none;
+    flex-direction: column;
+    width: 160px;
+    padding: 5px;
+}
 
-        .dropdown a {
-            text-decoration: none;
-            color: #8B5B29;
-            padding: 10px;
-            display: block;
-            transition: background-color 0.3s ease, font-weight 0.3s ease;
-        }
+.dropdown a {
+    text-decoration: none;
+    color: #8B5B29;
+    padding: 10px;
+    display: block;
+    transition: background-color 0.3s ease, font-weight 0.3s ease;
+}
 
-        .dropdown a:hover {
-            background-color: #8B5B29;
-            color: white;
-            font-weight: bold;
-        }
+.dropdown a:hover {
+    background-color: #8B5B29;
+    color: white;
+    font-weight: bold;
+}
 
-        /* Dropdown Menu active class */
-        .dropdown.active {
-            display: flex;
-        }
+#menu-icon.active + .dropdown {
+    display: flex;
+}
 
-        /* Purchase button styles */
-        form {
-            text-align: center;
-        }
    body {
     display: flex;
     flex-direction: column;
@@ -162,34 +180,7 @@ main {
     background-color: #F0F0F0; /* Set the background color for the content */
     border: 5px solid #ffffff; /* Optional: add a white border around the main content */
 }
-        button {
-            background-color: #FF6F61;
-            color: white;
-            border: none;
-            border-radius: 12px;
-            padding: 10px 20px;
-            cursor: pointer;
-            font-size: 16px;
-            font-weight: bold;
-            position: relative;
-            overflow: hidden;
-            transition: transform 0.3s;
-        }
 
-        button::before {
-            content: '❤️';
-            position: absolute;
-            left: 84px;
-            top: 50%;
-            transform: translateY(-50%);
-            font-size: 20px;
-            opacity: 0.7;
-        }
-
-        button:hover {
-            background-color: #FF4C4C;
-            transform: scale(1.05);
-        }
 
     </style>
 </head>
