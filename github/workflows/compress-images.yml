@@ -4,6 +4,7 @@ on:
   push:
     paths:
       - 'images/**'  # Trigger on image folder changes
+  workflow_dispatch:   # Allows manual trigger
 
 jobs:
   compress-images:
