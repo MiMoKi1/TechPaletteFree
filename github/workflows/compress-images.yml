@@ -1,0 +1,30 @@
+name: Compress Images
+
+on:
+  push:
+    paths:
+      - 'images/**'  # Trigger on image folder changes
+
+jobs:
+  compress-images:
+    runs-on: ubuntu-latest  # This runs the job on the latest Ubuntu
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2  # Check out the repo
+
+      - name: Install ImageMagick
+        run: sudo apt-get install imagemagick  # Install ImageMagick
+
+      - name: Compress images
+        run: |
+          find images/ -type f -iname "*.jpg" -exec mogrify -resize 800x800 -quality 75 {} \;
+          find images/ -type f -iname "*.png" -exec mogrify -resize 800x800 -quality 75 {} \;
+
+      - name: Commit changes
+        run: |
+          git config --global user.name "Your Name"
+          git config --global user.email "your-email@example.com"
+          git add images/*
+          git commit -m "Compressed images"
+          git push
