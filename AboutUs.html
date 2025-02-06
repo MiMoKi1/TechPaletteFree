@@ -8,156 +8,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
     <title>About Us | Tech Palette Mentor</title>
+<link rel="stylesheet" href="styles.css">
 
-    <style>
-        body {
-            font-family: 'Poppins', sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #F4F4F4;
-            color: #333;
-            display: flex;
-            flex-direction: column;
-            justify-content: flex-start;
-            align-items: center;
-            height: 100vh;
-        }
 
-        header {
-            width: 100%;
-            background-color: #E6AE99;
-            padding: 20px 0;
-            text-align: center;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-        }
-
-        #logo {
-            width: 120px;
-            height: auto;
-            margin-bottom: 10px;
-        }
-
-        h1 {
-            font-size: 24px;
-            color: #4A4A4A;
-            margin: 0;
-        }
-
-        main {
-            padding: 20px;
-            width: 80%;
-            max-width: 1200px;
-            background-color: #FFFFFF;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-            margin-top: 20px;
-            border-radius: 8px;
-        }
-
-        .content {
-            text-align: left;
-            line-height: 1.6;
-            font-size: 16px;
-            margin-bottom: 20px;
-        }
-
-        .content p {
-            margin: 15px 0;
-        }
-
-        img {
-            max-width: 100%;
-            height: auto;
-            margin: 20px 0;
-            border-radius: 8px;
-        }
-
-        h2 {
-            font-size: 20px;
-            color: #555;
-            margin-top: 30px;
-            text-align: center;
-        }
-
-        ul {
-            list-style-type: none;
-            padding: 0;
-            text-align: center;
-            margin: 20px 0;
-        }
-
-        ul li {
-            margin: 10px 0;
-        }
-
-        footer {
-            background-color: #E6AE99;
-            padding: 15px 0;
-            width: 100%;
-            text-align: center;
-            margin-top: 40px;
-            color: #333;
-            font-size: 12px;
-        }
-
-        footer a {
-            text-decoration: none;
-            color: #333;
-            margin: 0 10px;
-            transition: color 0.3s ease;
-        }
-
-        footer a:hover {
-            color: #8B5B29;
-        }
-
-        /* Menu Icon */
-        #menu-icon {
-            position: absolute;
-            top: 20px;
-            right: 20px;
-            width: 40px;
-            height: 40px;
-            cursor: pointer;
-        }
-
-        #menu-icon:hover {
-            transform: scale(1.1);
-            filter: brightness(1.1);
-        }
-
-        /* Dropdown Menu */
-        .dropdown {
-            position: absolute;
-            top: 70px;
-            right: 10px;
-            background-color: #FAF2E2;
-            border: 1px solid #8B5B29;
-            display: none;
-            flex-direction: column;
-            padding: 5px;
-            border-radius: 5px;
-            width: 160px;
-        }
-
-        .dropdown a {
-            text-decoration: none;
-            color: #8B5B29;
-            padding: 10px;
-            display: block;
-            transition: background-color 0.3s ease, font-weight 0.3s ease;
-        }
-
-        .dropdown a:hover {
-            background-color: #8B5B29;
-            color: white;
-            font-weight: bold;
-        }
-
-        #menu-icon.active + .dropdown {
-            display: flex;
-        }
-
-    </style>
 </head>
 <body>
     <header>
@@ -201,15 +54,7 @@
             <a href="https://www.linkedin.com/company/techpalettementor/"><img src="linkedin.png" alt="LinkedIn" style="width:14px;height:14px;"></a>
         </p>
     </footer>
+<script src="scripts.js"></script>
 
-    <script>
-        const menuIcon = document.getElementById("menu-icon");
-        const dropdown = document.querySelector(".dropdown");
-
-        menuIcon.addEventListener("click", () => {
-            menuIcon.classList.toggle("active");
-            dropdown.classList.toggle("active");
-        });
-    </script>
 </body>
 </html>
