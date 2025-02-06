@@ -8,15 +8,15 @@
 /* Body */
 body {
     font-family: 'Poppins', sans-serif;
-    margin: 0 20px; /* Add margins around the webpage */
+    margin: 40px; /* Added fat margin */
     padding: 0;
-    background-color: #F4F4F4;
+    background-color: #E6AE99; /* Light grey background */
     color: #333;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
-    height: 100vh;
+    min-height: 100vh;
 }
 
 /* Header */
@@ -25,7 +25,7 @@ body {
     background-color: #E6AE99; /* Light grey background */
     padding: 20px 0;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    text-align: center;
+    text-align: left; /* Aligned text to the left */
 }
 
 #logo {
@@ -38,24 +38,26 @@ h1 {
     font-size: 24px;
     color: #4A4A4A;
     margin: 0;
+    text-align: left;
 }
 
 /* Main Content */
 main {
     padding: 20px;
-    width: 80%; /* Adjust width for responsive design */
+    width: 80%;
     max-width: 1200px;
-    background-color: #F9E7A7; /* Soft legal yellow background */
+    background-color: #E6AE99; /* Light grey */
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     margin-top: 20px;
     border-radius: 8px;
-    margin-left: auto; /* Center content horizontally */
-    margin-right: auto; /* Center content horizontally */
+    margin-left: auto;
+    margin-right: auto;
+    text-align: left;
 }
 
 /* Text Content */
 .content, p, h2 {
-    text-align: left; /* Align text left */
+    text-align: left;
     line-height: 1.6;
     font-size: 16px;
 }
@@ -66,27 +68,28 @@ main {
 
 /* Images */
 img {
-    max-width: 100%; /* Ensure they scale properly */
-    height: auto; /* Maintain aspect ratio */
+    width: 50%; /* Medium size */
+    max-width: 400px;
+    height: auto;
     margin: 10px 0;
-    vertical-align: middle; /* Align the images with text */
+    vertical-align: middle;
 }
 
 /* Video */
 video {
-    max-width: 100%; /* Makes sure the video doesn't go beyond the container */
-    height: auto; /* Maintain aspect ratio */
+    max-width: 100%;
+    height: auto;
 }
 
 /* Footer */
 footer {
     background-color: #E6AE99;
-    padding: 15px 0;
+    padding: 10px 0;
     width: 100%;
-    text-align: center;
+    text-align: left;
     margin-top: 40px;
     color: #333;
-    font-size: 12px;
+    font-size: 10px; /* Made footer text smaller */
 }
 
 /* Footer Links */
@@ -103,9 +106,9 @@ footer a:hover {
 
 /* Footer icons */
 footer a img {
-    width: 14px;
-    height: 14px;
-    margin-left: 10px; /* Add margin between links and icons */
+    width: 20px; /* Normal size icons */
+    height: 20px;
+    margin-left: 10px;
 }
 
 /* Menu Icon */
