@@ -29,3 +29,4 @@ jobs:
           git add images/*
           git commit -m "Compressed images"
           git push
+ 
