@@ -62,52 +62,24 @@
             overflow: hidden;
         }
         .hero img {
-            transition: transform 1s ease; /* Slower transition */
+            transition: transform 0.5s ease;
         }
         .hero:hover img {
-            transform: translateX(calc(100vw - 100%)); /* Dramatic slide effect */
+            transform: scale(1.1); /* Enlarge on hover */
         }
-        /* Frame Flip Effects */
-        .frame {
-            transition: transform 1s ease; /* Slower and smoother flip */
+        /* Section Enlarge Effect */
+        .section {
+            transition: transform 0.5s ease;
         }
-        .frame.flip-360:hover {
+        .section:hover {
+            transform: scale(1.05); /* Enlarge on hover */
+        }
+        /* Terms and Conditions Frame Flip */
+        .policy-frame {
+            transition: transform 1s ease;
+        }
+        .policy-frame:hover {
             transform: rotateY(360deg); /* 360-degree flip */
-        }
-        .frame.flip-vertical:hover {
-            transform: rotateX(180deg); /* Flip vertically */
-        }
-        .frame.flip-horizontal:hover {
-            transform: rotateY(180deg); /* Flip horizontally */
-        }
-        /* End Frame Dissolve Effect */
-        .frame.dissolve {
-            position: relative;
-            overflow: hidden;
-        }
-        .frame.dissolve:hover img {
-            opacity: 0;
-            transition: opacity 1s ease;
-        }
-        .frame.dissolve::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: repeating-linear-gradient(
-                45deg,
-                transparent,
-                transparent 10px,
-                rgba(0, 0, 0, 0.1) 10px,
-                rgba(0, 0, 0, 0.1) 20px
-            );
-            opacity: 0;
-            transition: opacity 1s ease;
-        }
-        .frame.dissolve:hover::after {
-            opacity: 1;
         }
         /* Mobile-Friendly Adjustments */
         @media (max-width: 768px) {
@@ -121,7 +93,10 @@
                 width: 30px; /* Smaller icons for mobile */
                 height: 30px;
             }
-            .frame:hover {
+            .section:hover {
+                transform: none; /* Disable enlarge effect on mobile */
+            }
+            .policy-frame:hover {
                 transform: none; /* Disable flip effect on mobile */
             }
         }
@@ -130,7 +105,7 @@
 <body>
     <div class="container">
         <!-- Hero Section -->
-        <div class="hero">
+        <div class="hero section">
             <img src="1-HERO.png" alt="Hero Image">
         </div>
 
@@ -142,7 +117,9 @@
         </div>
 
         <!-- About Section -->
-        <img src="2-about.png" alt="About" class="frame flip-360">
+        <div class="section">
+            <img src="2-about.png" alt="About">
+        </div>
 
         <!-- Buttons -->
         <div class="buttons">
@@ -151,15 +128,21 @@
         </div>
 
         <!-- How to Use Section -->
-        <img src="3-How-to-use.png" alt="How to Use" class="frame flip-vertical">
+        <div class="section">
+            <img src="3-How-to-use.png" alt="How to Use">
+        </div>
 
         <!-- Wrapper Section -->
-        <a href="https://www.palettementor.work/app.html" target="_blank">
-            <img src="4-Wrapper.png" alt="Wrapper" class="frame flip-horizontal">
-        </a>
+        <div class="section">
+            <a href="https://www.palettementor.work/app.html" target="_blank">
+                <img src="4-Wrapper.png" alt="Wrapper">
+            </a>
+        </div>
 
         <!-- Read the Blog Section -->
-        <img src="5-Read-the-blog.png" alt="Read the Blog" class="frame flip-360" onclick="window.location.href='https://www.palettementor.work/blog.html';" style="cursor: pointer;">
+        <div class="section">
+            <img src="5-Read-the-blog.png" alt="Read the Blog" onclick="window.location.href='https://www.palettementor.work/blog.html';" style="cursor: pointer;">
+        </div>
 
         <!-- Donate Button -->
         <div class="buttons">
@@ -167,9 +150,11 @@
         </div>
 
         <!-- How to Use with Video Section -->
-        <a href="https://youtu.be/cAz0vP7UZVU?si=Qk9Knc1p6MA8-M-7" target="_blank">
-            <img src="6-How-to-use-with-video.png" alt="How to Use with Video" class="frame flip-vertical">
-        </a>
+        <div class="section">
+            <a href="https://youtu.be/cAz0vP7UZVU?si=Qk9Knc1p6MA8-M-7" target="_blank">
+                <img src="6-How-to-use-with-video.png" alt="How to Use with Video">
+            </a>
+        </div>
 
         <!-- Link Button -->
         <div class="buttons">
@@ -177,7 +162,9 @@
         </div>
 
         <!-- Policy Frame Section -->
-        <img src="7-policy-frame.png" alt="Policy Frame" class="frame flip-horizontal">
+        <div class="policy-frame section">
+            <img src="7-policy-frame.png" alt="Policy Frame">
+        </div>
 
         <!-- Donate Button -->
         <div class="buttons">
@@ -185,7 +172,9 @@
         </div>
 
         <!-- End Section -->
-        <img src="END.png" alt="End" class="frame dissolve">
+        <div class="section">
+            <img src="END.png" alt="End">
+        </div>
     </div>
 
     <!-- JavaScript for Mobile-Friendly Effects -->
@@ -193,16 +182,17 @@
         const hero = document.querySelector('.hero img');
         const buttons = document.querySelectorAll('.buttons a img');
         const icons = document.querySelectorAll('.icons img');
-        const frames = document.querySelectorAll('.frame');
+        const sections = document.querySelectorAll('.section');
+        const policyFrame = document.querySelector('.policy-frame');
 
         // Add click event for mobile devices
         if (window.innerWidth <= 768) {
-            // Hero Slide Effect
+            // Hero Enlarge Effect
             hero.addEventListener('click', () => {
-                hero.style.transform = 'translateX(calc(100vw - 100%))';
+                hero.style.transform = 'scale(1.1)';
                 setTimeout(() => {
-                    hero.style.transform = 'translateX(0)';
-                }, 1000);
+                    hero.style.transform = 'scale(1)';
+                }, 500);
             });
 
             // Button Scaling Effect
@@ -225,20 +215,22 @@
                 });
             });
 
-            // Frame Flip Effect
-            frames.forEach(frame => {
-                frame.addEventListener('click', () => {
-                    if (frame.classList.contains('flip-360')) {
-                        frame.style.transform = 'rotateY(360deg)';
-                    } else if (frame.classList.contains('flip-vertical')) {
-                        frame.style.transform = 'rotateX(180deg)';
-                    } else if (frame.classList.contains('flip-horizontal')) {
-                        frame.style.transform = 'rotateY(180deg)';
-                    }
+            // Section Enlarge Effect
+            sections.forEach(section => {
+                section.addEventListener('click', () => {
+                    section.style.transform = 'scale(1.05)';
                     setTimeout(() => {
-                        frame.style.transform = 'rotateX(0) rotateY(0)';
-                    }, 1000);
+                        section.style.transform = 'scale(1)';
+                    }, 500);
                 });
+            });
+
+            // Policy Frame Flip Effect
+            policyFrame.addEventListener('click', () => {
+                policyFrame.style.transform = 'rotateY(360deg)';
+                setTimeout(() => {
+                    policyFrame.style.transform = 'rotateY(0)';
+                }, 1000);
             });
         }
     </script>
