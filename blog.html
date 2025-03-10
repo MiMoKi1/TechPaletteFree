@@ -69,6 +69,9 @@
 
         .blog-posts li {
             margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 20px;
         }
 
         .blog-posts a {
@@ -82,12 +85,31 @@
         }
 
         .blog-image {
-            max-width: 100%;
+            max-width: 40%;
             height: auto;
-            display: block;
-            margin: 20px auto;
             border-radius: 8px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .blog-image:hover {
+            transform: scale(1.05);
+        }
+
+        /* Buttons */
+        .button-container {
+            display: flex;
+            gap: 10px;
+            margin: 20px 0;
+        }
+
+        .button-container img {
+            height: 30px;
+            transition: transform 0.3s ease;
+        }
+
+        .button-container img:hover {
+            transform: scale(1.1);
         }
 
         /* Footer */
@@ -132,20 +154,31 @@
     <main class="blog-container">
         <h1>Blog - Tech Palette Mentor</h1>
         <p class="blog-intro">Welcome to our blog! Here you'll find insightful posts on Irish art history, modern art techniques, and more!</p>
-   <a href="https://ko-fi.com/techpalettementor" target="_blank"><img src="DONATE.png" alt="Donate"></a>
+
+        <!-- Buttons -->
+        <div class="button-container">
+            <a href="https://www.palettementor.work/app.html" target="_blank"><img src="Link.png" alt="Link"></a>
+            <a href="https://ko-fi.com/techpalettementor" target="_blank"><img src="DONATE.png" alt="Donate"></a>
+        </div>
+
+        <!-- Blog Posts -->
         <section class="blog-posts">
             <ul>
-                <li><a href="/how_to_use_tech_palette_to_help_you_paint_a_guide_for_artists.html">How to Use Tech Palette to Help You Paint: A Guide for Artists</a></li>
-                <li><a href="/Exploring-Ireland-s-Art-History-and-the-Influence-of-Religion.html">Exploring Ireland's Art History and the Influence of Religion</a></li>
-                <img src="images/pexels-steve-1047526.jpg" alt="painting" class="blog-image">
-                <li><a href="/The-Influence-of-Celtic-Art-on-Modern-Irish-Artists.html">The Influence of Celtic Art on Modern Irish Artists</a></li>
-                <li><a href="/The-Evolution-of-Irish-Landscape-Painting.html">The Evolution of Irish Landscape Painting</a></li>
-		       <a href="https://ko-fi.com/techpalettementor" target="_blank"><img src="DONATE.png" alt="Donate"></a>
-                <li><a href="/Art_and_the_IrishDiaspora:_Connecting_the_Past_and_Present.html">Art and the Irish Diaspora: Connecting the Past and Present</a></li>
-                <li><a href="/The_Irish_Arts_and_Crafts_Movement:_Forgotten_Legacy.html">The Irish Arts and Crafts Movement: A Forgotten Legacy</a></li>
-                <li><a href="/Famous_Irish_Artists_of_the_19th_Century.html">Famous Irish Artists of the 19th Century</a></li>
-                <img src="images/pexels-shukur-18562111.jpg" alt="oil painting" class="blog-image">
-          <a href="https://ko-fi.com/techpalettementor" target="_blank"><img src="DONATE.png" alt="Donate"></a>
+                <li>
+                    <div>
+                        <a href="/how_to_use_tech_palette_to_help_you_paint_a_guide_for_artists.html">How to Use Tech Palette to Help You Paint: A Guide for Artists</a>
+                        <p>Learn how to use our web app to enhance your painting process.</p>
+                    </div>
+                    <img src="images/pexels-steve-1047526.jpg" alt="painting" class="blog-image">
+                </li>
+                <li>
+                    <div>
+                        <a href="/Exploring-Ireland-s-Art-History-and-the-Influence-of-Religion.html">Exploring Ireland's Art History and the Influence of Religion</a>
+                        <p>Discover how religion shaped Irish art over the centuries.</p>
+                    </div>
+                    <img src="images/pexels-shukur-18562111.jpg" alt="oil painting" class="blog-image">
+                </li>
+                <!-- Add more blog posts here -->
             </ul>
         </section>
     </main>
