@@ -6,74 +6,75 @@
     <title>Tech Palette Mentor</title>
     <style>
         body {
-            background-color: white;
-            margin: 0;
-            padding: 0;
+            background-color: black;
+            color: white;
+            text-align: center;
             font-family: Arial, sans-serif;
         }
-
         .container {
-            width: 100%;
-            margin: 0 auto;
+            max-width: 1200px;
+            margin: auto;
+            padding: 20px;
         }
-
         img {
-            width: 100%;
-            max-width: 1440px; /* Prevent images from being too large */
+            max-width: 100%;
+            height: auto;
             display: block;
-            margin-bottom: 20px;
+            margin: 20px auto;
         }
-
-        /* Social Links Styling */
-        .social-links {
-            text-align: center;
-            margin: 20px 0;
+        .icons {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin: 10px 0;
         }
-
-        .social-links a {
-            margin: 0 10px;
+        .icons img {
+            width: 40px;
+            height: 40px;
         }
-
-        /* Make the page responsive */
-        @media (max-width: 768px) {
-            img {
-                width: 100%;
-                height: auto;
-            }
+        .buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin: 10px 0;
+        }
+        .buttons a img {
+            width: 120px;
+            height: auto;
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <!-- Hero Section -->
         <img src="1-HERO.png" alt="Hero Image">
-        <div class="social-links">
-            <a href="https://www.instagram.com/mmyking" target="_blank"><img src="mmyking-insta.png" alt="Instagram"></a>
-            <a href="https://www.instagram.com/tpm_insta" target="_blank"><img src="TPM-insta.png" alt="TPM Instagram"></a>
-            <a href="https://www.youtube.com/your-video" target="_blank"><img src="TPM-YT.png" alt="YouTube"></a>
+        <div class="icons">
+            <a href="https://www.instagram.com/mmyking1/" target="_blank"><img src="mmyking-insta.png" alt="MMY King Instagram"></a>
+            <a href="https://www.instagram.com/techpalettementor/" target="_blank"><img src="TPM-insta.png" alt="TPM Instagram"></a>
+            <a href="https://youtu.be/cAz0vP7UZVU?si=Qk9Knc1p6MA8-M-7" target="_blank"><img src="TPM-YT.png" alt="TPM YouTube"></a>
         </div>
-
-        <!-- About Section -->
-        <img src="2-about.png" alt="About Image">
-        <a href="https://www.palettementor.work/app.html"><img src="Link.png" alt="Link to Web App"></a>
-        
-        <!-- Donate Button -->
-        <a href="https://ko-fi.com/techpalettementor"><img src="DONATE.png" alt="Donate Button"></a>
-
-        <!-- More Sections -->
+        <img src="2-about.png" alt="About">
+        <div class="buttons">
+            <a href="https://www.palettementor.work/app.html" target="_blank"><img src="Link.png" alt="Link"></a>
+            <a href="https://ko-fi.com/techpalettementor" target="_blank"><img src="DONATE.png" alt="Donate"></a>
+        </div>
         <img src="3-How-to-use.png" alt="How to Use">
         <img src="4-Wrapper.png" alt="Wrapper">
-        <img src="5-Read-the-blog.png" alt="Read the Blog">
-        <img src="6-How-to-use-with-video.png" alt="How to Use with Video">
-        <img src="7-policy-frame.png" alt="Policy Frame">
-        <img src="END.png" alt="End Image">
-
-        <!-- Final Social Links -->
-        <div class="social-links">
-            <a href="https://www.instagram.com/mmyking" target="_blank"><img src="mmyking-insta.png" alt="Instagram"></a>
-            <a href="https://www.instagram.com/tpm_insta" target="_blank"><img src="TPM-insta.png" alt="TPM Instagram"></a>
-            <a href="https://www.youtube.com/your-video" target="_blank"><img src="TPM-YT.png" alt="YouTube"></a>
+        <div class="buttons">
+            <a href="https://www.palettementor.work/app.html" target="_blank"><img src="Link.png" alt="Link"></a>
         </div>
+        <img src="5-Read-the-blog.png" alt="Read the Blog">
+        <div class="buttons">
+            <a href="https://ko-fi.com/techpalettementor" target="_blank"><img src="DONATE.png" alt="Donate"></a>
+        </div>
+        <img src="6-How-to-use-with-video.png" alt="How to Use with Video">
+        <div class="buttons">
+            <a href="https://www.palettementor.work/app.html" target="_blank"><img src="Link.png" alt="Link"></a>
+        </div>
+        <img src="7-policy-frame.png" alt="Policy Frame">
+        <div class="buttons">
+            <a href="https://ko-fi.com/techpalettementor" target="_blank"><img src="DONATE.png" alt="Donate"></a>
+        </div>
+        <img src="END.png" alt="End">
     </div>
 </body>
 </html>
