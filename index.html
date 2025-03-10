@@ -56,6 +56,14 @@
         /* Hero Section Animation */
         .hero {
             animation: float 3s ease-in-out infinite;
+            position: relative;
+            overflow: hidden;
+        }
+        .hero img {
+            transition: transform 0.5s ease;
+        }
+        .hero:hover img {
+            transform: translateX(20px);
         }
         @keyframes float {
             0%, 100% {
@@ -65,27 +73,27 @@
                 transform: translateY(-10px);
             }
         }
-        /* Frame Rotation Effect */
-        .frame {
-            transition: transform 0.8s ease;
-        }
-        .frame:hover {
-            transform: rotateY(360deg);
-        }
-        /* Policy Frame Hover Effect */
-        .policy-frame {
-            transition: transform 0.5s ease;
-        }
-        .policy-frame:hover {
-            transform: scale(1.05);
-            opacity: 0.9;
+        /* Mobile-Friendly Hero Effect */
+        @media (max-width: 768px) {
+            .hero img {
+                transition: none; /* Disable hover effect on mobile */
+            }
+            .buttons a img {
+                width: 150px; /* Smaller buttons for mobile */
+            }
+            .icons img {
+                width: 30px; /* Smaller icons for mobile */
+                height: 30px;
+            }
         }
     </style>
 </head>
 <body>
     <div class="container">
         <!-- Hero Section -->
-        <img src="1-HERO.png" alt="Hero Image" class="hero">
+        <div class="hero">
+            <img src="1-HERO.png" alt="Hero Image">
+        </div>
 
         <!-- Social Icons -->
         <div class="icons">
@@ -140,5 +148,20 @@
         <!-- End Section -->
         <img src="END.png" alt="End" class="frame">
     </div>
+
+    <!-- JavaScript for Mobile-Friendly Hero Effect -->
+    <script>
+        const hero = document.querySelector('.hero img');
+
+        // Add click event for mobile devices
+        if (window.innerWidth <= 768) {
+            hero.addEventListener('click', () => {
+                hero.style.transform = 'translateX(20px)';
+                setTimeout(() => {
+                    hero.style.transform = 'translateX(0)';
+                }, 500);
+            });
+        }
+    </script>
 </body>
 </html>
