@@ -96,20 +96,17 @@
             transform: scale(1.05);
         }
 
-        /* Buttons */
-        .button-container {
-            display: flex;
-            gap: 10px;
-            margin: 20px 0;
+        /* Donate Button in Blog Posts */
+        .blog-posts .donate-button img {
+            width: 100px; /* Smaller width for the button */
+            height: auto; /* Maintain aspect ratio */
+            display: inline-block; /* Align with text */
+            margin: 10px 0; /* Add some spacing */
+            transition: transform 0.3s ease; /* Smooth hover effect */
         }
 
-        .button-container img {
-            height: 30px;
-            transition: transform 0.3s ease;
-        }
-
-        .button-container img:hover {
-            transform: scale(1.1);
+        .blog-posts .donate-button img:hover {
+            transform: scale(1.1); /* Slightly enlarge on hover */
         }
 
         /* Footer */
@@ -168,7 +165,11 @@
                     <div>
                         <a href="/how_to_use_tech_palette_to_help_you_paint_a_guide_for_artists.html">How to Use Tech Palette to Help You Paint: A Guide for Artists</a>
                         <p>Learn how to use our web app to enhance your painting process.</p>
-                                   <a href="https://ko-fi.com/techpalettementor" target="_blank"><img src="DONATE.png" alt="Donate"></a>
+                        <div class="donate-button">
+                            <a href="https://ko-fi.com/techpalettementor" target="_blank">
+                                <img src="DONATE.png" alt="Donate">
+                            </a>
+                        </div>
                     </div>
                     <img src="images/pexels-steve-1047526.jpg" alt="painting" class="blog-image">
                 </li>
@@ -204,7 +205,11 @@
                     <div>
                         <a href="/The_Irish_Arts_and_Crafts_Movement:_Forgotten_Legacy.html">The Irish Arts and Crafts Movement: A Forgotten Legacy</a>
                         <p>Rediscover the impact of the Arts and Crafts movement in Ireland.</p>
-                                   <a href="https://ko-fi.com/techpalettementor" target="_blank"><img src="DONATE.png" alt="Donate"></a>
+                        <div class="donate-button">
+                            <a href="https://ko-fi.com/techpalettementor" target="_blank">
+                                <img src="DONATE.png" alt="Donate">
+                            </a>
+                        </div>
                     </div>
                     <img src="images/pexels-ivan-samkov-5677087.jpg" alt="beautiful colours and oil painting blending" class="blog-image">
                 </li>
@@ -219,7 +224,11 @@
                     <div>
                         <a href="/Women_in_Irish_Art:_Pioneers_and_Contemporary_Figures.html">Women in Irish Art: Pioneers and Contemporary Figures</a>
                         <p>Celebrate the contributions of women to Irish art.</p>
-                                   <a href="https://ko-fi.com/techpalettementor" target="_blank"><img src="DONATE.png" alt="Donate"></a>
+                        <div class="donate-button">
+                            <a href="https://ko-fi.com/techpalettementor" target="_blank">
+                                <img src="DONATE.png" alt="Donate">
+                            </a>
+                        </div>
                     </div>
                     <img src="images/pexels-yigithan02-1108528.jpg" alt="rainbow of colours painting" class="blog-image">
                 </li>
