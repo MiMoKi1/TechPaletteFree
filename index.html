@@ -71,6 +71,9 @@
         .frame {
             transition: transform 1s ease; /* Slower and smoother flip */
         }
+        .frame.flip-360:hover {
+            transform: rotateY(360deg); /* 360-degree flip */
+        }
         .frame.flip-vertical:hover {
             transform: rotateX(180deg); /* Flip vertically */
         }
@@ -139,7 +142,7 @@
         </div>
 
         <!-- About Section -->
-        <img src="2-about.png" alt="About" class="frame flip-vertical">
+        <img src="2-about.png" alt="About" class="frame flip-360">
 
         <!-- Buttons -->
         <div class="buttons">
@@ -148,15 +151,15 @@
         </div>
 
         <!-- How to Use Section -->
-        <img src="3-How-to-use.png" alt="How to Use" class="frame flip-horizontal">
+        <img src="3-How-to-use.png" alt="How to Use" class="frame flip-vertical">
 
         <!-- Wrapper Section -->
         <a href="https://www.palettementor.work/app.html" target="_blank">
-            <img src="4-Wrapper.png" alt="Wrapper" class="frame flip-vertical">
+            <img src="4-Wrapper.png" alt="Wrapper" class="frame flip-horizontal">
         </a>
 
         <!-- Read the Blog Section -->
-        <img src="5-Read-the-blog.png" alt="Read the Blog" class="frame flip-horizontal" onclick="window.location.href='https://www.palettementor.work/blog.html';" style="cursor: pointer;">
+        <img src="5-Read-the-blog.png" alt="Read the Blog" class="frame flip-360" onclick="window.location.href='https://www.palettementor.work/blog.html';" style="cursor: pointer;">
 
         <!-- Donate Button -->
         <div class="buttons">
@@ -225,7 +228,9 @@
             // Frame Flip Effect
             frames.forEach(frame => {
                 frame.addEventListener('click', () => {
-                    if (frame.classList.contains('flip-vertical')) {
+                    if (frame.classList.contains('flip-360')) {
+                        frame.style.transform = 'rotateY(360deg)';
+                    } else if (frame.classList.contains('flip-vertical')) {
                         frame.style.transform = 'rotateX(180deg)';
                     } else if (frame.classList.contains('flip-horizontal')) {
                         frame.style.transform = 'rotateY(180deg)';
