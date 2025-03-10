@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tech Palette Mentor</title>
     <style>
+        /* General Styles */
         body {
             background-color: white;
             color: black;
@@ -12,11 +13,14 @@
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
+            cursor: url('paintbrush-cursor.png'), auto; /* Paintbrush cursor */
+            overflow: hidden; /* Prevent scrolling */
         }
         .container {
             max-width: 1200px;
             margin: auto;
             padding: 20px;
+            position: relative;
         }
         img {
             max-width: 100%;
@@ -63,7 +67,7 @@
             transition: transform 0.5s ease;
         }
         .hero:hover img {
-            transform: translateX(20px);
+            transform: translateX(10px); /* Smaller slide effect */
         }
         @keyframes float {
             0%, 100% {
@@ -73,7 +77,25 @@
                 transform: translateY(-10px);
             }
         }
-        /* Mobile-Friendly Hero Effect */
+        /* Frame Flip Effect */
+        .frame {
+            transition: transform 0.5s ease;
+        }
+        .frame:hover {
+            transform: rotateY(180deg); /* Flip effect */
+        }
+        /* Canvas Chasing Paintbrush */
+        #canvas {
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            background-color: #f0f0f0;
+            border: 2px dashed #333;
+            border-radius: 10px;
+            pointer-events: none; /* Ignore mouse events */
+            transition: top 0.2s ease, left 0.2s ease;
+        }
+        /* Mobile-Friendly Adjustments */
         @media (max-width: 768px) {
             .hero img {
                 transition: none; /* Disable hover effect on mobile */
@@ -84,6 +106,9 @@
             .icons img {
                 width: 30px; /* Smaller icons for mobile */
                 height: 30px;
+            }
+            .frame:hover {
+                transform: none; /* Disable flip effect on mobile */
             }
         }
     </style>
@@ -147,19 +172,77 @@
 
         <!-- End Section -->
         <img src="END.png" alt="End" class="frame">
+
+        <!-- Canvas Chasing Paintbrush -->
+        <div id="canvas"></div>
     </div>
 
-    <!-- JavaScript for Mobile-Friendly Hero Effect -->
+    <!-- JavaScript for Canvas Chasing Paintbrush -->
+    <script>
+        const canvas = document.getElementById('canvas');
+
+        // Move canvas to follow the mouse
+        document.addEventListener('mousemove', (e) => {
+            const mouseX = e.clientX;
+            const mouseY = e.clientY;
+            const canvasSize = 100; // Size of the canvas
+            const offset = 20; // Distance from the cursor
+
+            // Calculate canvas position
+            const canvasX = mouseX + offset;
+            const canvasY = mouseY + offset;
+
+            // Update canvas position
+            canvas.style.left = `${canvasX}px`;
+            canvas.style.top = `${canvasY}px`;
+        });
+    </script>
+
+    <!-- JavaScript for Mobile-Friendly Effects -->
     <script>
         const hero = document.querySelector('.hero img');
+        const buttons = document.querySelectorAll('.buttons a img');
+        const icons = document.querySelectorAll('.icons img');
+        const frames = document.querySelectorAll('.frame');
 
         // Add click event for mobile devices
         if (window.innerWidth <= 768) {
+            // Hero Slide Effect
             hero.addEventListener('click', () => {
-                hero.style.transform = 'translateX(20px)';
+                hero.style.transform = 'translateX(10px)';
                 setTimeout(() => {
                     hero.style.transform = 'translateX(0)';
                 }, 500);
+            });
+
+            // Button Scaling Effect
+            buttons.forEach(button => {
+                button.addEventListener('click', () => {
+                    button.style.transform = 'scale(1.1)';
+                    setTimeout(() => {
+                        button.style.transform = 'scale(1)';
+                    }, 300);
+                });
+            });
+
+            // Icon Scaling Effect
+            icons.forEach(icon => {
+                icon.addEventListener('click', () => {
+                    icon.style.transform = 'scale(1.2)';
+                    setTimeout(() => {
+                        icon.style.transform = 'scale(1)';
+                    }, 300);
+                });
+            });
+
+            // Frame Flip Effect
+            frames.forEach(frame => {
+                frame.addEventListener('click', () => {
+                    frame.style.transform = 'rotateY(180deg)';
+                    setTimeout(() => {
+                        frame.style.transform = 'rotateY(0)';
+                    }, 500);
+                });
             });
         }
     </script>
