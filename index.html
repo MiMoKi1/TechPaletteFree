@@ -14,7 +14,6 @@
             margin: 0;
             padding: 0;
             cursor: url('paintbrush-cursor.png'), auto; /* Paintbrush cursor */
-            overflow: hidden; /* Prevent scrolling */
         }
         .container {
             max-width: 1200px;
@@ -50,7 +49,7 @@
             margin: 20px 0;
         }
         .buttons a img {
-            width: 200px;
+            width: 150px; /* Smaller buttons */
             height: auto;
             transition: transform 0.3s ease;
         }
@@ -59,41 +58,21 @@
         }
         /* Hero Section Animation */
         .hero {
-            animation: float 3s ease-in-out infinite;
             position: relative;
             overflow: hidden;
         }
         .hero img {
-            transition: transform 0.5s ease;
+            transition: transform 1s ease; /* Slower transition */
         }
         .hero:hover img {
-            transform: translateX(10px); /* Smaller slide effect */
-        }
-        @keyframes float {
-            0%, 100% {
-                transform: translateY(0);
-            }
-            50% {
-                transform: translateY(-10px);
-            }
+            transform: translateX(calc(100vw - 100%)); /* Dramatic slide effect */
         }
         /* Frame Flip Effect */
         .frame {
-            transition: transform 0.5s ease;
+            transition: transform 1s ease; /* Slower and smoother flip */
         }
         .frame:hover {
             transform: rotateY(180deg); /* Flip effect */
-        }
-        /* Canvas Chasing Paintbrush */
-        #canvas {
-            position: absolute;
-            width: 100px;
-            height: 100px;
-            background-color: #f0f0f0;
-            border: 2px dashed #333;
-            border-radius: 10px;
-            pointer-events: none; /* Ignore mouse events */
-            transition: top 0.2s ease, left 0.2s ease;
         }
         /* Mobile-Friendly Adjustments */
         @media (max-width: 768px) {
@@ -101,7 +80,7 @@
                 transition: none; /* Disable hover effect on mobile */
             }
             .buttons a img {
-                width: 150px; /* Smaller buttons for mobile */
+                width: 120px; /* Smaller buttons for mobile */
             }
             .icons img {
                 width: 30px; /* Smaller icons for mobile */
@@ -172,31 +151,7 @@
 
         <!-- End Section -->
         <img src="END.png" alt="End" class="frame">
-
-        <!-- Canvas Chasing Paintbrush -->
-        <div id="canvas"></div>
     </div>
-
-    <!-- JavaScript for Canvas Chasing Paintbrush -->
-    <script>
-        const canvas = document.getElementById('canvas');
-
-        // Move canvas to follow the mouse
-        document.addEventListener('mousemove', (e) => {
-            const mouseX = e.clientX;
-            const mouseY = e.clientY;
-            const canvasSize = 100; // Size of the canvas
-            const offset = 20; // Distance from the cursor
-
-            // Calculate canvas position
-            const canvasX = mouseX + offset;
-            const canvasY = mouseY + offset;
-
-            // Update canvas position
-            canvas.style.left = `${canvasX}px`;
-            canvas.style.top = `${canvasY}px`;
-        });
-    </script>
 
     <!-- JavaScript for Mobile-Friendly Effects -->
     <script>
@@ -209,10 +164,10 @@
         if (window.innerWidth <= 768) {
             // Hero Slide Effect
             hero.addEventListener('click', () => {
-                hero.style.transform = 'translateX(10px)';
+                hero.style.transform = 'translateX(calc(100vw - 100%))';
                 setTimeout(() => {
                     hero.style.transform = 'translateX(0)';
-                }, 500);
+                }, 1000);
             });
 
             // Button Scaling Effect
@@ -241,7 +196,7 @@
                     frame.style.transform = 'rotateY(180deg)';
                     setTimeout(() => {
                         frame.style.transform = 'rotateY(0)';
-                    }, 500);
+                    }, 1000);
                 });
             });
         }
