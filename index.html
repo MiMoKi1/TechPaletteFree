@@ -10,6 +10,8 @@
             color: black;
             text-align: center;
             font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
         }
         .container {
             max-width: 1200px;
@@ -21,6 +23,7 @@
             height: auto;
             display: block;
             margin: 20px auto;
+            transition: transform 0.5s ease, opacity 0.5s ease;
         }
         .icons {
             display: flex;
@@ -31,6 +34,10 @@
         .icons img {
             width: 40px;
             height: 40px;
+            transition: transform 0.3s ease;
+        }
+        .icons img:hover {
+            transform: scale(1.2);
         }
         .buttons {
             display: flex;
@@ -39,43 +46,99 @@
             margin: 20px 0;
         }
         .buttons a img {
-            width: 200px; /* Increased size for Donate button */
+            width: 200px;
             height: auto;
+            transition: transform 0.3s ease;
+        }
+        .buttons a img:hover {
+            transform: scale(1.1);
+        }
+        /* Hero Section Animation */
+        .hero {
+            animation: float 3s ease-in-out infinite;
+        }
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+        /* Frame Rotation Effect */
+        .frame {
+            transition: transform 0.8s ease;
+        }
+        .frame:hover {
+            transform: rotateY(360deg);
+        }
+        /* Policy Frame Hover Effect */
+        .policy-frame {
+            transition: transform 0.5s ease;
+        }
+        .policy-frame:hover {
+            transform: scale(1.05);
+            opacity: 0.9;
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <img src="1-HERO.png" alt="Hero Image">
+        <!-- Hero Section -->
+        <img src="1-HERO.png" alt="Hero Image" class="hero">
+
+        <!-- Social Icons -->
         <div class="icons">
             <a href="https://www.instagram.com/mmyking1/" target="_blank"><img src="mmyking-insta.png" alt="MMY King Instagram"></a>
             <a href="https://www.instagram.com/techpalettementor/" target="_blank"><img src="TPM-insta.png" alt="TPM Instagram"></a>
             <a href="https://youtu.be/cAz0vP7UZVU?si=Qk9Knc1p6MA8-M-7" target="_blank"><img src="TPM-YT.png" alt="TPM YouTube"></a>
         </div>
-        <img src="2-about.png" alt="About">
+
+        <!-- About Section -->
+        <img src="2-about.png" alt="About" class="frame">
+
+        <!-- Buttons -->
         <div class="buttons">
             <a href="https://www.palettementor.work/app.html" target="_blank"><img src="Link.png" alt="Link"></a>
             <a href="https://ko-fi.com/techpalettementor" target="_blank"><img src="DONATE.png" alt="Donate"></a>
         </div>
-        <img src="3-How-to-use.png" alt="How to Use">
+
+        <!-- How to Use Section -->
+        <img src="3-How-to-use.png" alt="How to Use" class="frame">
+
+        <!-- Wrapper Section -->
         <a href="https://www.palettementor.work/app.html" target="_blank">
-            <img src="4-Wrapper.png" alt="Wrapper">
+            <img src="4-Wrapper.png" alt="Wrapper" class="frame">
         </a>
-        <img src="5-Read-the-blog.png" alt="Read the Blog" onclick="window.location.href='https://www.palettementor.work/blog.html';" style="cursor: pointer;">
+
+        <!-- Read the Blog Section -->
+        <img src="5-Read-the-blog.png" alt="Read the Blog" class="frame" onclick="window.location.href='https://www.palettementor.work/blog.html';" style="cursor: pointer;">
+
+        <!-- Donate Button -->
         <div class="buttons">
             <a href="https://ko-fi.com/techpalettementor" target="_blank"><img src="DONATE.png" alt="Donate"></a>
         </div>
+
+        <!-- How to Use with Video Section -->
         <a href="https://youtu.be/cAz0vP7UZVU?si=Qk9Knc1p6MA8-M-7" target="_blank">
-            <img src="6-How-to-use-with-video.png" alt="How to Use with Video">
+            <img src="6-How-to-use-with-video.png" alt="How to Use with Video" class="frame">
         </a>
+
+        <!-- Link Button -->
         <div class="buttons">
             <a href="https://www.palettementor.work/app.html" target="_blank"><img src="Link.png" alt="Link"></a>
         </div>
-        <img src="7-policy-frame.png" alt="Policy Frame">
+
+        <!-- Policy Frame Section -->
+        <img src="7-policy-frame.png" alt="Policy Frame" class="policy-frame">
+
+        <!-- Donate Button -->
         <div class="buttons">
             <a href="https://ko-fi.com/techpalettementor" target="_blank"><img src="DONATE.png" alt="Donate"></a>
         </div>
-        <img src="END.png" alt="End">
+
+        <!-- End Section -->
+        <img src="END.png" alt="End" class="frame">
     </div>
 </body>
 </html>
