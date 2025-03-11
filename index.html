@@ -1,25 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-   <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="robots" content="index, follow">
-<meta name="description" content="Tech Palette Mentor – A unique tool for artists and designers to translate digital colors into real-world paints. Explore color blending, discover hex values, and master the art of mixing for oil, acrylic, and more.">
-<meta name="keywords" content="color mixing tool, artist color guide, paint blending app, hex to paint conversion, digital color to traditional art, color palette generator, painting resources, oil painting guide, acrylic painting help, hex color mixer, UI and web design colors, creative palette, color matching, design inspiration, artistic workflow, art and design tools, painting assistant, art color resources, Ireland, UK, Europe, artist tools, digital to physical color, pigment mixing, color reference tool.">
-<meta name="author" content="MMY King, UX Designer, Artist">
-<meta property="og:title" content="Tech Palette Mentor - Color Blending Made Simple">
-<meta property="og:description" content="Transform your artistic vision with Palette Mentor. Discover perfect blends, unlock color theory secrets, and design with precision.">
-<meta property="og:url" content="https://www.palettementor.work">
-<meta property="og:image" content="https://www.palettementor.work/images/thumbnail.jpg">
-
-<script async src="https://fundingchoicesmessages.google.com/i/pub-1920074084827369?ers=1"></script><script>(function() {function signalGooglefcPresent() {if (!window.frames['googlefcPresent']) {if (document.body) {const iframe = document.createElement('iframe'); iframe.style = 'width: 0; height: 0; border: none; z-index: -1000; left: -1000px; top: -1000px;'; iframe.style.display = 'none'; iframe.name = 'googlefcPresent'; document.body.appendChild(iframe);} else {setTimeout(signalGooglefcPresent, 0);}}}signalGooglefcPresent();})();</script>
-
-  <meta name="google-adsense-account" content="ca-pub-1920074084827369">
-    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="index, follow">
+    <meta name="description" content="Tech Palette Mentor – A unique tool for artists and designers to translate digital colors into real-world paints. Explore color blending, discover hex values, and master the art of mixing for oil, acrylic, and more.">
+    <meta name="keywords" content="color mixing tool, artist color guide, paint blending app, hex to paint conversion, digital color to traditional art, color palette generator, painting resources, oil painting guide, acrylic painting help, hex color mixer, UI and web design colors, creative palette, color matching, design inspiration, artistic workflow, art and design tools, painting assistant, art color resources, Ireland, UK, Europe, artist tools, digital to physical color, pigment mixing, color reference tool.">
+    <meta name="author" content="MMY King, UX Designer, Artist">
+    <meta property="og:title" content="Tech Palette Mentor - Color Blending Made Simple">
+    <meta property="og:description" content="Transform your artistic vision with Palette Mentor. Discover perfect blends, unlock color theory secrets, and design with precision.">
+    <meta property="og:url" content="https://www.palettementor.work">
+    <meta property="og:image" content="https://www.palettementor.work/images/thumbnail.jpg">
+    <script async src="https://fundingchoicesmessages.google.com/i/pub-1920074084827369?ers=1"></script>
+    <script>(function() {function signalGooglefcPresent() {if (!window.frames['googlefcPresent']) {if (document.body) {const iframe = document.createElement('iframe'); iframe.style = 'width: 0; height: 0; border: none; z-index: -1000; left: -1000px; top: -1000px;'; iframe.style.display = 'none'; iframe.name = 'googlefcPresent'; document.body.appendChild(iframe);} else {setTimeout(signalGooglefcPresent, 0);}}}signalGooglefcPresent();})();</script>
+    <meta name="google-adsense-account" content="ca-pub-1920074084827369">
     <link rel="icon" type="image/x-icon" href="2favicon.ico">
     <title>Tech Palette Mentor</title>
     <style>
-        /* General Styles */
         body {
             background-color: white;
             color: black;
@@ -29,8 +26,7 @@
             padding: 0;
             cursor: url('paintbrush-cursor.png'), auto;
         }
-        
-        /* Menu Styles */
+
         #menu-icon {
             position: absolute;
             top: 120px;
@@ -80,7 +76,6 @@
             background: #f0f0f0;
         }
 
-        /* Container and Other Styles */
         .container {
             max-width: 1200px;
             margin: auto;
@@ -130,14 +125,47 @@
             transform: scale(1.1);
         }
 
-        /* Mobile Styles */
+        .hero {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero:hover img {
+            transform: scale(1.1);
+        }
+
+        .section {
+            transition: transform 0.5s ease;
+        }
+
+        .section:hover {
+            transform: scale(1.05);
+        }
+
+        .policy-frame {
+            transition: transform 1s ease;
+        }
+
+        .policy-frame:hover {
+            transform: rotateY(360deg);
+        }
+
         @media (max-width: 768px) {
+            .hero img {
+                transition: none;
+            }
             .buttons a img {
                 width: 240px;
             }
             .icons img {
                 width: 30px;
                 height: 30px;
+            }
+            .section:hover {
+                transform: none;
+            }
+            .policy-frame:hover {
+                transform: none;
             }
         }
     </style>
@@ -148,17 +176,13 @@
         <a href="index.html">
         </a>
 
-        <!-- Menu System -->
-        <img id="menu-icon" src="menu.png" alt="Menu Icon" aria-haspopup="true" aria-expanded="false">
+        <img id="menu-icon" src="menu.png" alt="Menu Icon">
         <div class="dropdown">
             <a href="index.html">Home</a>
             <a href="blog.html">Blog</a>
-            <a href="app.html">Web App</a>
-     
         </div>
 
         <div class="container">
-            <!-- Page Content (Same as before) -->
             <div class="hero section">
                 <img src="4-HERO.png" alt="Hero Image">
             </div>
@@ -170,45 +194,116 @@
             </div>
             <a href="https://ko-fi.com/techpalettementor" target="_blank"><img src="DONATE.png" alt="Donate"></a>
 
-            <!-- Rest of your content remains the same -->
-            <!-- ... (All other sections remain unchanged) ... -->
-            
+            <div class="section">
+                <img src="2-2-about.png" alt="About">
+            </div>
+
+            <div class="buttons">
+                <a href="https://www.palettementor.work/app.html" target="_blank"><img src="Link.png" alt="Link"></a>
+                <a href="https://ko-fi.com/techpalettementor" target="_blank"><img src="DONATE.png" alt="Donate"></a>
+            </div>
+
+            <div class="section">
+                <img src="3-How-to-use.png" alt="How to Use">
+            </div>
+
+            <div class="section">
+                <a href="https://www.palettementor.work/app.html" target="_blank">
+                    <img src="2-4-Wrapper.png" alt="Wrapper">
+                </a>
+            </div>
+
+            <div class="section">
+                <img src="2-5-Read-the-blog.png" alt="Read the Blog" onclick="window.location.href='https://www.palettementor.work/blog.html';" style="cursor: pointer;">
+            </div>
+
+            <div class="buttons">
+                <a href="https://ko-fi.com/techpalettementor" target="_blank"><img src="DONATE.png" alt="Donate"></a>
+            </div>
+
+            <div class="section">
+                <a href="https://youtu.be/cAz0vP7UZVU?si=Qk9Knc1p6MA8-M-7" target="_blank">
+                    <img src="2-6-How-to-use-with-video.png" alt="How to Use with Video">
+                </a>
+            </div>
+
+            <div class="buttons">
+                <a href="https://www.palettementor.work/app.html" target="_blank"><img src="Link.png" alt="Link"></a>
+            </div>
+
+            <div class="policy-frame section">
+                <img src="7-policy-frame.png" alt="Policy Frame">
+            </div>
+
+            <div class="buttons">
+                <a href="https://ko-fi.com/techpalettementor" target="_blank"><img src="DONATE.png" alt="Donate"></a>
+            </div>
+
+            <div class="section">
+                <img src="cool-new-hero.png" alt="End">
+            </div>
         </div>
     </div>
 
     <script>
-        // Menu Functionality
+        // Menu functionality
         const menuIcon = document.getElementById("menu-icon");
         const dropdown = document.querySelector(".dropdown");
 
-        // Toggle menu
         menuIcon.addEventListener("click", (e) => {
             e.stopPropagation();
-            const isActive = dropdown.classList.toggle("active");
-            menuIcon.setAttribute("aria-expanded", isActive);
+            dropdown.classList.toggle("active");
         });
 
-        // Close menu when clicking outside
         document.addEventListener("click", (e) => {
             if (!dropdown.contains(e.target) && !menuIcon.contains(e.target)) {
                 dropdown.classList.remove("active");
-                menuIcon.setAttribute("aria-expanded", "false");
             }
         });
 
-        // Close menu on mobile after selection
         dropdown.addEventListener("click", (e) => {
             if (window.innerWidth <= 768) {
                 dropdown.classList.remove("active");
-                menuIcon.setAttribute("aria-expanded", "false");
             }
         });
 
-        // Mobile-Specific Interactions
+        // Original mobile interactions
+        const hero = document.querySelector('.hero img');
+        const buttons = document.querySelectorAll('.buttons a img');
+        const icons = document.querySelectorAll('.icons img');
+        const sections = document.querySelectorAll('.section');
+        const policyFrame = document.querySelector('.policy-frame');
+
         if (window.innerWidth <= 768) {
-            // Add mobile touch interactions if needed
-            document.querySelectorAll('.section').forEach(section => {
-                section.style.cursor = 'pointer';
+            hero.addEventListener('click', () => {
+                hero.style.transform = 'scale(1.1)';
+                setTimeout(() => hero.style.transform = 'scale(1)', 500);
+            });
+
+            buttons.forEach(button => {
+                button.addEventListener('click', () => {
+                    button.style.transform = 'scale(1.1)';
+                    setTimeout(() => button.style.transform = 'scale(1)', 300);
+                });
+            });
+
+            icons.forEach(icon => {
+                icon.addEventListener('click', () => {
+                    icon.style.transform = 'scale(1.2)';
+                    setTimeout(() => icon.style.transform = 'scale(1)', 300);
+                });
+            });
+
+            sections.forEach(section => {
+                section.addEventListener('click', () => {
+                    section.style.transform = 'scale(1.05)';
+                    setTimeout(() => section.style.transform = 'scale(1)', 500);
+                });
+            });
+
+            policyFrame.addEventListener('click', () => {
+                policyFrame.style.transform = 'rotateY(360deg)';
+                setTimeout(() => policyFrame.style.transform = 'rotateY(0)', 1000);
             });
         }
     </script>
