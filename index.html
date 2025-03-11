@@ -25,6 +25,22 @@
     <title>Tech Palette Mentor</title>
     <style>
         /* General Styles */
+
+         /* Dropdown Menu Styles */
+        #menu-icon {
+            position: absolute;
+            top: 120px;
+            left: 10px;
+            width: 40px;
+            height: 40px;
+            cursor: pointer;
+            transition: transform 0.3s ease, filter 0.3s ease;
+        }
+
+        #menu-icon:hover {
+            transform: scale(1.1);
+            filter: brightness(1.2);
+        }
         body {
             background-color: white;
             color: black;
@@ -122,6 +138,24 @@
     </style>
 </head>
 <body>
+      <div id="canvas-container">
+        <div id="header">Tech Palette Mentor</div>
+        <a href="index.html">
+            <img id="logo" src="new-logo-Tech-Palette_mentor.png" alt="Palette Mentor Logo">
+        </a>
+   
+
+   
+
+ <!-- Menu Icon -->
+        <img id="menu-icon" src="menu.png" alt="Menu Icon">
+
+        <!-- Dropdown Menu -->
+        <div class="dropdown">
+    <a href="index.html">Home</a>
+          	 <a href="blog.html">Blog</a>	
+        </div>
+
     <div class="container">
         <!-- Hero Section -->
         <div class="hero section">
@@ -255,4 +289,13 @@
         }
     </script>
 </body>
+    <script>
+        const menuIcon = document.getElementById("menu-icon");
+        const dropdown = document.querySelector(".dropdown");
+
+        menuIcon.addEventListener("click", () => {
+            menuIcon.classList.toggle("active");
+            dropdown.classList.toggle("active");
+        });
+    </script>
 </html>
