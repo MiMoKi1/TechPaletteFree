@@ -3,22 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Explore our blog about Irish art history, modern art techniques, and more.">
     <title>Blog - Tech Palette Mentor</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
     <link rel="icon" type="image/x-icon" href="2favicon.ico">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="robots" content="index, follow">
-<meta name="description" content="Explore the Tech Palette Mentor blog for insights on color blending, paint mixing, and creative techniques. From digital to traditional art, find expert tips, tutorials, and inspiration for your next masterpiece.">
-<meta name="keywords" content="art blog, color theory tips, paint mixing techniques, digital to traditional art, artist resources, oil painting advice, acrylic painting guide, hex to pigment conversion, creative workflow, design inspiration, UI color palettes, painting tutorials, color blending guide, artist insights, pigment mixing, art and design trends, creative process, painting help, artistic tools, Tech Palette Mentor blog.">
-<meta name="author" content="MMY King, UX Designer, Artist">
-<meta property="og:title" content="Tech Palette Mentor Blog - Color, Creativity & Inspiration">
-<meta property="og:description" content="Unlock the secrets of color blending with Tech Palette Mentor’s blog. Get expert insights, painting guides, and design inspiration for artists and creators.">
-<meta property="og:url" content="https://www.palettementor.work">
-<meta property="og:image" content="https://www.palettementor.work/images/thumbnail.jpg">
-
-  
-
+    <meta name="robots" content="index, follow">
+    <meta name="description" content="Explore the Tech Palette Mentor blog for insights on color blending, paint mixing, and creative techniques. From digital to traditional art, find expert tips, tutorials, and inspiration for your next masterpiece.">
+    <meta name="keywords" content="art blog, color theory tips, paint mixing techniques, digital to traditional art, artist resources, oil painting advice, acrylic painting guide, hex to pigment conversion, creative workflow, design inspiration, UI color palettes, painting tutorials, color blending guide, artist insights, pigment mixing, art and design trends, creative process, painting help, artistic tools, Tech Palette Mentor blog.">
+    <meta name="author" content="MMY King, UX Designer, Artist">
+    <meta property="og:title" content="Tech Palette Mentor Blog - Color, Creativity & Inspiration">
+    <meta property="og:description" content="Unlock the secrets of color blending with Tech Palette Mentor’s blog. Get expert insights, painting guides, and design inspiration for artists and creators.">
+    <meta property="og:url" content="https://www.palettementor.work">
+    <meta property="og:image" content="https://www.palettementor.work/images/thumbnail.jpg">
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1920074084827369" crossorigin="anonymous"></script>
     <meta name="google-adsense-account" content="ca-pub-1920074084827369">
     <style>
@@ -32,13 +27,12 @@
             padding: 0;
         }
 
+        /* Header and Menu Styles */
         header {
             background-color: #fff;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-            padding: 10px 20px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
+            padding: 20px;
+            position: relative;
         }
 
         #logo img {
@@ -46,22 +40,54 @@
         }
 
         #menu-icon {
-            height: 30px;
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            width: 40px;
+            height: 40px;
             cursor: pointer;
+            transition: transform 0.3s ease;
+            z-index: 1001;
+        }
+
+        #menu-icon:hover {
+            transform: scale(1.1);
         }
 
         .dropdown {
-            display: flex;
-            gap: 20px;
+            display: none;
+            position: absolute;
+            top: 70px;
+            right: 20px;
+            background: white;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+            z-index: 1000;
+            padding: 10px;
+            border-radius: 5px;
+            opacity: 0;
+            transform: translateY(-10px);
+            transition: opacity 0.3s ease, transform 0.3s ease;
+        }
+
+        .dropdown.active {
+            display: block;
+            opacity: 1;
+            transform: translateY(0);
         }
 
         .dropdown a {
-            text-decoration: none;
+            display: block;
+            padding: 10px;
             color: #333;
-            font-weight: 600;
+            text-decoration: none;
+            transition: background 0.3s ease;
         }
 
-        /* Blog Container */
+        .dropdown a:hover {
+            background: #f0f0f0;
+        }
+
+        /* Blog Content Styles */
         .blog-container {
             max-width: 800px;
             margin: 40px auto;
@@ -80,10 +106,19 @@
         }
 
         .blog-posts li {
-            margin-bottom: 15px;
+            margin-bottom: 30px;
             display: flex;
             align-items: center;
             gap: 20px;
+            padding: 15px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .blog-posts li:hover {
+            transform: translateY(-3px);
         }
 
         .blog-posts a {
@@ -96,18 +131,11 @@
             text-decoration: underline;
         }
 
-        /* Consistent Image Sizes */
         .blog-image {
-            width: 300px; /* Fixed width */
-            height: 200px; /* Fixed height */
-            object-fit: cover; /* Crop images to fit */
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease;
-        }
-
-        .blog-image:hover {
-            transform: scale(1.05);
+            width: 200px;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 6px;
         }
 
         /* Buttons */
@@ -115,11 +143,11 @@
             display: flex;
             justify-content: center;
             gap: 20px;
-            margin: 20px 0;
+            margin: 30px 0;
         }
 
         .button-container img {
-            width: 150px; /* Smaller buttons */
+            width: 150px;
             height: auto;
             transition: transform 0.3s ease;
         }
@@ -128,42 +156,13 @@
             transform: scale(1.1);
         }
 
-        /* Blog Post Microinteractions */
-        .blog-posts li {
-            position: relative;
-            overflow: hidden;
-        }
-
-        .blog-posts li::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 123, 255, 0.1);
-            transition: left 0.5s ease;
-        }
-
-        .blog-posts li:hover::before {
-            left: 0;
-        }
-
-        .blog-posts li:hover {
-            transform: translateX(10px); /* Slide effect */
-        }
-
-        .blog-posts li {
-            transition: transform 0.3s ease;
-        }
-
-        /* Footer */
+        /* Footer Styles */
         footer {
             background-color: #333;
             color: #fff;
             text-align: center;
-            padding: 20px;
-            margin-top: 40px;
+            padding: 30px 20px;
+            margin-top: 50px;
         }
 
         footer a {
@@ -175,11 +174,37 @@
         footer img {
             height: 20px;
             vertical-align: middle;
+            margin: 0 5px;
         }
 
         .rights-reserved {
             font-size: 0.9rem;
-            margin-top: 10px;
+            margin-top: 15px;
+            color: #ccc;
+        }
+
+        @media (max-width: 768px) {
+            .blog-posts li {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .blog-image {
+                width: 100%;
+                height: 200px;
+            }
+            
+            #menu-icon {
+                top: 15px;
+                right: 15px;
+                width: 35px;
+                height: 35px;
+            }
+            
+            .dropdown {
+                top: 60px;
+                right: 15px;
+            }
         }
     </style>
 </head>
@@ -188,7 +213,9 @@
         <a href="index.html" id="logo">
             <img src="new-logo-Tech-Palette_mentor.png" alt="Tech Palette Mentor Logo">
         </a>
-      
+        
+        <!-- Hamburger Menu -->
+        <img id="menu-icon" src="menu.png" alt="Menu Icon">
         <div class="dropdown">
             <a href="index.html">Home</a>
             <a href="app.html">Web App</a>
@@ -200,13 +227,11 @@
         <h1>Blog - Tech Palette Mentor</h1>
         <p class="blog-intro">Welcome to our blog! Here you'll find insightful posts on Irish art history, modern art techniques, and more!</p>
 
-        <!-- Buttons -->
         <div class="button-container">
-          
+            <a href="https://www.palettementor.work/app.html" target="_blank"><img src="Link.png" alt="Link"></a>
             <a href="https://ko-fi.com/techpalettementor" target="_blank"><img src="DONATE.png" alt="Donate"></a>
         </div>
 
-        <!-- Blog Posts -->
         <section class="blog-posts">
             <ul>
                 <li>
@@ -265,7 +290,6 @@
                     </div>
                     <img src="images/pexels-yigithan02-1108528.jpg" alt="rainbow of colours painting" class="blog-image">
                 </li>
-                <!-- Add more blog posts here as needed -->
             </ul>
         </section>
     </main>
@@ -282,6 +306,28 @@
             <p>This blog is for SEO keyword reach; we cannot be held accountable for any inaccuracies.</p>
         </div>
     </footer>
-    <script src="scripts.js"></script>
+
+    <script>
+        // Menu functionality
+        const menuIcon = document.getElementById("menu-icon");
+        const dropdown = document.querySelector(".dropdown");
+
+        menuIcon.addEventListener("click", (e) => {
+            e.stopPropagation();
+            dropdown.classList.toggle("active");
+        });
+
+        document.addEventListener("click", (e) => {
+            if (!dropdown.contains(e.target) && !menuIcon.contains(e.target)) {
+                dropdown.classList.remove("active");
+            }
+        });
+
+        dropdown.addEventListener("click", (e) => {
+            if (window.innerWidth <= 768) {
+                dropdown.classList.remove("active");
+            }
+        });
+    </script>
 </body>
 </html>
