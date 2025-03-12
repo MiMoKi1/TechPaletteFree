@@ -38,6 +38,20 @@
     </script>
 
     <style>
+
+         #donate-button {
+    width: 50px;
+    height: auto;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    transition: transform 0.3s ease;
+    z-index: 100;
+    display: none; /* Start hidden */
+}
+#donate-button:hover {
+    transform: scale(1.1);
+}
         body {
             display: flex;
             flex-direction: column;
@@ -299,6 +313,25 @@ main {
     border: 5px solid #ffffff; /* Optional: add a white border around the main content */
 }
 
+         .social-share {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+    justify-content: center;
+}
+.social-share button {
+    background: #D8CBAF;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 12px;
+    color: black;
+}
+.social-share button:hover {
+    background: #C49337;
+}
+
     </style>
 </head>
 <body>
@@ -318,10 +351,11 @@ main {
         <!-- Dropdown Menu -->
         <div class="dropdown">
     <a href="index.html">Home</a>
-          	 <a href="blog.html">Blog</a>	
+ <a href="blog.html">Blog</a>	
         </div>
-
-   
+<a href="https://ko-fi.com/techpalettementor" target="_blank" id="donateButton">
+    <img src="DONATE.png" alt="Donate" id="donate-button">
+</a>   
         <div id="features"> <!-- Features container -->
             <canvas id="canvas"></canvas>
             <div id="controls">
@@ -395,6 +429,63 @@ main {
         <a href="https://www.pinterest.com/techmentorpalette/"><img src="pinterest.png" alt="Pinterest" style="width:14px;height:14px;"></a>
         <a href="https://www.linkedin.com/company/techpalettementor/"><img src="linkedin.png" alt="LinkedIn" style="width:14px;height:14px;"></a>
     </p>
+
+     <div class="social-share">
+    <button onclick="shareOnFacebook()">Share on Facebook</button>
+    <button onclick="shareOnTwitter()">Share on Twitter</button>
+    <button onclick="shareOnPinterest()">Share on Pinterest</button>
+</div>
 </footer>
+     <script>
+    // Donate Button Logic
+    let donateInterval;
+
+    function checkDonationStatus() {
+        return localStorage.getItem('hasDonated') === 'true';
+    }
+
+    function showDonateButton() {
+        if (!checkDonationStatus()) {
+            const button = document.getElementById('donate-button');
+            button.style.display = 'block';
+            setTimeout(() => {
+                button.style.display = 'none';
+            }, 5000); // Show for 5 seconds
+        }
+    }
+
+    // Initialize donation tracking
+    document.getElementById('donateButton').addEventListener('click', () => {
+        localStorage.setItem('hasDonated', 'true');
+        clearInterval(donateInterval);
+    });
+
+    // Start popup cycle (10 minute intervals)
+    if (!checkDonationStatus()) {
+        donateInterval = setInterval(showDonateButton, 600000); // 10 minutes
+        setTimeout(showDonateButton, 600000); // Initial delay
+    }
+</script>
+
+     <script>
+    // Social Sharing Functions
+    function shareOnFacebook() {
+        const url = encodeURIComponent(window.location.href);
+        window.open(`https://www.facebook.com/sharer/sharer.php?u=${url}`, '_blank');
+    }
+
+    function shareOnTwitter() {
+        const text = encodeURIComponent("Check out this amazing color blending tool!");
+        const url = encodeURIComponent(window.location.href);
+        window.open(`https://twitter.com/intent/tweet?text=${text}&url=${url}`, '_blank');
+    }
+
+    function shareOnPinterest() {
+        const url = encodeURIComponent(window.location.href);
+        const media = encodeURIComponent("https://www.palettementor.work/images/thumbnail.jpg");
+        const description = encodeURIComponent("Tech Palette Mentor - Color Blending Made Simple");
+        window.open(`https://pinterest.com/pin/create/button/?url=${url}&media=${media}&description=${description}`, '_blank');
+    }
+</script>
 </body>
 </html>
