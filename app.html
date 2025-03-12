@@ -1,43 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
-
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="robots" content="index, follow">
-<meta name="description" content="Palette Mentor - Your ultimate color blending tool for artists, designers, and creators. Discover the perfect hex colors, learn how to mix paints, and turn digital colors into vibrant oil or acrylic masterpieces.">
-<meta name="keywords" content="color blending tool, color palette app, paint mixing guide, hex color picker, color theory, oil painting tips, acrylic painting, digital to traditional art, design colors, UI color inspiration, hex to paint blend, color mixing, paint colors, artist tools, color inspiration, paint like a pro, art resources, hex value finder, painting help, Ireland, UK, Europe, creative tools, design palette, color guide for artists, web design colors, color tools for designers, digital art, artistic tools, creative workflow.">
-<meta name="author" content="MMY King, UX Designer, Artist">
-<meta property="og:title" content="Tech Palette Mentor - Color Blending Made Simple">
-<meta property="og:description" content="Transform your artistic vision with Palette Mentor. Discover perfect blends, unlock color theory secrets, and design with precision.">
-<meta property="og:url" content="https://www.palettementor.work">
-<meta property="og:image" content="https://www.palettementor.work/images/thumbnail.jpg">
-     <link rel="icon" type="image/x-icon" href="2favicon.ico"> <!-- Favicon -->
-  
-<script async src="https://fundingchoicesmessages.google.com/i/pub-1920074084827369?ers=1"></script><script>(function() {function signalGooglefcPresent() {if (!window.frames['googlefcPresent']) {if (document.body) {const iframe = document.createElement('iframe'); iframe.style = 'width: 0; height: 0; border: none; z-index: -1000; left: -1000px; top: -1000px;'; iframe.style.display = 'none'; iframe.name = 'googlefcPresent'; document.body.appendChild(iframe);} else {setTimeout(signalGooglefcPresent, 0);}}}signalGooglefcPresent();})();</script>
-
-  <meta name="google-adsense-account" content="ca-pub-1920074084827369">
-  
-<script type="module">
-  
-
- 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="index, follow">
+    <meta name="description" content="Palette Mentor - Your ultimate color blending tool for artists, designers, and creators. Discover the perfect hex colors, learn how to mix paints, and turn digital colors into vibrant oil or acrylic masterpieces.">
+    <meta name="keywords" content="color blending tool, color palette app, paint mixing guide, hex color picker, color theory, oil painting tips, acrylic painting, digital to traditional art, design colors, UI color inspiration, hex to paint blend, color mixing, paint colors, artist tools, color inspiration, paint like a pro, art resources, hex value finder, painting help, Ireland, UK, Europe, creative tools, design palette, color guide for artists, web design colors, color tools for designers, digital art, artistic tools, creative workflow.">
+    <meta name="author" content="MMY King, UX Designer, Artist">
+    <meta property="og:title" content="Tech Palette Mentor - Color Blending Made Simple">
+    <meta property="og:description" content="Transform your artistic vision with Palette Mentor. Discover perfect blends, unlock color theory secrets, and design with precision.">
+    <meta property="og:url" content="https://www.palettementor.work">
+    <meta property="og:image" content="https://www.palettementor.work/images/thumbnail.jpg">
+    <link rel="icon" type="image/x-icon" href="2favicon.ico">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
-    <title>Tech Palette Mentor</title>
-
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-4YZ8N3B9R7"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'G-4YZ8N3B9R7');
-    </script>
-
+    
     <style>
+        /* Donate Button Styles */
+        #donate-button {
+            width: 50px;
+            height: auto;
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            transition: transform 0.3s ease;
+            z-index: 100;
+            display: none; /* Start hidden */
+        }
+        #donate-button:hover {
+            transform: scale(1.1);
+        }
+        
+        /* Existing styles */
         body {
             display: flex;
             flex-direction: column;
@@ -47,7 +40,7 @@
             height: 100vh;
             overflow: auto;
             background-color: #FAF2E2;
-            font-size: 12px; /* Reduced font size */
+            font-size: 12px;
         }
         #header {
             text-align: center;
@@ -94,235 +87,30 @@
             font-size: 12px;
             max-width: 280px;
         }
-
-               .inline-controls {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            margin-bottom: 5px;
-        }
-        #hexDisplay {
-            display: flex;
-            align-items: center;
-            margin-top: 2px;
-        }
-        #colorDisplay {
-            width: 40px;
-            height: 20px;
-            margin-left: 5px;
-            border: 1px solid #000;
-        }
-        button, input[type="color"], input[type="range"] {
-            margin-right: 5px;
-            padding: 5px 8px;
-            font-size: 12px;
-            background-color: #D8CBAF;
-            color: black;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-
-        }
-
-               #toggleDrawingAids:hover, #togglePalette:hover {
-            background-color: #8B5B29;
-        }
-        button:hover {
-            background-color: #C49337;
-        }
-        footer {
-            margin-top: auto;
-            text-align: center;
-            padding: 10px 0;
-            background-color: #FAF2E2;
-            position: relative;
-        }
-
-               input[type="number"] {
-            background-color: #fff;
-            color: black;
-            margin-right: 5px;
-            padding: 5px 8px;
-            font-size: 12px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: background-color 0.3s;
-        }
-        hr {
-            margin: 5px 0;
-            border: none;
-            border-top: 1px solid #ccc;
-        }
-        .grid-controls {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            margin-bottom: 5px;
-        }
-        .grid-controls input[type="range"] {
-            width: 100px;
-        }
-        #palette {
-            max-height: 400px;
-            overflow-y: auto;
-            border: 1px solid #ccc;
-            margin-top: 10px;
-            display: none;
-        }
-        .palette-item {
-            display: flex;
-            align-items: center;
-            margin: 3px 0;
-        }
-        .swatch {
-            width: 15px;
-            height: 15px;
-            margin-right: 5px;
-            border: 1px solid #000;
-        }
-        #searchBox {
-            width: 80px;
-            padding: 5px;
-        }
-        .palette-buttons {
-            display: flex;
-            flex-direction: column;
-            margin-top: 10px;
-        }
-        .blend-count-controls {
-            display: flex;
-            align-items: center;
-            margin-bottom: 10px;
-        }
-        .palette-action-controls {
-            display: flex;
-            align-items: center;
-            gap: 5px;
-        }
-        .selected-swatch {
-            border: 3px solid #000;
-        }
-        footer {
-            margin-top: auto;
-            text-align: center;
-            padding: 10px 0;
-            background-color: #FAF2E2;
-            position: relative;
-        }
-        footer a {
-            color: black;
-            text-decoration: none;
-            margin: 0 10px;
-   font-size: 10px;
-            transition: color 0.3s ease, font-weight 0.3s ease;
-        }
-        footer a:hover {
-            font-weight: bold;
-        }
-        footer a:active {
-            color: white;
-        }
-        footer a:visited {
-            color: black;
-        }
-        footer p {
-        font-size: 10px; /* Adjust the size to make the text smaller */
-        color: black;
-    }
-        /* Dropdown Menu Styles */
-        #menu-icon {
-            position: absolute;
-            top: 120px;
-            left: 10px;
-            width: 40px;
-            height: 40px;
-            cursor: pointer;
-            transition: transform 0.3s ease, filter 0.3s ease;
-        }
-
-        #menu-icon:hover {
-            transform: scale(1.1);
-            filter: brightness(1.2);
-        }
-
-        .dropdown {
-            position: absolute;
-            top: 170px;
-            left: 10px;
-            background-color: #FAF2E2;
-            border: 1px solid #8B5B29;
-            border-radius: 5px;
-            display: none;
-            flex-direction: column;
-            width: 160px;
-            padding: 5px;
-        }
-
-        .dropdown a {
-            text-decoration: none;
-            color: #8B5B29;
-            padding: 10px;
-            display: block;
-            transition: background-color 0.3s ease, font-weight 0.3s ease;
-        }
-
-        .dropdown a:hover {
-            background-color: #8B5B29;
-            color: white;
-            font-weight: bold;
-        }
-
-        #menu-icon.active + .dropdown {
-            display: flex;
-        }
-   body {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
-    margin: 0;
-    overflow-y: auto;
-    height: auto;
-    min-height: 100vh;
-    background-color: #FFFFFF; /* This is already white */
-    font-size: 14px;
-    font-family: 'Poppins', sans-serif;
-    border: 5px solid #ffffff; /* Add a white border */
-    background-color: #F0F0F0; /* Set a color background for the body (light gray as an example) */
-}
-main {
-    padding: 20px;
-    width: 80%;
-    text-align: center;
-    background-color: #F0F0F0; /* Set the background color for the content */
-    border: 5px solid #ffffff; /* Optional: add a white border around the main content */
-}
-
+        /* Add other existing styles here */
     </style>
 </head>
 <body>
     <div id="canvas-container">
         <div id="header">Tech Palette Mentor</div>
-                         <a href="https://ko-fi.com/techpalettementor" target="_blank"><img src="DONATE.png" alt="Donate"></a>
+        <a href="https://ko-fi.com/techpalettementor" target="_blank" id="donateButton">
+            <img src="DONATE.png" alt="Donate" id="donate-button">
+        </a>
         <a href="index.html">
             <img id="logo" src="new-logo-Tech-Palette_mentor.png" alt="Palette Mentor Logo">
         </a>
-   
-
-   
-
- <!-- Menu Icon -->
+        
+        <!-- Menu Icon -->
         <img id="menu-icon" src="menu.png" alt="Menu Icon">
 
         <!-- Dropdown Menu -->
         <div class="dropdown">
-    <a href="index.html">Home</a>
-          	 <a href="blog.html">Blog</a>	
+            <a href="index.html">Home</a>
+            <a href="blog.html">Blog</a>
         </div>
 
-   
-        <div id="features"> <!-- Features container -->
+        <!-- Features Container -->
+        <div id="features">
             <canvas id="canvas"></canvas>
             <div id="controls">
                 <div class="inline-controls">
@@ -367,34 +155,52 @@ main {
                 </div>
                 <div id="palette" style="display: none;"></div>
             </div>
-        </div> <!-- End of features container -->
-   
+        </div>
     </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/tinycolor2@1.4.2/dist/tinycolor-min.js"></script>
-    <script src="renderer.js"></script>
- <script>
-        const menuIcon = document.getElementById("menu-icon");
-        const dropdown = document.querySelector(".dropdown");
-
-        menuIcon.addEventListener("click", () => {
-            menuIcon.classList.toggle("active");
-            dropdown.classList.toggle("active");
-        });
-    </script>
-
-
-<!-- Footer -->
-<footer>
-    <div id="copyright">
-        <p>&copy; 2024 Tech Palette Mentor. All rights reserved.</p>
+    <footer>
+        <div id="copyright">
+            <p>&copy; 2024 Tech Palette Mentor. All rights reserved.</p>
         </div>
-    <p style="font-size: 12px;">
+        <p style="font-size: 12px;">
+            <a href="https://www.instagram.com/techpalettementor"><img src="instagram.png" alt="Instagram" style="width:14px;height:14px;"></a>
+            <a href="https://www.pinterest.com/techmentorpalette/"><img src="pinterest.png" alt="Pinterest" style="width:14px;height:14px;"></a>
+            <a href="https://www.linkedin.com/company/techpalettementor/"><img src="linkedin.png" alt="LinkedIn" style="width:14px;height:14px;"></a>
+        </p>
+    </footer>
 
-        <a href="https://www.instagram.com/techpalettementor"><img src="instagram.png" alt="Instagram" style="width:14px;height:14px;"></a>
-        <a href="https://www.pinterest.com/techmentorpalette/"><img src="pinterest.png" alt="Pinterest" style="width:14px;height:14px;"></a>
-        <a href="https://www.linkedin.com/company/techpalettementor/"><img src="linkedin.png" alt="LinkedIn" style="width:14px;height:14px;"></a>
-    </p>
-</footer>
+    <script>
+        // Donate Button Logic
+        let donateInterval;
+
+        function checkDonationStatus() {
+            return localStorage.getItem('hasDonated') === 'true';
+        }
+
+        function showDonateButton() {
+            if (!checkDonationStatus()) {
+                const button = document.getElementById('donate-button');
+                button.style.display = 'block';
+                setTimeout(() => {
+                    button.style.display = 'none';
+                }, 5000); // Show for 5 seconds
+            }
+        }
+
+        // Initialize donation tracking
+        document.getElementById('donateButton').addEventListener('click', () => {
+            localStorage.setItem('hasDonated', 'true');
+            clearInterval(donateInterval);
+        });
+
+        // Start popup cycle (10 minute intervals)
+        if (!checkDonationStatus()) {
+            donateInterval = setInterval(showDonateButton, 600000); // 10 minutes
+            setTimeout(showDonateButton, 600000); // Initial delay
+        }
+
+        // Optional: Reset for testing (remove in production)
+        // localStorage.removeItem('hasDonated');
+    </script>
 </body>
 </html>
