@@ -80,20 +80,21 @@
             height: auto;
             z-index: 100;
         }
-        #canvas-container {
-            width: 100%;
-            height: 100%;
-            position: relative;
-            overflow: auto;
-            background-color: #FAF2E2;
-        }
-        #canvas {
-            display: block;
-            max-width: 100%;
-            max-height: 100%;
-            width: auto;
-            height: auto;
-            transition: transform 0.2s ease-in-out;
+#canvas-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: #FAF2E2;
+}
+
+#canvas {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain; /* Ensures the image fits within the canvas without distortion */
+}
         }
         #controls {
             display: flex;
@@ -108,6 +109,59 @@
             font-size: 12px;
             max-width: 280px;
         }
+
+#controls {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 5px;
+    background-color: #F5F5F5;
+    border: 1px solid #ccc;
+    z-index: 10;
+    font-size: 12px;
+    max-width: 280px;
+}
+
+/* Adjust controls for smaller screens */
+@media (max-width: 768px) {
+    #controls {
+        max-width: 200px; /* Reduce width */
+        font-size: 10px; /* Reduce font size */
+        padding: 3px; /* Reduce padding */
+    }
+
+    button, input[type="color"], input[type="range"] {
+        padding: 3px 5px; /* Reduce button padding */
+        font-size: 10px; /* Reduce button font size */
+    }
+
+    #palette {
+        max-height: 200px; /* Reduce palette height */
+    }
+
+    .palette-item {
+        margin: 2px 0; /* Reduce palette item margin */
+    }
+
+    .swatch {
+        width: 12px; /* Reduce swatch size */
+        height: 12px;
+    }
+}
+         @media (max-width: 768px) {
+    #controls {
+        display: none; /* Hide controls by default on mobile */
+        position: fixed;
+        top: 50px;
+        right: 10px;
+        background-color: rgba(245, 245, 245, 0.9); /* Semi-transparent background */
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+}
 
                .inline-controls {
             display: flex;
@@ -503,5 +557,31 @@ main {
         window.open(`https://pinterest.com/pin/create/button/?url=${url}&media=${media}&description=${description}`, '_blank');
     }
 </script>
+
+     // Add this script to toggle controls on mobile
+const toggleControls = document.createElement('button');
+toggleControls.id = 'toggleControls';
+toggleControls.textContent = '☰ Controls';
+toggleControls.style.position = 'absolute';
+toggleControls.style.top = '10px';
+toggleControls.style.right = '10px';
+toggleControls.style.zIndex = '1000';
+toggleControls.style.padding = '5px';
+toggleControls.style.backgroundColor = '#D8CBAF';
+toggleControls.style.border = 'none';
+toggleControls.style.borderRadius = '5px';
+toggleControls.style.cursor = 'pointer';
+document.body.appendChild(toggleControls);
+
+const controls = document.getElementById('controls');
+controls.style.display = 'none'; // Hide controls by default on mobile
+
+toggleControls.addEventListener('click', () => {
+    if (controls.style.display === 'none') {
+        controls.style.display = 'flex';
+    } else {
+        controls.style.display = 'none';
+    }
+});
 </body>
 </html>
