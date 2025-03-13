@@ -51,8 +51,7 @@
 }
 #donate-button:hover {
     transform: scale(1.1);
-}
-                                                                 body {
+}           body {
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -95,22 +94,7 @@
     max-height: 100%;
     object-fit: contain; /* Ensures the image fits within the canvas without distortion */
 }
-        }
-        #controls {
-            display: flex;
-            flex-direction: column;
-            position: absolute;
-            top: 0;
-            right: 0;
-            padding: 5px;
-            background-color: #F5F5F5;
-            border: 1px solid #ccc;
-            z-index: 10;
-            font-size: 12px;
-            max-width: 280px;
-        }
-
-#controls {
+  #controls {
     display: flex;
     flex-direction: column;
     position: absolute;
@@ -130,6 +114,14 @@
         max-width: 200px; /* Reduce width */
         font-size: 10px; /* Reduce font size */
         padding: 3px; /* Reduce padding */
+        display: none; /* Hide controls by default on mobile */
+        position: fixed;
+        top: 50px;
+        right: 10px;
+        background-color: rgba(245, 245, 245, 0.9); /* Semi-transparent background */
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     }
 
     button, input[type="color"], input[type="range"] {
@@ -148,18 +140,6 @@
     .swatch {
         width: 12px; /* Reduce swatch size */
         height: 12px;
-    }
-}
-         @media (max-width: 768px) {
-    #controls {
-        display: none; /* Hide controls by default on mobile */
-        position: fixed;
-        top: 50px;
-        right: 10px;
-        background-color: rgba(245, 245, 245, 0.9); /* Semi-transparent background */
-        border: 1px solid #ccc;
-        border-radius: 5px;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     }
 }
 
@@ -558,30 +538,32 @@ main {
     }
 </script>
 
-     // Add this script to toggle controls on mobile
-const toggleControls = document.createElement('button');
-toggleControls.id = 'toggleControls';
-toggleControls.textContent = '☰ Controls';
-toggleControls.style.position = 'absolute';
-toggleControls.style.top = '10px';
-toggleControls.style.right = '10px';
-toggleControls.style.zIndex = '1000';
-toggleControls.style.padding = '5px';
-toggleControls.style.backgroundColor = '#D8CBAF';
-toggleControls.style.border = 'none';
-toggleControls.style.borderRadius = '5px';
-toggleControls.style.cursor = 'pointer';
-document.body.appendChild(toggleControls);
+<script>
+    // Add this script to toggle controls on mobile
+    const toggleControls = document.createElement('button');
+    toggleControls.id = 'toggleControls';
+    toggleControls.textContent = '☰ Controls';
+    toggleControls.style.position = 'absolute';
+    toggleControls.style.top = '10px';
+    toggleControls.style.right = '10px';
+    toggleControls.style.zIndex = '1000';
+    toggleControls.style.padding = '5px';
+    toggleControls.style.backgroundColor = '#D8CBAF';
+    toggleControls.style.border = 'none';
+    toggleControls.style.borderRadius = '5px';
+    toggleControls.style.cursor = 'pointer';
+    document.body.appendChild(toggleControls);
 
-const controls = document.getElementById('controls');
-controls.style.display = 'none'; // Hide controls by default on mobile
+    const controls = document.getElementById('controls');
+    controls.style.display = 'none'; // Hide controls by default on mobile
 
-toggleControls.addEventListener('click', () => {
-    if (controls.style.display === 'none') {
-        controls.style.display = 'flex';
-    } else {
-        controls.style.display = 'none';
-    }
-});
+    toggleControls.addEventListener('click', () => {
+        if (controls.style.display === 'none') {
+            controls.style.display = 'flex';
+        } else {
+            controls.style.display = 'none';
+        }
+    });
+</script>
 </body>
 </html>
