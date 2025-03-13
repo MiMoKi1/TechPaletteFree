@@ -313,19 +313,24 @@ main {
     border: 5px solid #ffffff; /* Optional: add a white border around the main content */
 }
 
-         .social-share {
+ .social-container {
     display: flex;
+    align-items: center;
     gap: 10px;
-    margin-top: 10px;
     justify-content: center;
+    margin-top: 10px;
+}
+.social-share {
+    display: flex;
+    gap: 5px;
 }
 .social-share button {
     background: #D8CBAF;
     border: none;
-    padding: 8px 12px;
+    padding: 5px 10px;
     border-radius: 5px;
     cursor: pointer;
-    font-size: 12px;
+    font-size: 10px;
     color: black;
 }
 .social-share button:hover {
@@ -433,17 +438,17 @@ main {
     <div id="copyright">
         <p>&copy; 2024 Tech Palette Mentor. All rights reserved.</p>
         </div>
-    <p style="font-size: 12px;">
-
+  <div class="social-container">
+    <div class="social-share">
+        <button onclick="shareOnFacebook()">Facebook</button>
+        <button onclick="shareOnTwitter()">Twitter</button>
+        <button onclick="shareOnPinterest()">Pinterest</button>
+    </div>
+    <div class="social-icons">
         <a href="https://www.instagram.com/techpalettementor"><img src="instagram.png" alt="Instagram" style="width:14px;height:14px;"></a>
         <a href="https://www.pinterest.com/techmentorpalette/"><img src="pinterest.png" alt="Pinterest" style="width:14px;height:14px;"></a>
         <a href="https://www.linkedin.com/company/techpalettementor/"><img src="linkedin.png" alt="LinkedIn" style="width:14px;height:14px;"></a>
-    </p>
-
-     <div class="social-share">
-    <button onclick="shareOnFacebook()">Share on Facebook</button>
-    <button onclick="shareOnTwitter()">Share on Twitter</button>
-    <button onclick="shareOnPinterest()">Share on Pinterest</button>
+    </div>
 </div>
 </footer>
      <script>
@@ -460,7 +465,7 @@ main {
             button.style.display = 'block';
             setTimeout(() => {
                 button.style.display = 'none';
-            }, 5000); // Show for 5 seconds
+            }, 7000); // Show for 7 seconds
         }
     }
 
@@ -468,6 +473,7 @@ main {
     document.getElementById('donateButton').addEventListener('click', () => {
         localStorage.setItem('hasDonated', 'true');
         clearInterval(donateInterval);
+         document.getElementById('donate-button').style.display = 'none'; // Hide immediately after clicking
     });
 
     // Start popup cycle (10 minute intervals)
