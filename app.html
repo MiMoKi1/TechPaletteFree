@@ -28,7 +28,14 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
     <title>Tech Palette Mentor</title>
 
-  
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-4YZ8N3B9R7"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-4YZ8N3B9R7');
+    </script>
 
     <style>
 
@@ -44,19 +51,8 @@
 }
 #donate-button:hover {
     transform: scale(1.1);
-}           body {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: flex-start;
-            margin: 0;
-            height: 100vh;
-            overflow: auto;
-            background-color: #FAF2E2;
-            font-size: 12px; /* Reduced font size */
-        }
-  <style>
-        body {
+}
+                                                                 body {
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -294,6 +290,52 @@
         #menu-icon.active + .dropdown {
             display: flex;
         }
+   body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    margin: 0;
+    overflow-y: auto;
+    height: auto;
+    min-height: 100vh;
+    background-color: #FFFFFF; /* This is already white */
+    font-size: 14px;
+    font-family: 'Poppins', sans-serif;
+    border: 5px solid #ffffff; /* Add a white border */
+    background-color: #F0F0F0; /* Set a color background for the body (light gray as an example) */
+}
+main {
+    padding: 20px;
+    width: 80%;
+    text-align: center;
+    background-color: #F0F0F0; /* Set the background color for the content */
+    border: 5px solid #ffffff; /* Optional: add a white border around the main content */
+}
+
+ .social-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    justify-content: center;
+    margin-top: 10px;
+}
+.social-share {
+    display: flex;
+    gap: 5px;
+}
+.social-share button {
+    background: #D8CBAF;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 10px;
+    color: black;
+}
+.social-share button:hover {
+    background: #C49337;
+}
 
     </style>
      <script type="application/ld+json">
@@ -308,9 +350,17 @@
 </script>
 </head>
 <body>
+    <div id="canvas-container">
+        <div id="header">Tech Palette Mentor</div>
+               
+        <a href="index.html">
+            <img id="logo" src="new-logo-Tech-Palette_mentor.png" alt="Palette Mentor Logo">
+        </a>
    
 
-    <!-- Menu Icon -->
+   
+
+ <!-- Menu Icon -->
         <img id="menu-icon" src="menu.png" alt="Menu Icon">
 
         <!-- Dropdown Menu -->
@@ -318,16 +368,10 @@
     <a href="index.html">Home</a>
  <a href="blog.html">Blog</a>	
         </div>
-<body>
-    <div id="canvas-container">
-        <div id="header">Tech Palette Mentor</div>
-        <a href="index.html">
-            <img id="logo" src="palettementor100x100transp.png" alt="Palette Mentor Logo">
-        </a>
-    
-   
-
-        <div id="features" style="display: none;"> <!-- Features container -->
+<a href="https://ko-fi.com/techpalettementor" target="_blank" id="donateButton">
+    <img src="DONATE.png" alt="Donate" id="donate-button">
+</a>   
+        <div id="features"> <!-- Features container -->
             <canvas id="canvas"></canvas>
             <div id="controls">
                 <div class="inline-controls">
@@ -374,7 +418,6 @@
             </div>
         </div> <!-- End of features container -->
    
-     
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/tinycolor2@1.4.2/dist/tinycolor-min.js"></script>
@@ -395,7 +438,12 @@
     <div id="copyright">
         <p>&copy; 2024 Tech Palette Mentor. All rights reserved.</p>
         </div>
-
+  <div class="social-container">
+    <div class="social-share">
+        <button onclick="shareOnFacebook()">Facebook</button>
+        <button onclick="shareOnTwitter()">Twitter</button>
+        <button onclick="shareOnPinterest()">Pinterest</button>
+    </div>
     <div class="social-icons">
         <a href="https://www.instagram.com/techpalettementor"><img src="instagram.png" alt="Instagram" style="width:14px;height:14px;"></a>
         <a href="https://www.pinterest.com/techmentorpalette/"><img src="pinterest.png" alt="Pinterest" style="width:14px;height:14px;"></a>
@@ -404,6 +452,56 @@
 </div>
 </footer>
      <script>
-  
+    // Donate Button Logic
+    let donateInterval;
+
+    function checkDonationStatus() {
+        return localStorage.getItem('hasDonated') === 'true';
+    }
+
+    function showDonateButton() {
+        if (!checkDonationStatus()) {
+            const button = document.getElementById('donate-button');
+            button.style.display = 'block';
+            setTimeout(() => {
+                button.style.display = 'none';
+            }, 7000); // Show for 7 seconds
+        }
+    }
+
+    // Initialize donation tracking
+    document.getElementById('donateButton').addEventListener('click', () => {
+        localStorage.setItem('hasDonated', 'true');
+        clearInterval(donateInterval);
+         document.getElementById('donate-button').style.display = 'none'; // Hide immediately after clicking
+    });
+
+    // Start popup cycle (10 minute intervals)
+    if (!checkDonationStatus()) {
+        donateInterval = setInterval(showDonateButton, 600000); // 10 minutes
+        setTimeout(showDonateButton, 600000); // Initial delay
+    }
+</script>
+
+     <script>
+    // Social Sharing Functions
+    function shareOnFacebook() {
+        const url = encodeURIComponent(window.location.href);
+        window.open(`https://www.facebook.com/sharer/sharer.php?u=${url}`, '_blank');
+    }
+
+    function shareOnTwitter() {
+        const text = encodeURIComponent("Check out this amazing color blending tool!");
+        const url = encodeURIComponent(window.location.href);
+        window.open(`https://twitter.com/intent/tweet?text=${text}&url=${url}`, '_blank');
+    }
+
+    function shareOnPinterest() {
+        const url = encodeURIComponent(window.location.href);
+        const media = encodeURIComponent("https://www.palettementor.work/images/thumbnail.jpg");
+        const description = encodeURIComponent("Tech Palette Mentor - Color Blending Made Simple");
+        window.open(`https://pinterest.com/pin/create/button/?url=${url}&media=${media}&description=${description}`, '_blank');
+    }
+</script>
 </body>
 </html>
