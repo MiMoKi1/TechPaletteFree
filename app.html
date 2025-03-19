@@ -62,6 +62,18 @@
             background-color: #FAF2E2;
             font-size: 12px; /* Reduced font size */
         }
+  <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            margin: 0;
+            height: 100vh;
+            overflow: auto;
+            background-color: #FAF2E2;
+            font-size: 12px; /* Reduced font size */
+        }
         #header {
             text-align: center;
             margin: 10px 0;
@@ -79,69 +91,34 @@
             height: auto;
             z-index: 100;
         }
-#canvas-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    height: 100%;
-    overflow: auto;
-    background-color: #FAF2E2;
-}
-
-#canvas {
-    max-width: 100%;
-    max-height: 100%;
-    object-fit: contain; /* Ensures the image fits within the canvas without distortion */
-}
-  #controls {
-    display: flex;
-    flex-direction: column;
-    position: absolute;
-    top: 0;
-    right: 0;
-    padding: 5px;
-    background-color: #F5F5F5;
-    border: 1px solid #ccc;
-    z-index: 10;
-    font-size: 12px;
-    max-width: 280px;
-}
-
-/* Adjust controls for smaller screens */
-@media (max-width: 768px) {
-    #controls {
-        max-width: 200px; /* Reduce width */
-        font-size: 10px; /* Reduce font size */
-        padding: 3px; /* Reduce padding */
-        display: none; /* Hide controls by default on mobile */
-        position: fixed;
-        top: 50px;
-        right: 10px;
-        background-color: rgba(245, 245, 245, 0.9); /* Semi-transparent background */
-        border: 1px solid #ccc;
-        border-radius: 5px;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    }
-
-    button, input[type="color"], input[type="range"] {
-        padding: 3px 5px; /* Reduce button padding */
-        font-size: 10px; /* Reduce button font size */
-    }
-
-    #palette {
-        max-height: 200px; /* Reduce palette height */
-    }
-
-    .palette-item {
-        margin: 2px 0; /* Reduce palette item margin */
-    }
-
-    .swatch {
-        width: 12px; /* Reduce swatch size */
-        height: 12px;
-    }
-}
+        #canvas-container {
+            width: 100%;
+            height: 100%;
+            position: relative;
+            overflow: auto;
+            background-color: #FAF2E2;
+        }
+        #canvas {
+            display: block;
+            max-width: 100%;
+            max-height: 100%;
+            width: auto;
+            height: auto;
+            transition: transform 0.2s ease-in-out;
+        }
+        #controls {
+            display: flex;
+            flex-direction: column;
+            position: absolute;
+            top: 0;
+            right: 0;
+            padding: 5px;
+            background-color: #F5F5F5;
+            border: 1px solid #ccc;
+            z-index: 10;
+            font-size: 12px;
+            max-width: 280px;
+        }
 
                .inline-controls {
             display: flex;
@@ -324,52 +301,6 @@
         #menu-icon.active + .dropdown {
             display: flex;
         }
-   body {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
-    margin: 0;
-    overflow-y: auto;
-    height: auto;
-    min-height: 100vh;
-    background-color: #FFFFFF; /* This is already white */
-    font-size: 14px;
-    font-family: 'Poppins', sans-serif;
-    border: 5px solid #ffffff; /* Add a white border */
-    background-color: #F0F0F0; /* Set a color background for the body (light gray as an example) */
-}
-main {
-    padding: 20px;
-    width: 80%;
-    text-align: center;
-    background-color: #F0F0F0; /* Set the background color for the content */
-    border: 5px solid #ffffff; /* Optional: add a white border around the main content */
-}
-
- .social-container {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    justify-content: center;
-    margin-top: 10px;
-}
-.social-share {
-    display: flex;
-    gap: 5px;
-}
-.social-share button {
-    background: #D8CBAF;
-    border: none;
-    padding: 5px 10px;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 10px;
-    color: black;
-}
-.social-share button:hover {
-    background: #C49337;
-}
 
     </style>
      <script type="application/ld+json">
@@ -402,10 +333,18 @@ main {
     <a href="index.html">Home</a>
  <a href="blog.html">Blog</a>	
         </div>
-<a href="https://ko-fi.com/techpalettementor" target="_blank" id="donateButton">
-    <img src="DONATE.png" alt="Donate" id="donate-button">
-</a>   
-        <div id="features"> <!-- Features container -->
+<body>
+    <div id="canvas-container">
+        <div id="header">Tech Palette Mentor</div>
+        <a href="index.html">
+            <img id="logo" src="palettementor100x100transp.png" alt="Palette Mentor Logo">
+        </a>
+     <img id="google-login" src="signinwithgoogle.jpg" alt="Sign in with Google" style="cursor: pointer;" />
+
+
+   
+
+        <div id="features" style="display: none;"> <!-- Features container -->
             <canvas id="canvas"></canvas>
             <div id="controls">
                 <div class="inline-controls">
@@ -452,6 +391,7 @@ main {
             </div>
         </div> <!-- End of features container -->
    
+     
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/tinycolor2@1.4.2/dist/tinycolor-min.js"></script>
@@ -472,12 +412,7 @@ main {
     <div id="copyright">
         <p>&copy; 2024 Tech Palette Mentor. All rights reserved.</p>
         </div>
-  <div class="social-container">
-    <div class="social-share">
-        <button onclick="shareOnFacebook()">Facebook</button>
-        <button onclick="shareOnTwitter()">Twitter</button>
-        <button onclick="shareOnPinterest()">Pinterest</button>
-    </div>
+
     <div class="social-icons">
         <a href="https://www.instagram.com/techpalettementor"><img src="instagram.png" alt="Instagram" style="width:14px;height:14px;"></a>
         <a href="https://www.pinterest.com/techmentorpalette/"><img src="pinterest.png" alt="Pinterest" style="width:14px;height:14px;"></a>
@@ -486,84 +421,6 @@ main {
 </div>
 </footer>
      <script>
-    // Donate Button Logic
-    let donateInterval;
-
-    function checkDonationStatus() {
-        return localStorage.getItem('hasDonated') === 'true';
-    }
-
-    function showDonateButton() {
-        if (!checkDonationStatus()) {
-            const button = document.getElementById('donate-button');
-            button.style.display = 'block';
-            setTimeout(() => {
-                button.style.display = 'none';
-            }, 7000); // Show for 7 seconds
-        }
-    }
-
-    // Initialize donation tracking
-    document.getElementById('donateButton').addEventListener('click', () => {
-        localStorage.setItem('hasDonated', 'true');
-        clearInterval(donateInterval);
-         document.getElementById('donate-button').style.display = 'none'; // Hide immediately after clicking
-    });
-
-    // Start popup cycle (10 minute intervals)
-    if (!checkDonationStatus()) {
-        donateInterval = setInterval(showDonateButton, 600000); // 10 minutes
-        setTimeout(showDonateButton, 600000); // Initial delay
-    }
-</script>
-
-     <script>
-    // Social Sharing Functions
-    function shareOnFacebook() {
-        const url = encodeURIComponent(window.location.href);
-        window.open(`https://www.facebook.com/sharer/sharer.php?u=${url}`, '_blank');
-    }
-
-    function shareOnTwitter() {
-        const text = encodeURIComponent("Check out this amazing color blending tool!");
-        const url = encodeURIComponent(window.location.href);
-        window.open(`https://twitter.com/intent/tweet?text=${text}&url=${url}`, '_blank');
-    }
-
-    function shareOnPinterest() {
-        const url = encodeURIComponent(window.location.href);
-        const media = encodeURIComponent("https://www.palettementor.work/images/thumbnail.jpg");
-        const description = encodeURIComponent("Tech Palette Mentor - Color Blending Made Simple");
-        window.open(`https://pinterest.com/pin/create/button/?url=${url}&media=${media}&description=${description}`, '_blank');
-    }
-</script>
-
-<script>
-    // Add this script to toggle controls on mobile
-    const toggleControls = document.createElement('button');
-    toggleControls.id = 'toggleControls';
-    toggleControls.textContent = '☰ Controls';
-    toggleControls.style.position = 'absolute';
-    toggleControls.style.top = '10px';
-    toggleControls.style.right = '10px';
-    toggleControls.style.zIndex = '1000';
-    toggleControls.style.padding = '5px';
-    toggleControls.style.backgroundColor = '#D8CBAF';
-    toggleControls.style.border = 'none';
-    toggleControls.style.borderRadius = '5px';
-    toggleControls.style.cursor = 'pointer';
-    document.body.appendChild(toggleControls);
-
-    const controls = document.getElementById('controls');
-    controls.style.display = 'none'; // Hide controls by default on mobile
-
-    toggleControls.addEventListener('click', () => {
-        if (controls.style.display === 'none') {
-            controls.style.display = 'flex';
-        } else {
-            controls.style.display = 'none';
-        }
-    });
-</script>
+  
 </body>
 </html>
