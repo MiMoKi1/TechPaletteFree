@@ -185,21 +185,21 @@
 </div>
 
 <script defer>
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-  const menuButton = document.getElementById('menu-icon');
-  const dropdown = document.getElementById('dropdown');
-  
-  menuButton.addEventListener('click', function(e) {
-    e.stopPropagation();
-    dropdown.classList.toggle('active');
+  document.addEventListener('DOMContentLoaded', function() {
+    const menuButton = document.getElementById('menu-icon');
+    const dropdown = document.getElementById('dropdown');
+    
+    menuButton.addEventListener('click', function(e) {
+      e.stopPropagation();
+      dropdown.classList.toggle('active');
+    });
+    
+    document.addEventListener('click', function() {
+      dropdown.classList.remove('active');
+    });
   });
-  
-  document.addEventListener('click', function() {
-    dropdown.classList.remove('active');
-  });
-});
 </script>
+
 
 <script>
   window.addEventListener('load', () => {
