@@ -14,158 +14,158 @@
 <meta property="og:description" content="Stop guessing colour mixes - instantly find the right paint blend for any digital color. Free web tool for artists.">
 <meta property="og:image" content="https://www.palettementor.work/images/social-preview.webp">
 <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://fundingchoicesmessages.google.com; img-src 'self' data: https://www.palettementor.work; style-src 'self' 'unsafe-inline'">
-    <link rel="icon" type="image/x-icon" href="2favicon.ico"> 
-  <link rel="preload" href="111-small.webp" as="image" media="(max-width: 800px)">
+    <link rel="icon" type="image/x-icon" href="2favicon.ico">
+  <link rel="preload" href="111-small.webp" as="image" media="(max-width: 800px)">
 <link rel="preload" href="111-medium.webp" as="image" media="(min-width: 801px)">
 <link rel="preload" href="paintbrush-cursor.png" as="image">
- <style>
-    body {
-    margin: 0;
-    padding: 0;
-    font-family: Arial, sans-serif;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    background-color: #f9f9f9;
-    cursor: url('paintbrush-cursor.png'), auto;
+ <style>
+    body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f9f9f9;
+    cursor: url('paintbrush-cursor.png'), auto;
 }
 
 .container {
-    max-width: 1200px;
-    margin: auto;
-    padding: 20px;
-    position: relative;
+    max-width: 1200px;
+    margin: auto;
+    padding: 20px;
+    position: relative;
 }
 
 /* Hero Section */
 .hero img {
-    width: 100vw;
-    max-width: 1200px;
-    height: auto;
+    width: 100vw;
+    max-width: 1200px;
+    height: auto;
 }
 
 /* Dropdown Menu Styles */
 #menu-icon {
-    position: absolute;
-    top: 120px;
-    left: 10px;
-    width: 40px;
-    height: 40px;
-    cursor: pointer;
-    transition: transform 0.3s ease, filter 0.3s ease;
+    position: absolute;
+    top: 120px;
+    left: 10px;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    transition: transform 0.3s ease, filter 0.3s ease;
 }
 
 #menu-icon:hover {
-    transform: scale(1.1);
-    filter: brightness(1.2);
+    transform: scale(1.1);
+    filter: brightness(1.2);
 }
 
 .dropdown {
-    position: absolute;
-    top: 170px;
-    left: 10px;
-    background-color: #FAF2E2;
-    border: 1px solid #8B5B29;
-    border-radius: 5px;
-    display: none;
-    flex-direction: column;
-    width: 160px;
-    padding: 5px;
+    position: absolute;
+    top: 170px;
+    left: 10px;
+    background-color: #FAF2E2;
+    border: 1px solid #8B5B29;
+    border-radius: 5px;
+    display: none;
+    flex-direction: column;
+    width: 160px;
+    padding: 5px;
+    z-index: 10; /* Ensure dropdown is above other elements */
+}
+
+.dropdown.active {
+    display: flex;
 }
 
 .dropdown a {
-    text-decoration: none;
-    color: #8B5B29;
-    padding: 10px;
-    display: block;
-    transition: background-color 0.3s ease, font-weight 0.3s ease;
+    text-decoration: none;
+    color: #8B5B29;
+    padding: 10px;
+    display: block;
+    transition: background-color 0.3s ease, font-weight 0.3s ease;
 }
 
 .dropdown a:hover {
-    background-color: #8B5B29;
-    color: white;
-    font-weight: bold;
-}
-
-#menu-icon.active + .dropdown {
-    display: flex; /* Make the dropdown visible when active */
+    background-color: #8B5B29;
+    color: white;
+    font-weight: bold;
 }
 
 /* Skip Link */
 .skip-link {
-    position: absolute;
-    top: -40px;
-    left: 0;
-    padding: 8px;
-    background: #000;
-    color: #fff;
-    z-index: 1001;
+    position: absolute;
+    top: -40px;
+    left: 0;
+    padding: 8px;
+    background: #000;
+    color: #fff;
+    z-index: 1001;
 }
 
 .skip-link:focus {
-    top: 0;
+    top: 0;
 }
 
 /* Visually Hidden */
 .visually-hidden {
-    position: absolute;
-    clip: rect(0 0 0 0);
-    width: 1px;
-    height: 1px;
-    margin: -1px;
-    overflow: hidden;
+    position: absolute;
+    clip: rect(0 0 0 0);
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
 }
 
 /* Image Styling */
 img {
-    max-width: 100%;
-    height: auto;
-    display: block;
+    max-width: 100%;
+    height: auto;
+    display: block;
 }
 
 /* Buttons */
 .buttons a {
-    display: inline-block;
-    margin: 10px;
+    display: inline-block;
+    margin: 10px;
 }
 
 /* Icons */
 .icons a {
-    display: inline-block;
-    margin: 5px;
+    display: inline-block;
+    margin: 5px;
 }
 
 /* Responsive Image Sizing */
 picture img {
-    width: 100%;
-    height: auto;
+    width: 100%;
+    height: auto;
 }
 
 /* Section Padding */
 .section {
-    margin: 20px 0;
+    margin: 20px 0;
 }
 
 
-  </style>
-  
+  </style>
+ 
 <link rel="stylesheet" href="styles.css" media="print" onload="this.media='all'">
 </head>
 <body>
-    
+   
 <a href="#maincontent" class="skip-link">Skip to main content</a>
 <div id="canvas-container">
 
-    
-  <img id="menu-icon" src="menu.png" alt="Menu Icon">
-     <!-- Dropdown Menu -->
-        <div class="dropdown">
+   
+  <img id="menu-icon" src="menu.png" alt="Menu Icon">
+             <div class="dropdown">
 <a href="index.html" aria-label="Home">Home</a>
 <a href="blog.html" aria-label="Blog">Blog</a>
 <a href="app.html" aria-label="Web App">Web App</a>
 </div>
-    
+   
 <main id="maincontent" role="main">
 <div class="container">
 <header class="hero section">
@@ -192,26 +192,25 @@ picture img {
 </div>
 </div>
 <script>
-    window.addEventListener("DOMContentLoaded", () => {
-        const menuIcon = document.getElementById("menu-icon");
-        const dropdown = document.querySelector(".dropdown");
+    window.addEventListener("DOMContentLoaded", () => {
+        const menuIcon = document.getElementById("menu-icon");
+        const dropdown = document.querySelector(".dropdown");
 
-        if (menuIcon && dropdown) {
-            menuIcon.addEventListener("click", (e) => {
-                e.stopPropagation(); // Prevent the click event from propagating
-                dropdown.classList.toggle("active"); // Toggle the dropdown menu visibility
-            });
+        if (menuIcon && dropdown) {
+            menuIcon.addEventListener("click", () => {
+                dropdown.classList.toggle("active"); // Toggle the dropdown menu visibility
+            });
 
-            // Close the dropdown if the user clicks outside of the menu
-            document.addEventListener("click", (e) => {
-                if (!dropdown.contains(e.target) && e.target !== menuIcon) {
-                    dropdown.classList.remove("active");
-                }
-            });
-        } else {
-            console.error("Menu icon or dropdown not found");
-        }
-    });
+            // Close the dropdown if the user clicks outside of the menu
+            document.addEventListener("click", (e) => {
+                if (!dropdown.contains(e.target) && e.target !== menuIcon) {
+                    dropdown.classList.remove("active");
+                }
+            });
+        } else {
+            console.error("Menu icon or dropdown not found");
+        }
+    });
 </script>
 
 
