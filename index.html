@@ -50,7 +50,28 @@
 <a href="https://youtu.be/cAz0vP7UZVU" target="_blank" rel="noopener noreferrer" aria-label="YouTube"><img src="TPM-YT.png" alt="YouTube" width="40" height="40" loading="lazy"></a>
 </div>
 </div>
-<script defer>document.addEventListener("DOMContentLoaded",function(){const e=document.getElementById("menu-icon"),t=document.getElementById("dropdown");e.addEventListener("click",function(n){n.stopPropagation(),t.classList.toggle("active")}),document.addEventListener("click",function(){t.classList.remove("active")})});</script>
+<script>
+  window.addEventListener("DOMContentLoaded", () => {
+    const menu = document.getElementById("menu-icon");
+    const dropdown = document.getElementById("dropdown");
+
+    if (menu && dropdown) {
+      menu.addEventListener("click", (e) => {
+        e.stopPropagation();
+        dropdown.classList.toggle("active");
+      });
+
+      document.addEventListener("click", (e) => {
+        if (!dropdown.contains(e.target) && e.target !== menu) {
+          dropdown.classList.remove("active");
+        }
+      });
+    } else {
+      console.error("Menu icon or dropdown not found");
+    }
+  });
+</script>
+
 <script>window.addEventListener("load",()=>{setTimeout(()=>{const e=document.createElement("script");e.src="https://fundingchoicesmessages.google.com/i/pub-1920074084827369?ers=1",e.async=!0,document.body.appendChild(e)},2e3)});</script>
 </body>
 </html>
