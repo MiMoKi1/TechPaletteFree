@@ -46,18 +46,26 @@
         }
 
         /* Dropdown Menu Styles */
-        #menu-icon {
+        #menu-button {
             position: absolute;
             top: 10px;
             left: 10px;
-            width: 40px;
+            width: 80px;  /* Increased width for the button */
             height: 40px;
             cursor: pointer;
             transition: transform 0.3s ease, filter 0.3s ease;
             z-index: 1000;
+            background-color: #4CAF50; /* Green background */
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
 
-        #menu-icon:hover {
+        #menu-button:hover {
             transform: scale(1.1);
             filter: brightness(1.2);
         }
@@ -154,8 +162,7 @@
 </head>
 <body>
     <a href="#maincontent" class="skip-link">Skip to main content</a>
-    <img id="menu-icon" src="menu.png" alt="Menu Icon">
-    <div class="dropdown">
+    <button id="menu-button">Menu</button>  <div class="dropdown">
         <a href="https://www.palettementor.work/app.html"  aria-label="Web App">Web App</a>
         <a href="https://www.palettementor.work/blog.html" aria-label="Blog">Blog</a>
     </div>
@@ -189,14 +196,15 @@
     </div>
     <script>
         document.addEventListener("DOMContentLoaded", () => {
-            const menuIcon = document.getElementById("menu-icon");
+            const menuButton = document.getElementById("menu-button");
             const dropdown = document.querySelector(".dropdown");
 
-            if (menuIcon && dropdown) {
-                menuIcon.addEventListener("click", (e) => {
+            if (menuButton && dropdown) {
+                menuButton.addEventListener("click", (e) => {
                     try {
                         e.stopPropagation();
                         dropdown.classList.toggle("active");
+                        console.log("Menu button clicked. Dropdown active state:", dropdown.classList.contains("active"));
                     } catch (error) {
                         console.error("Error handling click event:", error);
                     }
@@ -204,21 +212,22 @@
 
                 document.addEventListener("click", (e) => {
                     try {
-                        if (!dropdown.contains(e.target) && e.target !== menuIcon) {
+                        if (!dropdown.contains(e.target) && e.target !== menuButton) { // Changed from menuIcon to menuButton
                             dropdown.classList.remove("active");
+                            console.log("Document clicked. Dropdown active state:", dropdown.classList.contains("active"));
                         }
                     } catch (error) {
-                         console.error("Error handling document click:", error);
+                        console.error("Error handling document click:", error);
                     }
                 });
             } else {
-                if (!menuIcon) {
-                    console.error("Menu icon element not found.  Check your HTML ID.");
+                if (!menuButton) {
+                    console.error("Menu button element not found.  Check your HTML ID."); // Changed to menuButton
                 }
                 if (!dropdown) {
                     console.error("Dropdown element not found.  Check your HTML class.");
                 }
-                console.error("Menu icon or dropdown not found");
+                console.error("Menu button or dropdown not found"); // Changed to menuButton
             }
         });
     </script>
