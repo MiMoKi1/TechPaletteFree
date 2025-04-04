@@ -9,25 +9,48 @@
 <meta property="og:title" content="Palette Mentor: Your Digital-to-Real Paint Mixing Tool">
 <meta property="og:description" content="Stop guessing color mixes - instantly find the right paint blend for any digital color. Free web tool for artists.">
 <meta property="og:image" content="https://www.palettementor.work/images/social-preview.webp">
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://fundingchoicesmessages.google.com; img-src 'self' data:; style-src 'self' 'unsafe-inline'">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://fundingchoicesmessages.google.com; img-src 'self' data: https://www.palettementor.work; style-src 'self' 'unsafe-inline'">
 <link rel="preload" href="111-small.webp" as="image" media="(max-width: 800px)">
 <link rel="preload" href="111-medium.webp" as="image" media="(min-width: 801px)">
 <link rel="preload" href="paintbrush-cursor.png" as="image">
-<style>.hero,.menu,h1{opacity:0;animation:fadeIn .3s ease-in forwards}@keyframes fadeIn{to{opacity:1}}
+<style>
+  .skip-link {
+    position: absolute;
+    top: -40px;
+    left: 0;
+    padding: 8px;
+    background: #000;
+    color: white;
+    z-index: 1001;
+  }
+  .skip-link:focus {
+    top: 0;
+  }
+  .visually-hidden {
+    position: absolute;
+    clip: rect(0 0 0 0);
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+  }
+  .hero,.menu,h1{opacity:0;animation:fadeIn .3s ease-in forwards}
+  @keyframes fadeIn{to{opacity:1}}
   #menu-icon{border:none;background:url(menu.webp) center/contain no-repeat;position:absolute;top:120px;left:10px;width:40px;height:40px;cursor:pointer;z-index:1001}
   .dropdown{display:none;position:absolute;top:160px;left:10px;background:#fff;box-shadow:0 2px 5px rgba(0,0,0,.2);z-index:1000;padding:10px;border-radius:5px}
-  .container{max-width:1200px;margin:auto;padding:20px;position:relative} img{max-width:100%;height:auto;display:block;aspect-ratio:attr(width)/attr(height)}</style></head>
+  .container{max-width:1200px;margin:auto;padding:20px;position:relative}
+  img{max-width:100%;height:auto;display:block;aspect-ratio:attr(width)/attr(height)}
+</style>
 <link rel="stylesheet" href="styles.css" media="print" onload="this.media='all'">
 </head>
   
-  <body>
+<body>
 <a href="#maincontent" class="skip-link">Skip to main content</a>
 <div id="canvas-container">
-<a href="index.html" aria-label="Home"></a>
 <button id="menu-icon" aria-expanded="false" aria-controls="dropdown">
   <span class="visually-hidden">Menu</span>
 </button>
-<div class="dropdown">
+<div class="dropdown" id="dropdown">
 <a href="index.html" aria-label="Home">Home</a>
 <a href="blog.html" aria-label="Blog">Blog</a>
 <a href="app.html" aria-label="Web App">Web App</a>
@@ -36,18 +59,33 @@
 <div class="container">
   
 <header class="hero section">
-        <picture>
-          <source srcset="111-small.webp" media="(max-width: 800px)" type="image/webp">
-          <source srcset="111-medium.webp" media="(min-width: 801px)" type="image/webp">
-          <img src="111-medium.jpg" alt="Hero" width="1200" height="630" loading="eager" fetchpriority="high">
-        </picture>
-      </header>
+  <picture>
+    <source srcset="111-small.webp" media="(max-width: 800px)" type="image/webp">
+    <source srcset="111-medium.webp" media="(min-width: 801px)" type="image/webp">
+    <img src="111-medium.webp" alt="Hero" width="1200" height="630" loading="eager" fetchpriority="high">
+  </picture>
+</header>
+
 <section class="section">
-<picture><source srcset="222.webp" type="image/webp"><img src="222.png" alt="About" width="800" height="450" loading="lazy"></picture>
+  <picture>
+    <source srcset="222.webp" type="image/webp">
+    <img src="222.webp" alt="About" width="800" height="450" loading="lazy">
+  </picture>
 </section>
+
 <div class="buttons">
-<a href="https://www.palettementor.work/app.html" target="_blank" rel="noopener" aria-label="Web App"><picture><source srcset="Link.webp" type="image/webp"><img src="Link.png" alt="App Link" width="300" height="100" loading="lazy"></picture></a>
-<a href="https://ko-fi.com/techpalettementor" target="_blank" rel="noopener" aria-label="Donate"><picture><source srcset="DONATE.webp" type="image/webp"><img src="DONATE.png" alt="Donate" width="300" height="100" loading="lazy"></picture></a>
+  <a href="https://www.palettementor.work/app.html" target="_blank" rel="noopener noreferrer" aria-label="Web App">
+    <picture>
+      <source srcset="Link.webp" type="image/webp">
+      <img src="Link.webp" alt="App Link" width="300" height="100" loading="lazy">
+    </picture>
+  </a>
+  <a href="https://ko-fi.com/techpalettementor" target="_blank" rel="noopener noreferrer" aria-label="Donate">
+    <picture>
+      <source srcset="DONATE.webp" type="image/webp">
+      <img src="DONATE.webp" alt="Donate" width="300" height="100" loading="lazy">
+    </picture>
+  </a>
 </div>
 <section class="section">
 <a href="https://youtu.be/cAz0vP7UZVU" target="_blank" rel="noopener" aria-label="Tutorial"><picture><source srcset="333.webp" type="image/webp"><img src="333.png" alt="Tutorial" width="800" height="450" loading="lazy"></picture></a>
@@ -74,18 +112,25 @@
 <a href="https://ko-fi.com/techpalettementor" target="_blank" rel="noopener" aria-label="Donate"><picture><source srcset="DONATE.webp" type="image/webp"><img src="DONATE.png" alt="Donate" width="300" height="100" loading="lazy"></picture></a>
 </div>
 </div>
-</main>
 <div class="icons">
-<a href="https://www.instagram.com/mmyking1/" target="_blank" rel="noopener" aria-label="Instagram"><img src="mmyking-insta.pngp" alt="Instagram" width="40" height="40"></a>
-<a href="https://www.instagram.com/techpalettementor/" target="_blank" rel="noopener" aria-label="Instagram"><img src="TPM-insta.png" alt="Instagram" width="40" height="40"></a>
-<a href="https://youtu.be/cAz0vP7UZVU" target="_blank" rel="noopener" aria-label="YouTube"><img src="TPM-YT.webp" alt="YouTube" width="40" height="40" loading="lazy"></a>
+  <a href="https://www.instagram.com/mmyking1/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+    <img src="mmyking-insta.webp" alt="Instagram" width="40" height="40" loading="lazy">
+  </a>
+  <a href="https://www.instagram.com/techpalettementor/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+    <img src="TPM-insta.webp" alt="Instagram" width="40" height="40" loading="lazy">
+  </a>
+  <a href="https://youtu.be/cAz0vP7UZVU" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
+    <img src="TPM-YT.webp" alt="YouTube" width="40" height="40" loading="lazy">
+  </a>
 </div>
 </div>
+
 <script defer>
   // Optimized menu toggle
-  const menuToggle = () => {
+  document.addEventListener('DOMContentLoaded', () => {
     const menu = document.getElementById('menu-icon');
     const dropdown = document.getElementById('dropdown');
+    
     if (menu && dropdown) {
       menu.addEventListener('click', (e) => {
         e.stopPropagation();
@@ -95,17 +140,17 @@
       });
       
       document.addEventListener('click', (e) => {
-        if (!dropdown.contains(e.target) {
+        if (!dropdown.contains(e.target) && e.target !== menu) {
           menu.setAttribute('aria-expanded', 'false');
           dropdown.classList.remove('active');
         }
       });
     }
-  };
-  menuToggle();
+  });
 </script>
+
 <script>
-  window.addEventListener('DOMContentLoaded', () => {
+  window.addEventListener('load', () => {
     // Load non-critical third-party scripts after 2s
     setTimeout(() => {
       const fcScript = document.createElement('script');
@@ -117,3 +162,4 @@
 </script>
 </body>
 </html>
+
