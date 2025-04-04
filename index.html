@@ -46,7 +46,7 @@
 </div>
 </div>
 <script>
-const menuIcon=document.getElementById("menu-icon");const dropdown=document.querySelector(".dropdown");menuIcon.addEventListener("click",(e)=>{e.stopPropagation();dropdown.classList.toggle("active")});document.addEventListener("click",(e)=>{if(!dropdown.contains(e.target)&&!menuIcon.contains(e.target)){dropdown.classList.remove("active")}});dropdown.addEventListener("click",(e)=>{if(window.innerWidth<=768){dropdown.classList.remove("active")}});
+const menuIcon=document.getElementById("menu-icon"),dropdown=document.querySelector(".dropdown");menuIcon.addEventListener("click",n=>{n.stopPropagation(),dropdown.classList.toggle("active")}),document.addEventListener("click",n=>{dropdown.contains(n.target)||menuIcon.contains(n.target)||dropdown.classList.remove("active")}),dropdown.addEventListener("click",n=>{window.innerWidth<=768&&dropdown.classList.remove("active")});
 </script>
 </body>
 </html>
