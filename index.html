@@ -13,7 +13,7 @@
     <meta property="og:title" content="Palette Mentor: Your Digital-to-Real Paint Mixing Tool">
     <meta property="og:description" content="Stop guessing colour mixes - instantly find the right paint blend for any digital color. Free web tool for artists.">
     <meta property="og:image" content="https://www.palettementor.work/images/social-preview.webp">
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://fundingchoicesmessages.google.com; img-src 'self' data: https://www.palettementor.work; style-src 'self' 'unsafe-inline'">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://fundingchoicesmessages.google.com; img-src 'self' 'unsafe-inline'">
     <link rel="icon" type="image/x-icon" href="2favicon.ico">
     <link rel="preload" href="111-small.webp" as="image" media="(max-width: 800px)">
     <link rel="preload" href="111-medium.webp" as="image" media="(min-width: 801px)">
@@ -200,7 +200,13 @@
             const dropdown = document.querySelector(".dropdown");
 
             if (menuButton && dropdown) {
-                menuButton.addEventListener("click", (e) => {
+                // Remove the old event listener, to be safe.
+                menuButton.removeEventListener("click", toggleMenu);
+
+                // Add the event listener directly.
+                menuButton.addEventListener("click", toggleMenu);
+
+                function toggleMenu(e) {
                     try {
                         e.stopPropagation();
                         dropdown.classList.toggle("active");
@@ -208,11 +214,11 @@
                     } catch (error) {
                         console.error("Error handling click event:", error);
                     }
-                });
+                }
 
                 document.addEventListener("click", (e) => {
                     try {
-                        if (!dropdown.contains(e.target) && e.target !== menuButton) { // Changed from menuIcon to menuButton
+                        if (!dropdown.contains(e.target) && e.target !== menuButton) {
                             dropdown.classList.remove("active");
                             console.log("Document clicked. Dropdown active state:", dropdown.classList.contains("active"));
                         }
@@ -222,12 +228,12 @@
                 });
             } else {
                 if (!menuButton) {
-                    console.error("Menu button element not found.  Check your HTML ID."); // Changed to menuButton
+                    console.error("Menu button element not found.  Check your HTML ID.");
                 }
                 if (!dropdown) {
                     console.error("Dropdown element not found.  Check your HTML class.");
                 }
-                console.error("Menu button or dropdown not found"); // Changed to menuButton
+                console.error("Menu button or dropdown not found");
             }
         });
     </script>
