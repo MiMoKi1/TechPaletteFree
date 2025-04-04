@@ -45,55 +45,6 @@
             height: auto;
         }
 
-        /* Dropdown Menu Styles */
-        #menu-icon {
-            position: absolute;
-            top: 120px;
-            left: 10px;
-            width: 40px;
-            height: 40px;
-            cursor: pointer;
-            transition: transform 0.3s ease, filter 0.3s ease;
-            z-index: 1000; /* Added z-index to ensure it's above other elements */
-        }
-
-        #menu-icon:hover {
-            transform: scale(1.1);
-            filter: brightness(1.2);
-        }
-
-        .dropdown {
-            position: absolute;
-            top: 170px;
-            left: 10px;
-            background-color: #FAF2E2;
-            border: 1px solid #8B5B29;
-            border-radius: 5px;
-            display: none;
-            flex-direction: column;
-            width: 160px;
-            padding: 5px;
-            z-index: 999; /* Added z-index, lower than menu-icon */
-        }
-
-        .dropdown.active {
-            display: flex; /* Make the dropdown visible when active */
-        }
-
-        .dropdown a {
-            text-decoration: none;
-            color: #8B5B29;
-            padding: 10px;
-            display: block;
-            transition: background-color 0.3s ease, font-weight 0.3s ease;
-        }
-
-        .dropdown a:hover {
-            background-color: #8B5B29;
-            color: white;
-            font-weight: bold;
-        }
-
         /* Skip Link */
         .skip-link {
             position: absolute;
@@ -155,12 +106,6 @@
 <body>
     <a href="#maincontent" class="skip-link">Skip to main content</a>
     <div id="canvas-container">
-        <img id="menu-icon" src="menu.png" alt="Menu Icon">
-        <div class="dropdown">
-            <a href="index.html" aria-label="Home">Home</a>
-            <a href="blog.html" aria-label="Blog">Blog</a>
-            <a href="app.html" aria-label="Web App">Web App</a>
-        </div>
         <main id="maincontent" role="main">
             <div class="container">
                 <header class="hero section">
@@ -188,27 +133,5 @@
             </div>
         </main>
     </div>
-    <script>
-        window.addEventListener("DOMContentLoaded", () => {
-            const menuIcon = document.getElementById("menu-icon");
-            const dropdown = document.querySelector(".dropdown");
-
-            if (menuIcon && dropdown) {
-                menuIcon.addEventListener("click", (e) => {
-                    e.stopPropagation(); // Prevent the click event from propagating
-                    dropdown.classList.toggle("active"); // Toggle the dropdown menu visibility
-                });
-
-                // Close the dropdown if the user clicks outside of the menu
-                document.addEventListener("click", (e) => {
-                    if (!dropdown.contains(e.target) && e.target !== menuIcon) {
-                        dropdown.classList.remove("active");
-                    }
-                });
-            } else {
-                console.error("Menu icon or dropdown not found");
-            }
-        });
-    </script>
 </body>
 </html>
