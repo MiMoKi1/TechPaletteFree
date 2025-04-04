@@ -13,7 +13,7 @@
     <meta property="og:title" content="Palette Mentor: Your Digital-to-Real Paint Mixing Tool">
     <meta property="og:description" content="Stop guessing colour mixes - instantly find the right paint blend for any digital color. Free web tool for artists.">
     <meta property="og:image" content="https://www.palettementor.work/images/social-preview.webp">
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://fundingchoicesmessages.google.com; img-src 'self' 'unsafe-inline'">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://fundingchoicesmessages.google.com; img-src 'self' data: https://www.palettementor.work; style-src 'self' 'unsafe-inline'">
     <link rel="icon" type="image/x-icon" href="2favicon.ico">
     <link rel="preload" href="111-small.webp" as="image" media="(max-width: 800px)">
     <link rel="preload" href="111-medium.webp" as="image" media="(min-width: 801px)">
@@ -35,7 +35,7 @@
             max-width: 1200px;
             margin: auto;
             padding: 20px;
-            position: relative; /* Important for absolute positioning of dropdown */
+            position: relative;
         }
 
         /* Hero Section */
@@ -46,26 +46,18 @@
         }
 
         /* Dropdown Menu Styles */
-        #menu-button {
+        #menu-icon {
             position: absolute;
             top: 10px;
             left: 10px;
-            width: 80px;  /* Increased width for the button */
+            width: 40px;
             height: 40px;
             cursor: pointer;
             transition: transform 0.3s ease, filter 0.3s ease;
             z-index: 1000;
-            background-color: #4CAF50; /* Green background */
-            color: white;
-            border: none;
-            border-radius: 5px;
-            font-size: 16px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
         }
 
-        #menu-button:hover {
+        #menu-icon:hover {
             transform: scale(1.1);
             filter: brightness(1.2);
         }
@@ -162,7 +154,8 @@
 </head>
 <body>
     <a href="#maincontent" class="skip-link">Skip to main content</a>
-    <button id="menu-button">Menu</button>  <div class="dropdown">
+    <img id="menu-icon" src="menu.png" alt="Menu Icon">
+    <div class="dropdown">
         <a href="https://www.palettementor.work/app.html"  aria-label="Web App">Web App</a>
         <a href="https://www.palettementor.work/blog.html" aria-label="Blog">Blog</a>
     </div>
@@ -196,29 +189,23 @@
     </div>
     <script>
         document.addEventListener("DOMContentLoaded", () => {
-            const menuButton = document.getElementById("menu-button");
+            const menuIcon = document.getElementById("menu-icon");
             const dropdown = document.querySelector(".dropdown");
 
-            if (menuButton && dropdown) {
-                // Remove the old event listener, to be safe.
-                menuButton.removeEventListener("click", toggleMenu);
-
-                // Add the event listener directly.
-                menuButton.addEventListener("click", toggleMenu);
-
-                function toggleMenu(e) {
+            if (menuIcon && dropdown) {
+                menuIcon.addEventListener("click", (e) => {
                     try {
                         e.stopPropagation();
                         dropdown.classList.toggle("active");
-                        console.log("Menu button clicked. Dropdown active state:", dropdown.classList.contains("active"));
+                        console.log("Menu icon clicked. Dropdown active state:", dropdown.classList.contains("active"));
                     } catch (error) {
                         console.error("Error handling click event:", error);
                     }
-                }
+                });
 
                 document.addEventListener("click", (e) => {
                     try {
-                        if (!dropdown.contains(e.target) && e.target !== menuButton) {
+                        if (!dropdown.contains(e.target) && e.target !== menuIcon) {
                             dropdown.classList.remove("active");
                             console.log("Document clicked. Dropdown active state:", dropdown.classList.contains("active"));
                         }
@@ -227,13 +214,13 @@
                     }
                 });
             } else {
-                if (!menuButton) {
-                    console.error("Menu button element not found.  Check your HTML ID.");
+                if (!menuIcon) {
+                    console.error("Menu icon element not found.  Check your HTML ID.");
                 }
                 if (!dropdown) {
                     console.error("Dropdown element not found.  Check your HTML class.");
                 }
-                console.error("Menu button or dropdown not found");
+                console.error("Menu icon or dropdown not found");
             }
         });
     </script>
