@@ -10,11 +10,17 @@
 <meta property="og:description" content="Stop guessing color mixes - instantly find the right paint blend for any digital color. Free web tool for artists.">
 <meta property="og:image" content="https://www.palettementor.work/images/social-preview.webp">
 <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://fundingchoicesmessages.google.com; img-src 'self' data:; style-src 'self' 'unsafe-inline'">
-<link rel="preload" href="111.webp" as="image" type="image/webp">
+<link rel="preload" href="111-small.webp" as="image" media="(max-width: 800px)">
+<link rel="preload" href="111-medium.webp" as="image" media="(min-width: 801px)">
 <link rel="preload" href="paintbrush-cursor.png" as="image">
-<style>#menu-icon{border:none;background:url(menu.png) center/contain no-repeat}.skip-link{position:absolute;top:-40px;left:0;padding:8px;background:#000;color:#fff;z-index:1001}.skip-link:focus{top:0}.visually-hidden{position:absolute;clip:rect(0 0 0 0);width:1px;height:1px;margin:-1px;overflow:hidden}body{background:#fffdd0;color:#000;text-align:center;font-family:Arial,sans-serif;margin:0;padding:0;cursor:url('paintbrush-cursor.png'),auto}img,video,iframe{aspect-ratio:attr(width)/attr(height)}.ad-container{min-height:90px}.hero,.menu,h1{opacity:0;animation:fadeIn .3s ease-in forwards}@keyframes fadeIn{to{opacity:1}}#menu-icon{position:absolute;top:120px;left:10px;width:40px;height:40px;cursor:pointer;z-index:1001;background:url(menu.png) center/contain no-repeat}.dropdown{display:none;position:absolute;top:160px;left:10px;background:#fff;box-shadow:0 2px 5px rgba(0,0,0,.2);z-index:1000;padding:10px;border-radius:5px}.dropdown.active{display:block}.dropdown a{display:block;padding:10px;color:#333;text-decoration:none}.dropdown a:hover{background:#f0f0f0}.container{max-width:1200px;margin:auto;padding:20px;position:relative}img{max-width:100%;height:auto;display:block;margin:20px auto}.hero img{width:100vw;max-width:1200px;height:auto}.icons{display:flex;justify-content:center;gap:10px;margin:10px 0}.icons img{width:40px;height:40px}.buttons{display:flex;justify-content:center;margin:20px 0}.buttons a img{width:300px;height:auto}@media (max-width:768px){.buttons a img{width:240px}.icons img{width:30px;height:30px}}</style>
+<style>.hero,.menu,h1{opacity:0;animation:fadeIn .3s ease-in forwards}@keyframes fadeIn{to{opacity:1}}
+  #menu-icon{border:none;background:url(menu.webp) center/contain no-repeat;position:absolute;top:120px;left:10px;width:40px;height:40px;cursor:pointer;z-index:1001}
+  .dropdown{display:none;position:absolute;top:160px;left:10px;background:#fff;box-shadow:0 2px 5px rgba(0,0,0,.2);z-index:1000;padding:10px;border-radius:5px}
+  .container{max-width:1200px;margin:auto;padding:20px;position:relative} img{max-width:100%;height:auto;display:block;aspect-ratio:attr(width)/attr(height)}</style></head>
+<link rel="stylesheet" href="styles.css" media="print" onload="this.media='all'">
 </head>
-<body>
+  
+  <body>
 <a href="#maincontent" class="skip-link">Skip to main content</a>
 <div id="canvas-container">
 <a href="index.html" aria-label="Home"></a>
@@ -28,9 +34,14 @@
 </div>
 <main id="maincontent" role="main">
 <div class="container">
+  
 <header class="hero section">
-<picture><source srcset="111.webp" type="image/webp"><img src="111.png" alt="Hero" width="1200" height="630" loading="eager"></picture>
-</header>
+        <picture>
+          <source srcset="111-small.webp" media="(max-width: 800px)" type="image/webp">
+          <source srcset="111-medium.webp" media="(min-width: 801px)" type="image/webp">
+          <img src="111-medium.jpg" alt="Hero" width="1200" height="630" loading="eager" fetchpriority="high">
+        </picture>
+      </header>
 <section class="section">
 <picture><source srcset="222.webp" type="image/webp"><img src="222.png" alt="About" width="800" height="450" loading="lazy"></picture>
 </section>
@@ -71,30 +82,38 @@
 </div>
 </div>
 <script defer>
-  document.getElementById("menu-icon")?.addEventListener("click", function(e) {
-    e.stopPropagation();
-    const dropdown = document.querySelector(".dropdown");
-    if (dropdown) {
-      dropdown.classList.toggle("active");
-      e.currentTarget.setAttribute("aria-expanded", dropdown.classList.contains("active"));
+  // Optimized menu toggle
+  const menuToggle = () => {
+    const menu = document.getElementById('menu-icon');
+    const dropdown = document.getElementById('dropdown');
+    if (menu && dropdown) {
+      menu.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const isExpanded = menu.getAttribute('aria-expanded') === 'true';
+        menu.setAttribute('aria-expanded', !isExpanded);
+        dropdown.classList.toggle('active');
+      });
+      
+      document.addEventListener('click', (e) => {
+        if (!dropdown.contains(e.target) {
+          menu.setAttribute('aria-expanded', 'false');
+          dropdown.classList.remove('active');
+        }
+      });
     }
-  });
-  
-  document.addEventListener("click", function(e) {
-    const dropdown = document.querySelector(".dropdown");
-    if (dropdown && !dropdown.contains(e.target) {
-      dropdown.classList.remove("active");
-      document.getElementById("menu-icon")?.setAttribute("aria-expanded", "false");
-    }
-  });
+  };
+  menuToggle();
 </script>
 <script>
-window.addEventListener('load', function() {
-  var fcScript = document.createElement('script');
-  fcScript.src = 'https://fundingchoicesmessages.google.com/i/pub-1920074084827369?ers=1';
-  fcScript.async = true;
-  document.body.appendChild(fcScript);
-});
+  window.addEventListener('DOMContentLoaded', () => {
+    // Load non-critical third-party scripts after 2s
+    setTimeout(() => {
+      const fcScript = document.createElement('script');
+      fcScript.src = 'https://fundingchoicesmessages.google.com/i/pub-1920074084827369?ers=1';
+      fcScript.async = true;
+      document.body.appendChild(fcScript);
+    }, 2000);
+  });
 </script>
 </body>
 </html>
