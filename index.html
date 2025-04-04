@@ -7,12 +7,12 @@
 <meta name="description" content="Tool for artists to translate digital colors into real-world paints">
 <link rel="preload" href="111.webp" as="image" type="image/webp">
 <link rel="preload" href="paintbrush-cursor.png" as="image">
-<style>body{background:#fffdd0;color:#000;text-align:center;font-family:Arial,sans-serif;margin:0;padding:0;cursor:url('paintbrush-cursor.png'),auto}#menu-icon{position:absolute;top:120px;left:10px;width:40px;height:40px;cursor:pointer;z-index:1001}.dropdown{display:none;position:absolute;top:160px;left:10px;background:#fff;box-shadow:0 2px 5px rgba(0,0,0,.2);z-index:1000;padding:10px;border-radius:5px}.dropdown.active{display:block}.dropdown a{display:block;padding:10px;color:#333;text-decoration:none}.dropdown a:hover{background:#f0f0f0}.container{max-width:1200px;margin:auto;padding:20px;position:relative}img{max-width:100%;height:auto;display:block;margin:20px auto}.hero img{width:100vw;max-width:1200px;height:auto}.icons{display:flex;justify-content:center;gap:10px;margin:10px 0}.icons img{width:40px;height:40px}.buttons{display:flex;justify-content:center;margin:20px 0}.buttons a img{width:300px;height:auto}@media (max-width:768px){.buttons a img{width:240px}.icons img{width:30px;height:30px}}</style>
+<style>body{background:#fffdd0;color:#000;text-align:center;font-family:Arial,sans-serif;margin:0;padding:0;cursor:url('paintbrush-cursor.png'),auto}#menu-icon{position:absolute;top:120px;left:10px;width:40px;height:40px;cursor:pointer;z-index:1001;background:url(menu.png) center/contain no-repeat}.dropdown{display:none;position:absolute;top:160px;left:10px;background:#fff;box-shadow:0 2px 5px rgba(0,0,0,.2);z-index:1000;padding:10px;border-radius:5px}.dropdown.active{display:block}.dropdown a{display:block;padding:10px;color:#333;text-decoration:none}.dropdown a:hover{background:#f0f0f0}.container{max-width:1200px;margin:auto;padding:20px;position:relative}img{max-width:100%;height:auto;display:block;margin:20px auto}.hero img{width:100vw;max-width:1200px;height:auto}.icons{display:flex;justify-content:center;gap:10px;margin:10px 0}.icons img{width:40px;height:40px}.buttons{display:flex;justify-content:center;margin:20px 0}.buttons a img{width:300px;height:auto}@media (max-width:768px){.buttons a img{width:240px}.icons img{width:30px;height:30px}}</style>
 </head>
 <body>
 <div id="canvas-container">
 <a href="index.html" aria-label="Home"></a>
-<img id="menu-icon" src="menu.webp" alt="Menu" width="40" height="40" loading="lazy">
+<div id="menu-icon" aria-label="Menu"></div>
 <div class="dropdown">
 <a href="index.html" aria-label="Home">Home</a>
 <a href="blog.html" aria-label="Blog">Blog</a>
@@ -60,7 +60,7 @@
 <a href="https://youtu.be/cAz0vP7UZVU" target="_blank" rel="noopener" aria-label="YouTube"><img src="TPM-YT.webp" alt="YouTube" width="40" height="40" loading="lazy"></a>
 </div>
 </div>
-<script>!function(){const e=document,t=e.getElementById("menu-icon"),n=e.querySelector(".dropdown");t.addEventListener("click",(e=>{e.stopPropagation(),n.classList.toggle("active")})),e.addEventListener("click",(e=>{n.contains(e.target)||t.contains(e.target)||n.classList.remove("active")}),n.addEventListener("click",(e=>{window.innerWidth<=768&&n.classList.remove("active")})}();</script>
+<script>!function(){const e=document,t=e.getElementById("menu-icon"),n=e.querySelector(".dropdown");t.addEventListener("click",(e=>{e.stopPropagation(),n.classList.toggle("active")})),e.addEventListener("click",(e=>{n.contains(e.target)||t.contains(e.target)||n.classList.remove("active")})),n.addEventListener("click",(e=>{window.innerWidth<=768&&n.classList.remove("active")}))}();</script>
 <script>window.addEventListener("load",(()=>{const e=document.createElement("script");e.src="https://fundingchoicesmessages.google.com/i/pub-1920074084827369?ers=1",e.async=!0,document.body.appendChild(e)}));</script>
 </body>
 </html>
