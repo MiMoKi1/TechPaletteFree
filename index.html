@@ -54,6 +54,7 @@
             height: 40px;
             cursor: pointer;
             transition: transform 0.3s ease, filter 0.3s ease;
+            z-index: 1000; /* Added z-index to ensure it's above other elements */
         }
 
         #menu-icon:hover {
@@ -72,6 +73,11 @@
             flex-direction: column;
             width: 160px;
             padding: 5px;
+            z-index: 999; /* Added z-index, lower than menu-icon */
+        }
+
+        .dropdown.active {
+            display: flex; /* Make the dropdown visible when active */
         }
 
         .dropdown a {
@@ -86,10 +92,6 @@
             background-color: #8B5B29;
             color: white;
             font-weight: bold;
-        }
-
-        #menu-icon.active + .dropdown {
-            display: flex; /* Make the dropdown visible when active */
         }
 
         /* Skip Link */
@@ -153,14 +155,12 @@
 <body>
     <a href="#maincontent" class="skip-link">Skip to main content</a>
     <div id="canvas-container">
-
         <img id="menu-icon" src="menu.png" alt="Menu Icon">
         <div class="dropdown">
             <a href="index.html" aria-label="Home">Home</a>
             <a href="blog.html" aria-label="Blog">Blog</a>
             <a href="app.html" aria-label="Web App">Web App</a>
         </div>
-
         <main id="maincontent" role="main">
             <div class="container">
                 <header class="hero section">
@@ -177,7 +177,7 @@
                 <section class="section"><picture><source srcset="555.webp" type="image/webp"><img src="555.png" alt="Blog" width="800" height="450" loading="lazy" onclick="window.location.href='https://www.palettementor.work/blog.html'" style="cursor:pointer" role="button" aria-label="Blog"></picture></section>
                 <div class="buttons"><a href="https://ko-fi.com/techpalettementor" target="_blank" rel="noopener" aria-label="Donate"><picture><source srcset="DONATE.webp" type="image/webp"><img src="DONATE.png" alt="Donate" width="300" height="100" loading="lazy"></picture></a></div>
                 <section class="section"><a href="https://youtu.be/cAz0vP7UZVU" target="_blank" rel="noopener" aria-label="Tutorial"><picture><source srcset="666.webp" type="image/webp"><img src="666.png" alt="Tutorial" width="800" height="450" loading="lazy"></picture></a></section>
-                <div class="buttons"><a href="https://www.palettementor.work/app.html" target="_blank" rel="noopener" aria-label="Web App"><picture><source srcset="Link.webp" type="image/webp"><img src="Link.png" alt="App Link" width="300" height="100" loading="lazy"></picture></a></div>
+                <div class="buttons"><a href="https://www.palettementor.work/app.html" target="_blank" rel="noopener" aria-label="Web App"><picture><source srcset="Link.webp" type="image/webp"><img src="Link.webp" alt="App Link" width="300" height="100" loading="lazy"></picture></a></div>
                 <section class="policy-frame section"><picture><source srcset="777.webp" type="image/webp"><img src="777.png" alt="Policy" width="800" height="450" loading="lazy"></picture></section>
                 <div class="buttons"><a href="https://ko-fi.com/techpalettementor" target="_blank" rel="noopener" aria-label="Donate"><picture><source srcset="DONATE.webp" type="image/webp"><img src="DONATE.png" alt="Donate" width="300" height="100" loading="lazy"></picture></a></div>
             </div>
