@@ -35,7 +35,7 @@
             max-width: 1200px;
             margin: auto;
             padding: 20px;
-            position: relative;
+            position: relative; /* Important for absolute positioning of dropdown */
         }
 
         /* Hero Section */
@@ -154,12 +154,12 @@
 </head>
 <body>
     <a href="#maincontent" class="skip-link">Skip to main content</a>
+    <img id="menu-icon" src="menu.png" alt="Menu Icon">
+    <div class="dropdown">
+        <a href="https://www.palettementor.work/app.html"  aria-label="Web App">Web App</a>
+        <a href="https://www.palettementor.work/blog.html" aria-label="Blog">Blog</a>
+    </div>
     <div id="canvas-container">
-        <img id="menu-icon" src="menu.png" alt="Menu Icon">
-        <div class="dropdown">
-            <a href="https://www.palettementor.work/app.html"  aria-label="Web App">Web App</a>
-            <a href="https://www.palettementor.work/blog.html" aria-label="Blog">Blog</a>
-        </div>
         <main id="maincontent" role="main">
             <div class="container">
                 <header class="hero section">
@@ -194,16 +194,30 @@
 
             if (menuIcon && dropdown) {
                 menuIcon.addEventListener("click", (e) => {
-                    e.stopPropagation();
-                    dropdown.classList.toggle("active");
+                    try {
+                        e.stopPropagation();
+                        dropdown.classList.toggle("active");
+                    } catch (error) {
+                        console.error("Error handling click event:", error);
+                    }
                 });
 
                 document.addEventListener("click", (e) => {
-                    if (!dropdown.contains(e.target) && e.target !== menuIcon) {
-                        dropdown.classList.remove("active");
+                    try {
+                        if (!dropdown.contains(e.target) && e.target !== menuIcon) {
+                            dropdown.classList.remove("active");
+                        }
+                    } catch (error) {
+                         console.error("Error handling document click:", error);
                     }
                 });
             } else {
+                if (!menuIcon) {
+                    console.error("Menu icon element not found.  Check your HTML ID.");
+                }
+                if (!dropdown) {
+                    console.error("Dropdown element not found.  Check your HTML class.");
+                }
                 console.error("Menu icon or dropdown not found");
             }
         });
