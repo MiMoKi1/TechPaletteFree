@@ -1,289 +1,439 @@
 <!DOCTYPE html>
+
 <html lang="en">
+
 <head>
-    <link rel="manifest" href="/manifest.json">
-    <link rel="apple-touch-icon" href="icon-192.png">
-    <meta name="robots" content="index, follow">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Palette Mentor | Sustainable Color Tool</title>
-    <meta name="description" content="Tool for artists to translate digital colours into real-world paints">
-    <meta name="keywords" content="colour mixing tool, digital to paint conversion, artist color guide, hex to paint, oil paint mixer, acrylic colour matching, watercolour palette generator, art tech tool, colour theory app, painting assistant, realistic colour blending, artist software, paint pigment converter, art supply matching, creative workflow tool, colour matching for artists, palette generator, painting techniques, colour harmony tool, artist resources">
-    <meta property="og:title" content="Palette Mentor: Your Digital-to-Real Paint Mixing Tool">
-    <meta property="og:description" content="Stop guessing colour mixes - instantly find the right paint blend for any digital color. Free web tool for artists.">
-    <meta property="og:image" content="https://www.palettementor.work/images/social-preview.webp">
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://fundingchoicesmessages.google.com; img-src 'self' data: https://www.palettementor.work; style-src 'self' 'unsafe-inline'">
-    <link rel="icon" type="image/x-icon" href="2favicon.ico">
-    <link rel="preload" href="111-small.webp" as="image" media="(max-width: 800px)">
-    <link rel="preload" href="111-medium.webp" as="image" media="(min-width: 801px)">
-    <link rel="preload" href="paintbrush-cursor.png" as="image">
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-            font-family: Arial, sans-serif;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            background-color: #f9f9f9;
-            cursor: url('paintbrush-cursor.png'), auto;
-        }
 
-        .container {
-            max-width: 1200px;
-            margin: auto;
-            padding: 20px;
-            position: relative;
-        }
+<link rel="manifest" href="/manifest.json">
 
-        /* Hero Section */
-        .hero img {
-            width: 100vw;
-            max-width: 1200px;
-            height: auto;
-        }
+<link rel="apple-touch-icon" href="icon-192.png">
 
-        /* Dropdown Menu Styles */
-        #menu-icon {
-            position: absolute;
-            top: 120px;
-            left: 10px;
-            width: 40px;
-            height: 40px;
-            cursor: pointer;
-            transition: transform 0.3s ease, filter 0.3s ease;
-            z-index: 11; /* Ensure the menu icon is above the dropdown */
-        }
+<meta name="robots" content="index, follow">
 
-        #menu-icon:hover {
-            transform: scale(1.1);
-            filter: brightness(1.2);
-        }
+<meta name="apple-mobile-web-app-capable" content="yes">
 
-        .dropdown {
-            position: absolute;
-            top: 170px;
-            left: 10px;
-            background-color: #FAF2E2;
-            border: 1px solid #8B5B29;
-            border-radius: 5px;
-            display: none;
-            flex-direction: column;
-            width: 160px;
-            padding: 5px;
-            z-index: 10;
-        }
+<meta charset="UTF-8">
 
-        .dropdown.active {
-            display: flex;
-        }
+<meta name="viewport" content="width=device-width,initial-scale=1">
 
-        .dropdown a {
-            text-decoration: none;
-            color: #8B5B29;
-            padding: 10px;
-            display: block;
-            transition: background-color 0.3s ease, font-weight 0.3s ease;
-        }
+<title>Palette Mentor | Sustainable Color Tool</title>
 
-        .dropdown a:hover {
-            background-color: #8B5B29;
-            color: white;
-            font-weight: bold;
-        }
+<meta name="description" content="Tool for artists to translate digital colours into real-world paints">
 
-        /* Skip Link */
-        .skip-link {
-            position: absolute;
-            top: -40px;
-            left: 0;
-            padding: 8px;
-            background: #000;
-            color: #fff;
-            z-index: 1001;
-        }
+<meta name="keywords" content="colour mixing tool, digital to paint conversion, artist color guide, hex to paint, oil paint mixer, acrylic colour matching, watercolour palette generator, art tech tool, colour theory app, painting assistant, realistic colour blending, artist software, paint pigment converter, art supply matching, creative workflow tool, colour matching for artists, palette generator, painting techniques, colour harmony tool, artist resources">
 
-        .skip-link:focus {
-            top: 0;
-        }
+<meta property="og:title" content="Palette Mentor: Your Digital-to-Real Paint Mixing Tool">
 
-        /* Visually Hidden */
-        .visually-hidden {
-            position: absolute;
-            clip: rect(0 0 0 0);
-            width: 1px;
-            height: 1px;
-            margin: -1px;
-            overflow: hidden;
-        }
+<meta property="og:description" content="Stop guessing colour mixes - instantly find the right paint blend for any digital color. Free web tool for artists.">
 
-        /* Image Styling */
-        img {
-            max-width: 100%;
-            height: auto;
-            display: block;
-        }
+<meta property="og:image" content="https://www.palettementor.work/images/social-preview.webp">
 
-        /* Buttons */
-        .buttons a {
-            display: inline-block;
-            margin: 10px;
-        }
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://fundingchoicesmessages.google.com; img-src 'self' data: https://www.palettementor.work; style-src 'self' 'unsafe-inline'">
 
-        /* Icons */
-        .icons a {
-            display: inline-block;
-            margin: 5px;
-        }
+    <link rel="icon" type="image/x-icon" href="2favicon.ico"> 
 
-        /* Responsive Image Sizing */
-        picture img {
-            width: 100%;
-            height: auto;
-        }
+  <link rel="preload" href="111-small.webp" as="image" media="(max-width: 800px)">
 
-        /* Section Padding */
-        .section {
-            margin: 20px 0;
-        }
+<link rel="preload" href="111-medium.webp" as="image" media="(min-width: 801px)">
 
-    </style>
-    <link rel="stylesheet" href="styles.css" media="print" onload="this.media='all'">
+<link rel="preload" href="paintbrush-cursor.png" as="image">
+
+ <style>
+
+    body {
+
+    margin: 0;
+
+    padding: 0;
+
+    font-family: Arial, sans-serif;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    min-height: 100vh;
+
+    background-color: #f9f9f9;
+
+    cursor: url('paintbrush-cursor.png'), auto;
+
+}
+
+
+
+.container {
+
+    max-width: 1200px;
+
+    margin: auto;
+
+    padding: 20px;
+
+    position: relative;
+
+}
+
+
+
+/* Hero Section */
+
+.hero img {
+
+    width: 100vw;
+
+    max-width: 1200px;
+
+    height: auto;
+
+}
+
+
+
+/* Dropdown Menu Styles */
+
+#menu-icon {
+
+    position: absolute;
+
+    top: 120px;
+
+    left: 10px;
+
+    width: 40px;
+
+    height: 40px;
+
+    cursor: pointer;
+
+    transition: transform 0.3s ease, filter 0.3s ease;
+
+}
+
+
+
+#menu-icon:hover {
+
+    transform: scale(1.1);
+
+    filter: brightness(1.2);
+
+}
+
+
+
+.dropdown {
+
+    position: absolute;
+
+    top: 170px;
+
+    left: 10px;
+
+    background-color: #FAF2E2;
+
+    border: 1px solid #8B5B29;
+
+    border-radius: 5px;
+
+    display: none;
+
+    flex-direction: column;
+
+    width: 160px;
+
+    padding: 5px;
+
+}
+
+
+
+.dropdown a {
+
+    text-decoration: none;
+
+    color: #8B5B29;
+
+    padding: 10px;
+
+    display: block;
+
+    transition: background-color 0.3s ease, font-weight 0.3s ease;
+
+}
+
+
+
+.dropdown a:hover {
+
+    background-color: #8B5B29;
+
+    color: white;
+
+    font-weight: bold;
+
+}
+
+
+
+#menu-icon.active + .dropdown {
+
+    display: flex; /* Make the dropdown visible when active */
+
+}
+
+
+
+/* Skip Link */
+
+.skip-link {
+
+    position: absolute;
+
+    top: -40px;
+
+    left: 0;
+
+    padding: 8px;
+
+    background: #000;
+
+    color: #fff;
+
+    z-index: 1001;
+
+}
+
+
+
+.skip-link:focus {
+
+    top: 0;
+
+}
+
+
+
+/* Visually Hidden */
+
+.visually-hidden {
+
+    position: absolute;
+
+    clip: rect(0 0 0 0);
+
+    width: 1px;
+
+    height: 1px;
+
+    margin: -1px;
+
+    overflow: hidden;
+
+}
+
+
+
+/* Image Styling */
+
+img {
+
+    max-width: 100%;
+
+    height: auto;
+
+    display: block;
+
+}
+
+
+
+/* Buttons */
+
+.buttons a {
+
+    display: inline-block;
+
+    margin: 10px;
+
+}
+
+
+
+/* Icons */
+
+.icons a {
+
+    display: inline-block;
+
+    margin: 5px;
+
+}
+
+
+
+/* Responsive Image Sizing */
+
+picture img {
+
+    width: 100%;
+
+    height: auto;
+
+}
+
+
+
+/* Section Padding */
+
+.section {
+
+    margin: 20px 0;
+
+}
+
+
+
+
+
+  </style>
+
+  
+
+<link rel="stylesheet" href="styles.css" media="print" onload="this.media='all'">
+
 </head>
+
 <body>
-    <a href="#maincontent" class="skip-link">Skip to main content</a>
-    <div id="canvas-container">
-        <img id="menu-icon" src="menu.png" alt="Menu Icon">
-        <div class="dropdown">
-            <a href="index.html" aria-label="Home">Home</a>
-            <a href="blog.html" aria-label="Blog">Blog</a>
-            <a href="app.html" aria-label="Web App">Web App</a>
-        </div>
-        <main id="maincontent" role="main">
-            <div class="container">
-                <header class="hero section">
-                    <picture>
-                        <source srcset="111-small.webp" media="(max-width: 800px)" type="image/webp">
-                        <source srcset="111-medium.webp" media="(min-width: 801px)" type="image/webp">
-                        <img src="111-medium.webp" alt="Hero" width="1200" height="630" loading="eager" fetchpriority="high">
-                    </picture>
-                </header>
-                <section class="section">
-                    <picture>
-                        <source srcset="222.webp" type="image/webp">
-                        <img src="222.webp" alt="About" width="800" height="450" loading="lazy">
-                    </picture>
-                </section>
-                <div class="buttons">
-                    <a href="https://www.palettementor.work/app.html" target="_blank" rel="noopener noreferrer" aria-label="Web App">
-                        <picture>
-                            <source srcset="Link.webp" type="image/webp">
-                            <img src="Link.webp" alt="App Link" width="300" height="100" loading="lazy">
-                        </picture>
-                    </a>
-                    <a href="https://ko-fi.com/techpalettementor" target="_blank" rel="noopener noreferrer" aria-label="Donate">
-                        <picture>
-                            <source srcset="DONATE.webp" type="image/webp">
-                            <img src="DONATE.webp" alt="Donate" width="300" height="100" loading="lazy">
-                        </picture>
-                    </a>
-                </div>
-                <section class="section">
-                    <a href="https://youtu.be/cAz0vP7UZVU" target="_blank" rel="noopener" aria-label="Tutorial">
-                        <picture>
-                            <source srcset="333.webp" type="image/webp">
-                            <img src="333.png" alt="Tutorial" width="800" height="450" loading="lazy">
-                        </picture>
-                    </a>
-                </section>
-                <section class="section">
-                    <a href="https://www.palettementor.work/app.html" target="_blank" rel="noopener" aria-label="Web App">
-                        <picture>
-                            <source srcset="444.webp" type="image/webp">
-                            <img src="444.png" alt="App" width="800" height="450" loading="lazy">
-                        </picture>
-                    </a>
-                </section>
-                <section class="section">
-                    <picture>
-                        <source srcset="555.webp" type="image/webp">
-                        <img src="555.png" alt="Blog" width="800" height="450" loading="lazy" onclick="window.location.href='https://www.palettementor.work/blog.html'" style="cursor:pointer" role="button" aria-label="Blog">
-                    </picture>
-                </section>
-                <div class="buttons">
-                    <a href="https://ko-fi.com/techpalettementor" target="_blank" rel="noopener" aria-label="Donate">
-                        <picture>
-                            <source srcset="DONATE.webp" type="image/webp">
-                            <img src="DONATE.png" alt="Donate" width="300" height="100" loading="lazy">
-                        </picture>
-                    </a>
-                </div>
-                <section class="section">
-                    <a href="https://youtu.be/cAz0vP7UZVU" target="_blank" rel="noopener" aria-label="Tutorial">
-                        <picture>
-                            <source srcset="666.webp" type="image/webp">
-                            <img src="666.png" alt="Tutorial" width="800" height="450" loading="lazy">
-                        </picture>
-                    </a>
-                </section>
-                <div class="buttons">
-                    <a href="https://www.palettementor.work/app.html" target="_blank" rel="noopener" aria-label="Web App">
-                        <picture>
-                            <source srcset="Link.webp" type="image/webp">
-                            <img src="Link.png" alt="App Link" width="300" height="100" loading="lazy">
-                        </picture>
-                    </a>
-                </div>
-                <section class="policy-frame section">
-                    <picture>
-                        <source srcset="777.webp" type="image/webp">
-                        <img src="777.png" alt="Policy" width="800" height="450" loading="lazy">
-                    </picture>
-                </section>
-                <div class="buttons">
-                    <a href="https://ko-fi.com/techpalettementor" target="_blank" rel="noopener" aria-label="Donate">
-                        <picture>
-                            <source srcset="DONATE.webp" type="image/webp">
-                            <img src="DONATE.png" alt="Donate" width="300" height="100" loading="lazy">
-                        </picture>
-                    </a>
-                </div>
-            </div>
-            <div class="icons">
-                <a href="https://www.instagram.com/mmyking1/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
-                    <img src="mmyking-insta.png" alt="Instagram" width="40" height="40" loading="lazy">
-                </a>
-                <a href="https://www.instagram.com/techpalettementor/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
-                    <img src="TPM-insta.png" alt="Instagram" width="40" height="40" loading="lazy">
-                </a>
-                <a href="https://youtu.be/cAz0vP7UZVU" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
-                    <img src="TPM-YT.png" alt="YouTube" width="40" height="40" loading="lazy">
-                </a>
-            </div>
-        </main>
-    </div>
-    <script>
-        window.addEventListener("DOMContentLoaded", () => {
-            const menuIcon = document.getElementById("menu-icon");
-            const dropdown = document.querySelector(".dropdown");
 
-            if (menuIcon && dropdown) {
-                menuIcon.addEventListener("click", () => {
-                    dropdown.classList.toggle("active");
-                });
+    
 
-                // Close the dropdown if the user clicks outside of the menu
-                document.addEventListener("click", (event) => {
-                    if (!dropdown.contains(event.target) && event.target !== menuIcon) {
-                        dropdown.classList.remove("active");
-                    }
-                });
-            } else {
-                console.error("Menu icon or dropdown not found");
-            }
-        });
-    </script>
+<a href="#maincontent" class="skip-link">Skip to main content</a>
+
+<div id="canvas-container">
+
+
+
+    
+
+  <img id="menu-icon" src="menu.png" alt="Menu Icon">
+
+     <!-- Dropdown Menu -->
+
+        <div class="dropdown">
+
+<a href="index.html" aria-label="Home">Home</a>
+
+<a href="blog.html" aria-label="Blog">Blog</a>
+
+<a href="app.html" aria-label="Web App">Web App</a>
+
+</div>
+
+    
+
+<main id="maincontent" role="main">
+
+<div class="container">
+
+<header class="hero section">
+
+<picture><source srcset="111.webp" media="(max-width: 800px)" type="image/webp"><img src="111.webp" alt="Hero" width="1200" height="630" loading="eager" fetchpriority="high"></picture>
+
+</header>
+
+<section class="section"><picture><source srcset="222.webp" type="image/webp"><img src="222.webp" alt="About" width="800" height="450" loading="lazy"></picture></section>
+
+<div class="buttons">
+
+<a href="https://www.palettementor.work/app.html" target="_blank" rel="noopener noreferrer" aria-label="Web App"><picture><source srcset="Link.webp" type="image/webp"><img src="Link.webp" alt="App Link" width="300" height="100" loading="lazy"></picture></a>
+
+<a href="https://ko-fi.com/techpalettementor" target="_blank" rel="noopener noreferrer" aria-label="Donate"><picture><source srcset="DONATE.webp" type="image/webp"><img src="DONATE.webp" alt="Donate" width="300" height="100" loading="lazy"></picture></a>
+
+</div>
+
+<section class="section"><a href="https://youtu.be/cAz0vP7UZVU" target="_blank" rel="noopener" aria-label="Tutorial"><picture><source srcset="333.webp" type="image/webp"><img src="333.png" alt="Tutorial" width="800" height="450" loading="lazy"></picture></a></section>
+
+<section class="section"><a href="https://www.palettementor.work/app.html" target="_blank" rel="noopener" aria-label="Web App"><picture><source srcset="444.webp" type="image/webp"><img src="444.png" alt="App" width="800" height="450" loading="lazy"></picture></a></section>
+
+<section class="section"><picture><source srcset="555.webp" type="image/webp"><img src="555.png" alt="Blog" width="800" height="450" loading="lazy" onclick="window.location.href='https://www.palettementor.work/blog.html'" style="cursor:pointer" role="button" aria-label="Blog"></picture></section>
+
+<div class="buttons"><a href="https://ko-fi.com/techpalettementor" target="_blank" rel="noopener" aria-label="Donate"><picture><source srcset="DONATE.webp" type="image/webp"><img src="DONATE.png" alt="Donate" width="300" height="100" loading="lazy"></picture></a></div>
+
+<section class="section"><a href="https://youtu.be/cAz0vP7UZVU" target="_blank" rel="noopener" aria-label="Tutorial"><picture><source srcset="666.webp" type="image/webp"><img src="666.png" alt="Tutorial" width="800" height="450" loading="lazy"></picture></a></section>
+
+<div class="buttons"><a href="https://www.palettementor.work/app.html" target="_blank" rel="noopener" aria-label="Web App"><picture><source srcset="Link.webp" type="image/webp"><img src="Link.png" alt="App Link" width="300" height="100" loading="lazy"></picture></a></div>
+
+<section class="policy-frame section"><picture><source srcset="777.webp" type="image/webp"><img src="777.png" alt="Policy" width="800" height="450" loading="lazy"></picture></section>
+
+<div class="buttons"><a href="https://ko-fi.com/techpalettementor" target="_blank" rel="noopener" aria-label="Donate"><picture><source srcset="DONATE.webp" type="image/webp"><img src="DONATE.png" alt="Donate" width="300" height="100" loading="lazy"></picture></a></div>
+
+</div>
+
+<div class="icons">
+
+<a href="https://www.instagram.com/mmyking1/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><img src="mmyking-insta.png" alt="Instagram" width="40" height="40" loading="lazy"></a>
+
+<a href="https://www.instagram.com/techpalettementor/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><img src="TPM-insta.png" alt="Instagram" width="40" height="40" loading="lazy"></a>
+
+<a href="https://youtu.be/cAz0vP7UZVU" target="_blank" rel="noopener noreferrer" aria-label="YouTube"><img src="TPM-YT.png" alt="YouTube" width="40" height="40" loading="lazy"></a>
+
+</div>
+
+</div>
+
+<script>
+
+    window.addEventListener("DOMContentLoaded", () => {
+
+        const menuIcon = document.getElementById("menu-icon");
+
+        const dropdown = document.querySelector(".dropdown");
+
+
+
+        if (menuIcon && dropdown) {
+
+            menuIcon.addEventListener("click", (e) => {
+
+                e.stopPropagation(); // Prevent the click event from propagating
+
+                dropdown.classList.toggle("active"); // Toggle the dropdown menu visibility
+
+            });
+
+
+
+            // Close the dropdown if the user clicks outside of the menu
+
+            document.addEventListener("click", (e) => {
+
+                if (!dropdown.contains(e.target) && e.target !== menuIcon) {
+
+                    dropdown.classList.remove("active");
+
+                }
+
+            });
+
+        } else {
+
+            console.error("Menu icon or dropdown not found");
+
+        }
+
+    });
+
+</script>
+
+
+
+
+
+
+
 </body>
+
 </html>
