@@ -19,20 +19,51 @@
 <link rel="preload" href="111-medium.webp" as="image" media="(min-width: 801px)">
 <link rel="preload" href="paintbrush-cursor.png" as="image">
  <style>
-    .dropdown { 
-      display: none; 
-      position: absolute; 
-      top: 160px; 
-      left: 10px; 
-      background: #fff; 
-      box-shadow: 0 2px 5px rgba(0,0,0,0.2); 
-      z-index: 1000; 
-      padding: 10px; 
-      border-radius: 5px;
-    }
-    .dropdown.active { 
-      display: block; 
-    }
+    /* Dropdown Menu Styles */
+        #menu-icon {
+            position: absolute;
+            top: 120px;
+            left: 10px;
+            width: 40px;
+            height: 40px;
+            cursor: pointer;
+            transition: transform 0.3s ease, filter 0.3s ease;
+        }
+
+        #menu-icon:hover {
+            transform: scale(1.1);
+            filter: brightness(1.2);
+        }
+
+        .dropdown {
+            position: absolute;
+            top: 170px;
+            left: 10px;
+            background-color: #FAF2E2;
+            border: 1px solid #8B5B29;
+            border-radius: 5px;
+            display: none;
+            flex-direction: column;
+            width: 160px;
+            padding: 5px;
+        }
+
+        .dropdown a {
+            text-decoration: none;
+            color: #8B5B29;
+            padding: 10px;
+            display: block;
+            transition: background-color 0.3s ease, font-weight 0.3s ease;
+        }
+
+        .dropdown a:hover {
+            background-color: #8B5B29;
+            color: white;
+            font-weight: bold;
+        }
+
+        #menu-icon.active + .dropdown {
+            display: flex;
     .skip-link {
       position: absolute;
       top: -40px;
@@ -67,19 +98,7 @@
       max-width: 1200px;
       height: auto;
     }
-    #menu-icon {
-      font-size: 30px;
-      background: none;
-      border: none;
-      color: black;
-      position: absolute;
-      top: 120px;
-      left: 10px;
-      width: 40px;
-      height: 40px;
-      cursor: pointer;
-      z-index: 1001;
-    }
+ 
     body {
       cursor: url('paintbrush-cursor.png'), auto;
     }
@@ -88,14 +107,19 @@
 <link rel="stylesheet" href="styles.css" media="print" onload="this.media='all'">
 </head>
 <body>
+    
 <a href="#maincontent" class="skip-link">Skip to main content</a>
 <div id="canvas-container">
-<button id="menu-icon" aria-label="Menu">☰</button>
-<div class="dropdown" id="dropdown">
+
+    
+  <img id="menu-icon" src="menu.png" alt="Menu Icon">
+     <!-- Dropdown Menu -->
+        <div class="dropdown">
 <a href="index.html" aria-label="Home">Home</a>
 <a href="blog.html" aria-label="Blog">Blog</a>
 <a href="app.html" aria-label="Web App">Web App</a>
 </div>
+    
 <main id="maincontent" role="main">
 <div class="container">
 <header class="hero section">
@@ -121,36 +145,15 @@
 <a href="https://youtu.be/cAz0vP7UZVU" target="_blank" rel="noopener noreferrer" aria-label="YouTube"><img src="TPM-YT.png" alt="YouTube" width="40" height="40" loading="lazy"></a>
 </div>
 </div>
-<script>
-  window.addEventListener("DOMContentLoaded", () => {
-    const menu = document.getElementById("menu-icon");
-    const dropdown = document.getElementById("dropdown");
+ <script>
+        const menuIcon = document.getElementById("menu-icon");
+        const dropdown = document.querySelector(".dropdown");
 
-    if (menu && dropdown) {
-      menu.addEventListener("click", (e) => {
-        e.stopPropagation();
-        dropdown.classList.toggle("active");
-      });
-
-      document.addEventListener("click", (e) => {
-        if (!dropdown.contains(e.target) && e.target !== menu) {
-          dropdown.classList.remove("active");
-        }
-      });
-    } else {
-      console.error("Menu icon or dropdown not found");
-    }
-  });
-</script>
-
-<script>window.addEventListener("load",()=>{setTimeout(()=>{const e=document.createElement("script");e.src="https://fundingchoicesmessages.google.com/i/pub-1920074084827369?ers=1",e.async=!0,document.body.appendChild(e)},2e3)});</script>
-<script>
-  if ('serviceWorker' in navigator) {
-    navigator.serviceWorker.register('/service-worker.js')
-      .then(reg => console.log('Service Worker registered ✔️', reg))
-      .catch(err => console.error('Service Worker registration failed ❌', err));
-  }
-</script>
+        menuIcon.addEventListener("click", () => {
+            menuIcon.classList.toggle("active");
+            dropdown.classList.toggle("active");
+        });
+    </script>
 
 
 </body>
