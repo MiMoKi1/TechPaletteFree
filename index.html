@@ -14,6 +14,34 @@
 <link rel="preload" href="111-medium.webp" as="image" media="(min-width: 801px)">
 <link rel="preload" href="paintbrush-cursor.png" as="image">
 <style>
+   #menu-icon {
+    position: absolute;
+    top: 120px;
+    left: 10px;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    z-index: 1001;
+    background: url('menu.png') center/contain no-repeat;
+    border: none;
+  }
+  
+  .dropdown {
+    display: none;
+    position: absolute;
+    top: 160px;
+    left: 10px;
+    background: #fff;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    z-index: 1000;
+    padding: 10px;
+    border-radius: 5px;
+  }
+  
+  .dropdown.active {
+    display: block;
+  }
+  
   .skip-link {
     position: absolute;
     top: -40px;
@@ -79,10 +107,10 @@
 <body>
 <a href="#maincontent" class="skip-link">Skip to main content</a>
 <div id="canvas-container">
-<button id="menu-icon" aria-expanded="false" aria-controls="dropdown">
-  <span class="visually-hidden">Menu</span>
-</button>
-<div class="dropdown" id="dropdown">
+<button id="menu-icon" aria-label="Menu">
+    <span style="display:none">Menu</span>
+  </button>
+  <div class="dropdown" id="dropdown">
 <a href="index.html" aria-label="Home">Home</a>
 <a href="blog.html" aria-label="Blog">Blog</a>
 <a href="app.html" aria-label="Web App">Web App</a>
@@ -145,39 +173,32 @@
 </div>
 <div class="icons">
   <a href="https://www.instagram.com/mmyking1/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
-    <img src="mmyking-insta.webp" alt="Instagram" width="40" height="40" loading="lazy">
+    <img src="mmyking-insta.png" alt="Instagram" width="40" height="40" loading="lazy">
   </a>
   <a href="https://www.instagram.com/techpalettementor/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
-    <img src="TPM-insta.webp" alt="Instagram" width="40" height="40" loading="lazy">
+    <img src="TPM-insta.png" alt="Instagram" width="40" height="40" loading="lazy">
   </a>
   <a href="https://youtu.be/cAz0vP7UZVU" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
-    <img src="TPM-YT.webp" alt="YouTube" width="40" height="40" loading="lazy">
+    <img src="TPM-YT.png" alt="YouTube" width="40" height="40" loading="lazy">
   </a>
 </div>
 </div>
 
 <script defer>
-  // Optimized menu toggle
-  document.addEventListener('DOMContentLoaded', () => {
-    const menu = document.getElementById('menu-icon');
-    const dropdown = document.getElementById('dropdown');
-    
-    if (menu && dropdown) {
-      menu.addEventListener('click', (e) => {
-        e.stopPropagation();
-        const isExpanded = menu.getAttribute('aria-expanded') === 'true';
-        menu.setAttribute('aria-expanded', !isExpanded);
-        dropdown.classList.toggle('active');
-      });
-      
-      document.addEventListener('click', (e) => {
-        if (!dropdown.contains(e.target) && e.target !== menu) {
-          menu.setAttribute('aria-expanded', 'false');
-          dropdown.classList.remove('active');
-        }
-      });
-    }
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const menuButton = document.getElementById('menu-icon');
+  const dropdown = document.getElementById('dropdown');
+  
+  menuButton.addEventListener('click', function(e) {
+    e.stopPropagation();
+    dropdown.classList.toggle('active');
   });
+  
+  document.addEventListener('click', function() {
+    dropdown.classList.remove('active');
+  });
+});
 </script>
 
 <script>
