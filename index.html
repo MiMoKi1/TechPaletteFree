@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  
 <meta charset="UTF-8">
   <meta property="og:title" content="Palette Mentor: Your Digital-to-Real Paint Mixing Tool">
 <meta property="og:description" content="Stop guessing color mixes - instantly find the right paint blend for any digital color. Free web tool for artists.">
@@ -69,7 +70,19 @@
 <a href="https://youtu.be/cAz0vP7UZVU" target="_blank" rel="noopener" aria-label="YouTube"><img src="TPM-YT.png" alt="YouTube" width="40" height="40"></a>
 </div>
 </div>
-<script>!function(){const e=document,t=e.getElementById("menu-icon"),n=e.querySelector(".dropdown");t.addEventListener("click",(e=>{e.stopPropagation(),n.classList.toggle("active")})),e.addEventListener("click",(e=>{n.contains(e.target)||t.contains(e.target)||n.classList.remove("active")})),n.addEventListener("click",(e=>{window.innerWidth<=768&&n.classList.remove("active")}))}();</script>
-<script>window.addEventListener("load",(()=>{const e=document.createElement("script");e.src="https://fundingchoicesmessages.google.com/i/pub-1920074084827369?ers=1",e.async=!0,document.body.appendChild(e)}));</script>
-</body>
+<script defer>
+  document.getElementById("menu-icon")?.addEventListener("click", function(e) {
+    e.stopPropagation();
+    document.querySelector(".dropdown")?.classList.toggle("active");
+  });
+</script>
+
+<script>
+window.addEventListener('load', function() {
+  var fcScript = document.createElement('script');
+  fcScript.src = 'https://fundingchoicesmessages.google.com/i/pub-1920074084827369?ers=1';
+  fcScript.async = true;
+  document.body.appendChild(fcScript);
+});
+</script></body>
 </html>
