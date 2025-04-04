@@ -13,180 +13,44 @@
 <link rel="preload" href="111-small.webp" as="image" media="(max-width: 800px)">
 <link rel="preload" href="111-medium.webp" as="image" media="(min-width: 801px)">
 <link rel="preload" href="paintbrush-cursor.png" as="image">
-<style>
-    
-  .dropdown {
-    display: none;
-    position: absolute;
-    top: 160px;
-    left: 10px;
-    background: #fff;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-    z-index: 1000;
-    padding: 10px;
-    border-radius: 5px;
-  }
-  
-  .skip-link {
-    position: absolute;
-    top: -40px;
-    left: 0;
-    padding: 8px;
-    background: #000;
-    color: white;
-    z-index: 1001;
-  }
-  .skip-link:focus {
-    top: 0;
-  }
-  .visually-hidden {
-    position: absolute;
-    clip: rect(0 0 0 0);
-    width: 1px;
-    height: 1px;
-    margin: -1px;
-    overflow: hidden;
-  }
-  #menu-icon {
-    border: none;
-    background: url(menu.png) center/contain no-repeat;
-    position: absolute;
-    top: 120px;
-    left: 10px;
-    width: 40px;
-    height: 40px;
-    cursor: pointer;
-    z-index: 1001;
-  }
-
-  .container {
-    max-width: 1200px;
-    margin: auto;
-    padding: 20px;
-    position: relative;
-  }
-  img {
-    max-width: 100%;
-    height: auto;
-    display: block;
-  }
-  .hero img {
-    width: 100vw;
-    max-width: 1200px;
-    height: auto;
-  }
-</style>
+<style>.dropdown{display:none;position:absolute;top:160px;left:10px;background:#fff;box-shadow:0 2px 5px rgba(0,0,0,0.2);z-index:1000;padding:10px;border-radius:5px}.dropdown.active{display:block}.skip-link{position:absolute;top:-40px;left:0;padding:8px;background:#000;color:#fff;z-index:1001}.skip-link:focus{top:0}.visually-hidden{position:absolute;clip:rect(0 0 0 0);width:1px;height:1px;margin:-1px;overflow:hidden}#menu-icon{border:none;background:url(menu.png) center/contain no-repeat;position:absolute;top:120px;left:10px;width:40px;height:40px;cursor:pointer;z-index:1001}.container{max-width:1200px;margin:auto;padding:20px;position:relative}img{max-width:100%;height:auto;display:block}.hero img{width:100vw;max-width:1200px;height:auto}</style>
 <link rel="stylesheet" href="styles.css" media="print" onload="this.media='all'">
 </head>
-  
 <body>
 <a href="#maincontent" class="skip-link">Skip to main content</a>
 <div id="canvas-container">
-<button id="menu-icon" aria-label="Menu">
-    <span style="display:none">Menu</span>
-  </button>
-  <div class="dropdown" id="dropdown">
+<button id="menu-icon" aria-label="Menu"><span style="display:none">Menu</span></button>
+<div class="dropdown" id="dropdown">
 <a href="index.html" aria-label="Home">Home</a>
 <a href="blog.html" aria-label="Blog">Blog</a>
 <a href="app.html" aria-label="Web App">Web App</a>
 </div>
 <main id="maincontent" role="main">
 <div class="container">
-  
 <header class="hero section">
-  <picture>
-    <source srcset="111.webp" media="(max-width: 800px)" type="image/webp">
-    <img src="111.webp" alt="Hero" width="1200" height="630" loading="eager" fetchpriority="high">
-  </picture>
+<picture><source srcset="111.webp" media="(max-width: 800px)" type="image/webp"><img src="111.webp" alt="Hero" width="1200" height="630" loading="eager" fetchpriority="high"></picture>
 </header>
-
-<section class="section">
-  <picture>
-    <source srcset="222.webp" type="image/webp">
-    <img src="222.webp" alt="About" width="800" height="450" loading="lazy">
-  </picture>
-</section>
-
+<section class="section"><picture><source srcset="222.webp" type="image/webp"><img src="222.webp" alt="About" width="800" height="450" loading="lazy"></picture></section>
 <div class="buttons">
-  <a href="https://www.palettementor.work/app.html" target="_blank" rel="noopener noreferrer" aria-label="Web App">
-    <picture>
-      <source srcset="Link.webp" type="image/webp">
-      <img src="Link.webp" alt="App Link" width="300" height="100" loading="lazy">
-    </picture>
-  </a>
-  <a href="https://ko-fi.com/techpalettementor" target="_blank" rel="noopener noreferrer" aria-label="Donate">
-    <picture>
-      <source srcset="DONATE.webp" type="image/webp">
-      <img src="DONATE.webp" alt="Donate" width="300" height="100" loading="lazy">
-    </picture>
-  </a>
+<a href="https://www.palettementor.work/app.html" target="_blank" rel="noopener noreferrer" aria-label="Web App"><picture><source srcset="Link.webp" type="image/webp"><img src="Link.webp" alt="App Link" width="300" height="100" loading="lazy"></picture></a>
+<a href="https://ko-fi.com/techpalettementor" target="_blank" rel="noopener noreferrer" aria-label="Donate"><picture><source srcset="DONATE.webp" type="image/webp"><img src="DONATE.webp" alt="Donate" width="300" height="100" loading="lazy"></picture></a>
 </div>
-<section class="section">
-<a href="https://youtu.be/cAz0vP7UZVU" target="_blank" rel="noopener" aria-label="Tutorial"><picture><source srcset="333.webp" type="image/webp"><img src="333.png" alt="Tutorial" width="800" height="450" loading="lazy"></picture></a>
-</section>
-<section class="section">
-<a href="https://www.palettementor.work/app.html" target="_blank" rel="noopener" aria-label="Web App"><picture><source srcset="444.webp" type="image/webp"><img src="444.png" alt="App" width="800" height="450" loading="lazy"></picture></a>
-</section>
-<section class="section">
-<picture><source srcset="555.webp" type="image/webp"><img src="555.png" alt="Blog" width="800" height="450" loading="lazy" onclick="window.location.href='https://www.palettementor.work/blog.html'" style="cursor:pointer" role="button" aria-label="Blog"></picture>
-</section>
-<div class="buttons">
-<a href="https://ko-fi.com/techpalettementor" target="_blank" rel="noopener" aria-label="Donate"><picture><source srcset="DONATE.webp" type="image/webp"><img src="DONATE.png" alt="Donate" width="300" height="100" loading="lazy"></picture></a>
-</div>
-<section class="section">
-<a href="https://youtu.be/cAz0vP7UZVU" target="_blank" rel="noopener" aria-label="Tutorial"><picture><source srcset="666.webp" type="image/webp"><img src="666.png" alt="Tutorial" width="800" height="450" loading="lazy"></picture></a>
-</section>
-<div class="buttons">
-<a href="https://www.palettementor.work/app.html" target="_blank" rel="noopener" aria-label="Web App"><picture><source srcset="Link.webp" type="image/webp"><img src="Link.png" alt="App Link" width="300" height="100" loading="lazy"></picture></a>
-</div>
-<section class="policy-frame section">
-<picture><source srcset="777.webp" type="image/webp"><img src="777.png" alt="Policy" width="800" height="450" loading="lazy"></picture>
-</section>
-<div class="buttons">
-<a href="https://ko-fi.com/techpalettementor" target="_blank" rel="noopener" aria-label="Donate"><picture><source srcset="DONATE.webp" type="image/webp"><img src="DONATE.png" alt="Donate" width="300" height="100" loading="lazy"></picture></a>
-</div>
+<section class="section"><a href="https://youtu.be/cAz0vP7UZVU" target="_blank" rel="noopener" aria-label="Tutorial"><picture><source srcset="333.webp" type="image/webp"><img src="333.png" alt="Tutorial" width="800" height="450" loading="lazy"></picture></a></section>
+<section class="section"><a href="https://www.palettementor.work/app.html" target="_blank" rel="noopener" aria-label="Web App"><picture><source srcset="444.webp" type="image/webp"><img src="444.png" alt="App" width="800" height="450" loading="lazy"></picture></a></section>
+<section class="section"><picture><source srcset="555.webp" type="image/webp"><img src="555.png" alt="Blog" width="800" height="450" loading="lazy" onclick="window.location.href='https://www.palettementor.work/blog.html'" style="cursor:pointer" role="button" aria-label="Blog"></picture></section>
+<div class="buttons"><a href="https://ko-fi.com/techpalettementor" target="_blank" rel="noopener" aria-label="Donate"><picture><source srcset="DONATE.webp" type="image/webp"><img src="DONATE.png" alt="Donate" width="300" height="100" loading="lazy"></picture></a></div>
+<section class="section"><a href="https://youtu.be/cAz0vP7UZVU" target="_blank" rel="noopener" aria-label="Tutorial"><picture><source srcset="666.webp" type="image/webp"><img src="666.png" alt="Tutorial" width="800" height="450" loading="lazy"></picture></a></section>
+<div class="buttons"><a href="https://www.palettementor.work/app.html" target="_blank" rel="noopener" aria-label="Web App"><picture><source srcset="Link.webp" type="image/webp"><img src="Link.png" alt="App Link" width="300" height="100" loading="lazy"></picture></a></div>
+<section class="policy-frame section"><picture><source srcset="777.webp" type="image/webp"><img src="777.png" alt="Policy" width="800" height="450" loading="lazy"></picture></section>
+<div class="buttons"><a href="https://ko-fi.com/techpalettementor" target="_blank" rel="noopener" aria-label="Donate"><picture><source srcset="DONATE.webp" type="image/webp"><img src="DONATE.png" alt="Donate" width="300" height="100" loading="lazy"></picture></a></div>
 </div>
 <div class="icons">
-  <a href="https://www.instagram.com/mmyking1/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
-    <img src="mmyking-insta.png" alt="Instagram" width="40" height="40" loading="lazy">
-  </a>
-  <a href="https://www.instagram.com/techpalettementor/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
-    <img src="TPM-insta.png" alt="Instagram" width="40" height="40" loading="lazy">
-  </a>
-  <a href="https://youtu.be/cAz0vP7UZVU" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
-    <img src="TPM-YT.png" alt="YouTube" width="40" height="40" loading="lazy">
-  </a>
+<a href="https://www.instagram.com/mmyking1/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><img src="mmyking-insta.png" alt="Instagram" width="40" height="40" loading="lazy"></a>
+<a href="https://www.instagram.com/techpalettementor/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><img src="TPM-insta.png" alt="Instagram" width="40" height="40" loading="lazy"></a>
+<a href="https://youtu.be/cAz0vP7UZVU" target="_blank" rel="noopener noreferrer" aria-label="YouTube"><img src="TPM-YT.png" alt="YouTube" width="40" height="40" loading="lazy"></a>
 </div>
 </div>
-
-<script defer>
-  document.addEventListener('DOMContentLoaded', function() {
-    const menuButton = document.getElementById('menu-icon');
-    const dropdown = document.getElementById('dropdown');
-    
-    menuButton.addEventListener('click', function(e) {
-      e.stopPropagation();
-      dropdown.classList.toggle('active');
-    });
-    
-    document.addEventListener('click', function() {
-      dropdown.classList.remove('active');
-    });
-  });
-</script>
-
-
-<script>
-  window.addEventListener('load', () => {
-    // Load non-critical third-party scripts after 2s
-    setTimeout(() => {
-      const fcScript = document.createElement('script');
-      fcScript.src = 'https://fundingchoicesmessages.google.com/i/pub-1920074084827369?ers=1';
-      fcScript.async = true;
-      document.body.appendChild(fcScript);
-    }, 2000);
-  });
-</script>
+<script defer>document.addEventListener("DOMContentLoaded",function(){const e=document.getElementById("menu-icon"),t=document.getElementById("dropdown");e.addEventListener("click",function(n){n.stopPropagation(),t.classList.toggle("active")}),document.addEventListener("click",function(){t.classList.remove("active")})});</script>
+<script>window.addEventListener("load",()=>{setTimeout(()=>{const e=document.createElement("script");e.src="https://fundingchoicesmessages.google.com/i/pub-1920074084827369?ers=1",e.async=!0,document.body.appendChild(e)},2e3)});</script>
 </body>
 </html>
-
