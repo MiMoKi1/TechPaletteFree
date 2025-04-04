@@ -2,17 +2,23 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
+  <meta name="keywords" content="your,keywords,here">
+<meta property="og:title" content="Palette Mentor">
+<meta property="og:description" content="Your description">
+<meta property="og:image" content="https://yoursite.com/image.jpg">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Palette Mentor | Sustainable Color Tool</title>
 <meta name="description" content="Tool for artists to translate digital colors into real-world paints">
 <link rel="preload" href="111.webp" as="image" type="image/webp">
 <link rel="preload" href="paintbrush-cursor.png" as="image">
-<style>body{background:#fffdd0;color:#000;text-align:center;font-family:Arial,sans-serif;margin:0;padding:0;cursor:url('paintbrush-cursor.png'),auto}#menu-icon{position:absolute;top:120px;left:10px;width:40px;height:40px;cursor:pointer;z-index:1001;background:url(menu.png) center/contain no-repeat}.dropdown{display:none;position:absolute;top:160px;left:10px;background:#fff;box-shadow:0 2px 5px rgba(0,0,0,.2);z-index:1000;padding:10px;border-radius:5px}.dropdown.active{display:block}.dropdown a{display:block;padding:10px;color:#333;text-decoration:none}.dropdown a:hover{background:#f0f0f0}.container{max-width:1200px;margin:auto;padding:20px;position:relative}img{max-width:100%;height:auto;display:block;margin:20px auto}.hero img{width:100vw;max-width:1200px;height:auto}.icons{display:flex;justify-content:center;gap:10px;margin:10px 0}.icons img{width:40px;height:40px}.buttons{display:flex;justify-content:center;margin:20px 0}.buttons a img{width:300px;height:auto}@media (max-width:768px){.buttons a img{width:240px}.icons img{width:30px;height:30px}}</style>
+<style>#menu-icon { border: none; background: url(menu.png) center/contain no-repeat;}.visually-hidden { position: absolute; clip: rect(0 0 0 0); }body{background:#fffdd0;color:#000;text-align:center;font-family:Arial,sans-serif;margin:0;padding:0;cursor:url('paintbrush-cursor.png'),auto}#menu-icon{position:absolute;top:120px;left:10px;width:40px;height:40px;cursor:pointer;z-index:1001;background:url(menu.png) center/contain no-repeat}.dropdown{display:none;position:absolute;top:160px;left:10px;background:#fff;box-shadow:0 2px 5px rgba(0,0,0,.2);z-index:1000;padding:10px;border-radius:5px}.dropdown.active{display:block}.dropdown a{display:block;padding:10px;color:#333;text-decoration:none}.dropdown a:hover{background:#f0f0f0}.container{max-width:1200px;margin:auto;padding:20px;position:relative}img{max-width:100%;height:auto;display:block;margin:20px auto}.hero img{width:100vw;max-width:1200px;height:auto}.icons{display:flex;justify-content:center;gap:10px;margin:10px 0}.icons img{width:40px;height:40px}.buttons{display:flex;justify-content:center;margin:20px 0}.buttons a img{width:300px;height:auto}@media (max-width:768px){.buttons a img{width:240px}.icons img{width:30px;height:30px}}</style>
 </head>
 <body>
 <div id="canvas-container">
 <a href="index.html" aria-label="Home"></a>
-<div id="menu-icon" aria-label="Menu"></div>
+<button id="menu-icon" aria-expanded="false" aria-controls="dropdown">
+  <span class="visually-hidden">Menu</span>
+</button>
 <div class="dropdown">
 <a href="index.html" aria-label="Home">Home</a>
 <a href="blog.html" aria-label="Blog">Blog</a>
