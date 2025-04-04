@@ -45,8 +45,30 @@
             height: auto;
         }
 
-        /* Dropdown Menu Styles */
-        /* Removed menu styles */
+        /* Navigation Links Styles */
+        .nav-links {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            display: flex;
+            gap: 15px; /* Space between links */
+            z-index: 1000; /* Ensure links are above other elements */
+        }
+
+        .nav-links a {
+            color: #8B5B29; /* Brown color */
+            text-decoration: none;
+            font-weight: bold;
+            padding: 5px 10px;
+            border-radius: 5px; /* Optional: Rounded corners for links */
+            background-color: #FAF2E2; /* Optional: Background color for links */
+        }
+
+        .nav-links a:hover {
+            color: white;
+            background-color: #8B5B29;
+        }
+
 
         /* Skip Link */
         .skip-link {
@@ -108,6 +130,12 @@
 </head>
 <body>
     <a href="#maincontent" class="skip-link">Skip to main content</a>
+    <div class="nav-links">
+        <a href="https://www.palettementor.work/" aria-label="Home">Home</a>
+        <a href="https://www.palettementor.work/blog.html" aria-label="Blog">Blog</a>
+        <a href="https://www.palettementor.work/app.html" aria-label="Web App">Web App</a>
+        <a href="https://ko-fi.com/techpalettementor" aria-label="Donate">Donate</a>
+    </div>
     <div id="canvas-container">
         <main id="maincontent" role="main">
             <div class="container">
