@@ -136,7 +136,7 @@
     </div>
     <script>
 const d = document,
-      b = d.body,
+      b = document.body, // Changed from d.body to document.body
       t = d.querySelector(".dark-mode-toggle");
 
 function toggleDarkMode() {
@@ -149,6 +149,7 @@ if (localStorage.getItem("darkMode") === "enabled") {
 }
 
 t.addEventListener("click", toggleDarkMode);
+
 </script>
 </body>
 </html>
