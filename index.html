@@ -6,6 +6,7 @@
     <meta name="robots" content="index, follow">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta charset="UTF-8">
+    <meta name="theme-color" content="#f9f9f9">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>Palette Mentor | Sustainable Color Tool</title>
     <meta name="description" content="Tool for artists to translate digital colours into real-world paints">
@@ -18,46 +19,8 @@
     <link rel="preload" href="111-small.webp" as="image" media="(max-width: 800px)">
     <link rel="preload" href="111-medium.webp" as="image" media="(min-width: 801px)">
     <link rel="preload" href="paintbrush-cursor.png" as="image">
-  <style>.badge-bar {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  padding: 10px;
-  justify-content: center;
-  background-color: #fff;
-  border-bottom: 1px solid #ddd;
-  font-family: Arial, sans-serif;
-  font-size: 14px;
-}
-.badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  padding: 6px 12px;
-  border-radius: 999px;
-  text-decoration: none;
-  font-weight: bold;
-  transition: background-color 0.3s ease;
-}
-.badge:hover {
-  opacity: 0.85;
-}
-.badge-speed {
-  background: #d1fae5;
-  color: #065f46;
-  border: 1px solid #6ee7b7;
-}
-.badge-carbon {
-  background: #def7ec;
-  color: #03543f;
-  border: 1px solid #34d399;
-}
-.badge-footprint {
-  background: #ecfccb;
-  color: #365314;
-  border: 1px solid #a3e635;
-}
-      body{margin:0;padding:0;font-family:Arial,sans-serif;display:flex;justify-content:center;align-items:center;min-height:100vh;background-color:#f9f9f9;transition:background-color .3s ease,color .3s ease;cursor:url(paintbrush-cursor.png),auto}body.dark-mode{background-color:#121212;color:#fff}.container{max-width:1200px;margin:auto;padding:20px;position:relative}.hero img{width:100vw;max-width:1200px;height:auto}.nav-links{position:absolute;top:40px;left:10px;display:flex;gap:15px;z-index:1000}.nav-links a{color:#8b5b29;text-decoration:none;font-weight:700;padding:5px 10px;border-radius:5px;background-color:#faf2e2;transition:background-color .3s ease,color .3s ease}.nav-links a:hover{color:#fff;background-color:#8b5b29}.nav-links a.dark-mode{color:#bdbdbd;background-color:#333}.nav-links a.dark-mode:hover{color:#fff;background-color:#555}.skip-link{position:absolute;top:0;left:0;padding:8px;background:#000;color:#fff;z-index:1001}.skip-link:focus{top:0}.visually-hidden{position:absolute;clip:rect(0 0 0 0);width:1px;height:1px;margin:-1px;overflow:hidden}img{max-width:100%;height:auto;display:block}.buttons a{display:inline-block;margin:10px}.icons a{display:inline-block;margin:5px}picture img{width:100%;height:auto}.section{margin:20px 0}.dark-mode-toggle{position:fixed;top:10px;right:10px;z-index:1000;background-color:#eee;border:none;padding:8px 12px;border-radius:5px;cursor:pointer;transition:background-color .3s ease;color:#333}.dark-mode-toggle.dark-mode{background-color:#555;color:#fff}.dark-mode-toggle:hover{background-color:#ccc}.dark-mode-toggle.dark-mode:hover{background-color:#777}.pwa-install{position:fixed;bottom:10px;left:10px;background-color:#4CAF50;color:#fff;border:none;padding:10px 15px;border-radius:5px;cursor:pointer;z-index:1001;display:none}</style>
+  <style>.badge-bar{display:flex;flex-wrap:wrap;gap:10px;padding:10px;justify-content:center;background-color:#fff;border-bottom:1px solid #ddd;font-family:Arial,sans-serif;font-size:14px}.badge{display:inline-flex;align-items:center;gap:6px;padding:6px 12px;border-radius:999px;text-decoration:none;font-weight:700;transition:background-color .3s ease}.badge:hover{opacity:.85}.badge-speed{background:#d1fae5;color:#065f46;border:1px solid #6ee7b7}.badge-carbon{background:#def7ec;color:#03543f;border:1px solid #34d399}.badge-footprint{background:#ecfccb;color:#365314;border:1px solid #a3e635}body{margin:0;padding:0;font-family:Arial,sans-serif;display:flex;justify-content:center;align-items:center;min-height:100vh;background-color:#f9f9f9;transition:background-color .3s ease,color .3s ease;cursor:url(paintbrush-cursor.png),auto}body.dark-mode{background-color:#121212;color:#fff}.container{max-width:1200px;margin:auto;padding:20px;position:relative}.hero img{width:100vw;max-width:1200px;height:auto}.nav-links{position:absolute;top:40px;left:10px;display:flex;gap:15px;z-index:1000}.nav-links a{color:#8b5b29;text-decoration:none;font-weight:700;padding:5px 10px;border-radius:5px;background-color:#faf2e2;transition:background-color .3s ease,color .3s ease}.nav-links a:hover{color:#fff;background-color:#8b5b29}.nav-links a.dark-mode{color:#bdbdbd;background-color:#333}.nav-links a.dark-mode:hover{color:#fff;background-color:#555}.skip-link{position:absolute;top:0;left:0;padding:8px;background:#000;color:#fff;z-index:1001}.skip-link:focus{top:0}.visually-hidden{position:absolute;clip:rect(0 0 0 0);width:1px;height:1px;margin:-1px;overflow:hidden}img{max-width:100%;height:auto;display:block}.buttons a{display:inline-block;margin:10px}.icons a{display:inline-block;margin:5px}picture img{width:100%;height:auto}.section{margin:20px 0}.dark-mode-toggle{position:fixed;top:10px;right:10px;z-index:1000;background-color:#eee;border:none;padding:8px 12px;border-radius:5px;cursor:pointer;transition:background-color .3s ease;color:#333}.dark-mode-toggle.dark-mode{background-color:#555;color:#fff}.dark-mode-toggle:hover{background-color:#ccc}.dark-mode-toggle.dark-mode:hover{background-color:#777}.pwa-install{position:fixed;bottom:10px;left:10px;background-color:#4CAF50;color:#fff;border:none;padding:10px 15px;border-radius:5px;cursor:pointer;z-index:1001;display:none}</style>
+
     <link rel="stylesheet" href="styles.min.css">
 </head>
 <body>
@@ -67,7 +30,7 @@
   <a href="https://www.websitecarbon.com/website/palettementor-work/" target="_blank" class="badge badge-carbon">🌱 Carbon Rating: A</a>
   <a href="https://digitalbeacon.co/report/palettementor-work" target="_blank" class="badge badge-footprint">♻️ Carbon Footprint: A</a>
 </div>
-</div>
+
 
     <button class="dark-mode-toggle">Toggle Dark Mode</button>
     <button class="pwa-install">Install App</button>
@@ -88,20 +51,20 @@
                 </header>
                 <section class="section">
                     <picture>
-                        <source srcset="222.webp, 222.png" type="image/webp">
+                        <source srcset="222.webp" type="image/webp">
                         <img src="222.png" alt="About" width="800" height="450" loading="lazy">
                     </picture>
                 </section>
                 <div class="buttons">
                     <a href="https://www.palettementor.work/app.html" target="_blank" rel="noopener noreferrer" aria-label="Web App">
                         <picture>
-                            <source srcset="Link.webp, Link.png" type="image/webp">
+                            <source srcset="Link.webp" type="image/webp">
                             <img src="Link.png" alt="App Link" width="300" height="100" loading="lazy">
                         </picture>
                     </a>
                     <a href="https://ko-fi.com/techpalettementor" target="_blank" rel="noopener noreferrer" aria-label="Donate">
                         <picture>
-                            <source srcset="DONATE.webp, DONATE.png" type="image/webp">
+                            <source srcset="DONATE.webp" type="image/webp">
                             <img src="DONATE.png" alt="Donate" width="300" height="100" loading="lazy">
                         </picture>
                     </a>
@@ -109,7 +72,7 @@
                 <section class="section">
                     <a href="https://youtu.be/cAz0vP7UZVU" target="_blank" rel="noopener" aria-label="Tutorial">
                         <picture>
-                            <source srcset="333.webp, 333.png" type="image/webp">
+                            <source srcset="333.webp" type="image/webp">
                             <img src="333.png" alt="Tutorial" width="800" height="450" loading="lazy">
                         </picture>
                     </a>
@@ -117,21 +80,21 @@
                 <section class="section">
                     <a href="https://www.palettementor.work/app.html" target="_blank" rel="noopener noreferrer" aria-label="Web App">
                         <picture>
-                            <source srcset="444.webp, 444.png" type="image/webp">
+                            <source srcset="444.webp" type="image/webp">
                             <img src="444.png" alt="App" width="800" height="450" loading="lazy">
                         </picture>
                     </a>
                 </section>
                 <section class="section">
                     <picture>
-                        <source srcset="555.webp, 555.png" type="image/webp">
+                        <source srcset="555.webp" type="image/webp">
                         <img src="555.png" alt="Blog" width="800" height="450" loading="lazy" onclick="window.location.href='https://www.palettementor.work/blog.html'" style="cursor:pointer" role="button" aria-label="Blog">
                     </picture>
                 </section>
                 <div class="buttons">
                     <a href="https://ko-fi.com/techpalettementor" target="_blank" rel="noopener" aria-label="Donate">
                         <picture>
-                            <source srcset="DONATE.webp, DONATE.png" type="image/webp">
+                            <source srcset="DONATE.webp" type="image/webp">
                             <img src="DONATE.png" alt="Donate" width="300" height="100" loading="lazy">
                         </picture>
                     </a>
@@ -139,7 +102,7 @@
                 <section class="section">
                     <a href="https://youtu.be/cAz0vP7UZVU" target="_blank" rel="noopener" aria-label="Tutorial">
                         <picture>
-                            <source srcset="666.webp, 666.png" type="image/webp">
+                            <source srcset="666.webp" type="image/webp">
                             <img src="666.png" alt="Tutorial" width="800" height="450" loading="lazy">
                         </picture>
                     </a>
@@ -147,21 +110,21 @@
                 <div class="buttons">
                     <a href="https://www.palettementor.work/app.html" target="_blank" rel="noopener noreferrer" aria-label="Web App">
                         <picture>
-                            <source srcset="Link.webp, Link.png" type="image/webp">
+                            <source srcset="Link.webp" type="image/webp">
                             <img src="Link.png" alt="App Link" width="300" height="100" loading="lazy">
                         </picture>
                     </a>
                 </div>
                 <section class="policy-frame section">
                     <picture>
-                        <source srcset="777.webp, 777.png" type="image/webp">
+                        <source srcset="777.webp" type="image/webp">
                         <img src="777.png" alt="Policy" width="800" height="450" loading="lazy">
                     </picture>
                 </section>
                 <div class="buttons">
                     <a href="https://ko-fi.com/techpalettementor" target="_blank" rel="noopener" aria-label="Donate">
                         <picture>
-                            <source srcset="DONATE.webp, DONATE.png" type="image/webp">
+                            <source srcset="DONATE.webp" type="image/webp">
                             <img src="DONATE.png" alt="Donate" width="300" height="100" loading="lazy">
                         </picture>
                     </a>
